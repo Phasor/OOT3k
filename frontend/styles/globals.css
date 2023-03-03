@@ -24,5 +24,33 @@
     .custom-shape-divider-bottom-1677869480 .shape-fill {
         fill: #4B1FCD;
     }
+
+    @keyframes slide-up1 {
+        from {
+            transform: translateY(-100px);
+        }
+        to {
+            transform: translateY(0px);
+        }
+        
+    }
+    @keyframes slide-up2 {
+        from {
+            transform: translateY(500px);
+        }
+        to {
+            transform: translateY(0px);
+        }
+        
+    }
+
+    .slide-up1 {
+        animation: slide-up1 2s ease-in-out;
+    }
+    .slide-up2 {
+        animation: slide-up2 2s ease-out;
+    }
+
+
   }
 
