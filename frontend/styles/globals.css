@@ -4,9 +4,9 @@
 @tailwind utilities;
 
 @layer components {
-    .custom-shape-divider-top-1677866635 {
+    .custom-shape-divider-bottom-1677869480 {
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 100%;
         overflow: hidden;
@@ -14,17 +14,15 @@
         transform: rotate(180deg);
     }
     
-    .custom-shape-divider-top-1677866635 svg {
+    .custom-shape-divider-bottom-1677869480 svg {
         position: relative;
         display: block;
-        width: calc(100% + 1.3px);
-        height: 146px;
+        width: calc(110% + 1.3px);
+        height: 140px;
     }
     
-    .custom-shape-divider-top-1677866635 .shape-fill {
-        fill: #74ACF7;
+    .custom-shape-divider-bottom-1677869480 .shape-fill {
+        fill: #4B1FCD;
     }
-
-
   }
 
