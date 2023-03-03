@@ -9,13 +9,15 @@ export default function Hero() {
                 <p className='font-hero text-[12vw] md:text-[10vw] lg:text-[8vw] xl:text-[4vw] text-white drop-shadow-xl'>of</p>
                 <p className='font-hero text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-white drop-shadow-xl'>Terror</p>
             </div>
-            <Image 
-              src="/mermaid.png"
-              alt="Image of a mermaid holding a wand"
-              width={500}
-              height={500}
-              className="absolute bottom-0 right-0 slide-up2 xl:block w-[200px] md:w-[300px] lg:w-[350px] xl:w-[450px]"
-            />
+            <div>
+              <Image 
+                src="/mermaid.png"
+                alt="Image of a mermaid holding a wand"
+                width={500}
+                height={500}
+                className="absolute bottom-0 right-0 slide-up2 xl:block w-[200px] md:w-[300px] lg:w-[350px] xl:w-[450px]"
+              />
+            </div>
             <Image 
               src="/narwhale.png"
               alt="Image of a narwhale"

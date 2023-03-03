@@ -1,6 +1,7 @@
 import Navbar from "../components/navigation/navbar";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
+import Lore from "../components/Lore";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <Navbar/>
         <Hero/>
         <Intro/>
+        <Lore/>
       </main>
     </div>
   );
