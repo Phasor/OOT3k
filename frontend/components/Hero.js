@@ -11,10 +11,17 @@ export default function Hero() {
             </div>
             <Image 
               src="/mermaid.png"
-              alt="Hero Image"
+              alt="Image of a mermaid holding a wand"
               width={500}
               height={500}
               className="absolute bottom-0 right-0 slide-up2"
+            />
+            <Image 
+              src="/narwhale.png"
+              alt="Image of a narwhale"
+              width={500}
+              height={500}
+              className="absolute bottom-0 left-0 slide-up2"
             />
             <div class="custom-shape-divider-bottom-1677869480" className="z-50">
               <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="slide-up1">
