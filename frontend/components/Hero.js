@@ -5,23 +5,23 @@ export default function Hero() {
   return (
         <div className="w-full h-screen flex justify-center items-center bg-[#74acf7] relative">
             <div className='text-center'>
-                <p className='font-hero text-[8rem] text-white drop-shadow-xl'>Oceans</p>
-                <p className='font-hero text-[4rem] text-white drop-shadow-xl'>of</p>
-                <p className='font-hero text-[8rem] text-white drop-shadow-xl'>Terror</p>
+                <p className='font-hero text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-white drop-shadow-xl'>Oceans</p>
+                <p className='font-hero text-[12vw] md:text-[10vw] lg:text-[8vw] xl:text-[4vw] text-white drop-shadow-xl'>of</p>
+                <p className='font-hero text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-white drop-shadow-xl'>Terror</p>
             </div>
             <Image 
               src="/mermaid.png"
               alt="Image of a mermaid holding a wand"
               width={500}
               height={500}
-              className="absolute bottom-0 right-0 slide-up2"
+              className="absolute bottom-0 right-0 slide-up2 hidden xl:block"
             />
             <Image 
               src="/narwhale.png"
               alt="Image of a narwhale"
               width={500}
               height={500}
-              className="absolute bottom-0 left-0 slide-up2"
+              className="absolute bottom-0 left-0 slide-up2 hidden xl:block"
             />
             <div class="custom-shape-divider-bottom-1677869480" className="z-50">
               <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="slide-up1">
