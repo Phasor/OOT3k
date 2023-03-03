@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Hero() {
   return (
         <div className="w-full h-screen flex justify-center items-center bg-[#74acf7] relative">
-            <div className='text-center'>
+            <div className='text-center '>
                 <p className='font-hero text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-white drop-shadow-xl'>Oceans</p>
                 <p className='font-hero text-[12vw] md:text-[10vw] lg:text-[8vw] xl:text-[4vw] text-white drop-shadow-xl'>of</p>
                 <p className='font-hero text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-white drop-shadow-xl'>Terror</p>
@@ -14,13 +14,13 @@ export default function Hero() {
               alt="Image of a mermaid holding a wand"
               width={500}
               height={500}
-              className="absolute bottom-0 right-0 slide-up2 hidden xl:block"
+              className="absolute bottom-0 right-0 slide-up2 xl:block w-[200px] md:w-[300px] lg:w-[350px] xl:w-[450px]"
             />
             <Image 
               src="/narwhale.png"
               alt="Image of a narwhale"
-              width={500}
-              height={500}
+              width={450}
+              height={450}
               className="absolute bottom-0 left-0 slide-up2 hidden xl:block"
             />
             <div class="custom-shape-divider-bottom-1677869480" className="z-50">
