@@ -110,23 +110,23 @@ function NavBar() {
                 navbar ? 'p-12 md:p-0 block' : 'hidden'
               }`}
             >
-              <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-                <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-purple-900  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+              <ul className="h-screen md:h-auto items-center justify-center md:flex md:space-x-6 ">
+                <li style={{backgroundImage: `url('/button-background.png')`, backgroundPosition: 'center' , backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className="w-[130px] pb-6 text-xl text-[#74acf7] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
                   <Link href="#intro" onClick={() => setNavbar(!navbar)}>
                     Intro
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+                <li style={{backgroundImage: `url('/button-background.png')`, backgroundPosition: 'center' , backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className="w-[130px] pb-6 text-xl text-[#74acf7] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
                   <Link href="#lore" onClick={() => setNavbar(!navbar)}>
                     Lore
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+                <li style={{backgroundImage: `url('/button-background.png')`, backgroundPosition: 'center' , backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className="w-[130px] pb-6 text-xl text-[#74acf7] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
                   <Link href="#collection" onClick={() => setNavbar(!navbar)}>
-                    3k Collection
+                    Collection
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+                <li style={{backgroundImage: `url('/button-background.png')`, backgroundPosition: 'center' , backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className="w-[130px] pb-6 text-xl text-[#74acf7] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
                   <Link href="#team" onClick={() => setNavbar(!navbar)}>
                     Team
                   </Link>
