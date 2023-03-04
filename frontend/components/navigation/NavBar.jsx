@@ -75,14 +75,14 @@ function NavBar() {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
-      <nav className="w-full bg-black fixed top-0 left-0 right-0 z-10">
+      <nav className="w-full bg-[#74acf7] absolute top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
-                <h2 className="text-2xl text-cyan-600 font-bold ">LOGO</h2>
-              </Link>
+					    < Image height={100} width={100} className="p-2" src="/logo.jpg"/>
+ 				      </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
                 <button
