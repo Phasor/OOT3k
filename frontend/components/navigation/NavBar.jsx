@@ -9,32 +9,40 @@ function NavBar() {
 
   useEffect(() => {
     const menu = document.getElementById('menu');
-
+  
     function slideIn() {
       menu.classList.remove('hidden');
-      menu.classList.add("slide-in");
+      menu.classList.add('slide-in');
     }
-
+  
     function slideOut() {
-      menu.classList.add("slide-out");
+      menu.classList.add('slide-out');
+      
       setTimeout(() => {
-        // add the 'hidden' class to hide the menu
         menu.classList.add('hidden');
-        // remove the 'slide-out' class to reset the animation
         menu.classList.remove('slide-out');
-      }, 500);
+      }, 300);
     }
-
+  
     if (showMobileMenu) {
-      slideIn();
-      // remove the 'hidden' class to show the menu
-      menu.classList.remove('hidden');
-      menu.classList.add('block');
-      menu.classList.add('md:p-0');
+      // check if screen width is less than 768px (tailwind's sm breakpoint)
+      if (window.innerWidth < 768) {
+        slideIn();
+        menu.classList.remove('hidden');
+        menu.classList.add('block');
+        menu.classList.add('md:p-0');
+      }
     } else {
-      slideOut();
+      // remove slide-in and slide-out classes on larger screens
+      if (window.innerWidth >= 768) {
+        menu.classList.remove('slide-in');
+        menu.classList.remove('slide-out');
+      } else {
+        slideOut();
+      }
     }
   }, [showMobileMenu]);
+  
 
 
   function handleMenuClick() {
@@ -78,7 +86,7 @@ function NavBar() {
           {/* Menu Links */}
           <div>
             <div id="menu"
-              className="pb-3 mt-8 md:block md:pb-0 md:mt-0 hidden"
+              className="pb-3 mt-8 md:pb-0 md:mt-0 hidden md:block"
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center">
                 <li className="text-xl text-white font-leckton py-5 md:px-6 md:py-1 text-center border-b-2 md:border md:rounded  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:border-blue-800  md:hover:bg-blue-400">
