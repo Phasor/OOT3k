@@ -74,6 +74,20 @@
     .custom-shape-divider-top-1677879891 .shape-fill {
         fill: #4B1FCD;
     }
+
+    @keyframes slide-left {
+        from {
+            transform: translateX(300px);
+        }
+        to {
+            transform: translateX(0px);
+        }
+        
+    }
+
+    .slide-left {
+        animation: slide-left 0.25s ease-out;
+    }
     
 
   }

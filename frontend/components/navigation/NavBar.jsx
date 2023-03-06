@@ -44,7 +44,7 @@ function NavBar() {
           <div>
             <div
               className={`pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                showMobileMenu ? 'p-12 md:p-0 block' : 'hidden'
+                showMobileMenu ? 'p-12 md:p-0 block slide-left' : 'hidden'
               }`}
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center">
