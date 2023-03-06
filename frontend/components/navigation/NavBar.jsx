@@ -22,7 +22,7 @@ function NavBar() {
         menu.classList.add('hidden');
         // remove the 'slide-out' class to reset the animation
         menu.classList.remove('slide-out');
-      }, 300);
+      }, 500);
     }
 
     if (showMobileMenu) {
