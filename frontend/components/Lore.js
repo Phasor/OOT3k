@@ -37,10 +37,10 @@ export default function Lore() {
           </div>
           
           <div className='max-w-6xl flex flex-col justify-center items-center my-11'>
-            <div className='h-[20rem] w-[20rem] bg-red-300 my-11 hide-left'></div>
-            <div className='h-[20rem] w-[20rem] bg-red-400 my-11 hide-right'></div>
-            <div className='h-[20rem] w-[20rem] bg-red-500 my-11 hide-left'></div>
-            <div className='h-[20rem] w-[20rem] bg-red-600 my-11 hide-right'></div>
+            <div className='h-[20rem] w-[20rem] bg-red-300 my-11 hide-left mr-[20rem]'></div>
+            <div className='h-[20rem] w-[20rem] bg-red-400 my-11 hide-right ml-[20rem]'></div>
+            <div className='h-[20rem] w-[20rem] bg-red-500 my-11 hide-left mr-[20rem]'></div>
+            <div className='h-[20rem] w-[20rem] bg-red-600 my-11 hide-right ml-[20rem]'></div>
           </div>
       </section>
     </>
