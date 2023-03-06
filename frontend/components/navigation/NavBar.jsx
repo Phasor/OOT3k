@@ -80,7 +80,7 @@ function NavBar() {
 
           {/* Icons */}
           <div>
-            <div className="flex items-center justify-between py-3 md:py-5 md:block border-4 border-yellow-600">
+            <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
 					    < Image height={100} width={100} className="p-2" src="/logo.jpg"/>
@@ -110,29 +110,29 @@ function NavBar() {
           {/* Menu Links */}
           <div>
             <div
-              className={`border-4 border-orange-700 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              className={`pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
                 showMobileMenu ? 'p-12 md:p-0 block' : 'hidden'
               }`}
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center md:space-x-6 ">
-                <li className="pb-6 text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
+                <li className="text-xl text-white py-5 md:px-6 md:py-1 text-center border-b-2 md:border md:rounded  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:border-blue-800  md:hover:bg-blue-400">
                   <Link href="#intro" onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                    Intro
+                    INTRO
                   </Link>
                 </li>
-                <li className=" pb-6 text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
+                <li className="text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]   border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link href="#lore" onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                    Lore
+                    LORE
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
+                <li className="text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link href="#collection" onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                    Collection
+                    COLLECTION
                   </Link>
                 </li>
-                <li className="pb-6 text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
+                <li className="text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link href="#team" onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                    Team
+                    TEAM
                   </Link>
                 </li>
               </ul>
