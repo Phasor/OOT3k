@@ -72,13 +72,15 @@ import { useState } from "react";
 import Image from "next/image";
 
 function NavBar() {
-  const [navbar, setNavbar] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
     <div>
       <nav className="w-full bg-[#74acf7] absolute top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+
+          {/* Icons */}
           <div>
-            <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <div className="flex items-center justify-between py-3 md:py-5 md:block border-4 border-yellow-600">
               {/* LOGO */}
               <Link href="/">
 					    < Image height={100} width={100} className="p-2" src="/logo.jpg"/>
@@ -87,9 +89,9 @@ function NavBar() {
               <div className="md:hidden">
                 <button
                   className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                  onClick={() => setNavbar(!navbar)}
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
-                  {navbar ? (
+                  {showMobileMenu ? (
                     <Image src="/close.svg" width={30} height={30} alt="logo" />
                   ) : (
                     <Image
@@ -104,30 +106,32 @@ function NavBar() {
               </div>
             </div>
           </div>
+            
+          {/* Menu Links */}
           <div>
             <div
-              className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? 'p-12 md:p-0 block' : 'hidden'
+              className={`border-4 border-orange-700 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+                showMobileMenu ? 'p-12 md:p-0 block' : 'hidden'
               }`}
             >
-              <ul className="h-screen md:h-auto items-center justify-center md:flex md:space-x-6 ">
-                <li style={{backgroundImage: `url('/button-background.png')`, backgroundPosition: 'center' , backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className="w-[130px] pb-6 text-xl text-[#74acf7] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
-                  <Link href="#intro" onClick={() => setNavbar(!navbar)}>
+              <ul className="h-screen md:h-auto md:flex items-center justify-center md:space-x-6 ">
+                <li className="pb-6 text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
+                  <Link href="#intro" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     Intro
                   </Link>
                 </li>
-                <li style={{backgroundImage: `url('/button-background.png')`, backgroundPosition: 'center' , backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className="w-[130px] pb-6 text-xl text-[#74acf7] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
-                  <Link href="#lore" onClick={() => setNavbar(!navbar)}>
+                <li className=" pb-6 text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
+                  <Link href="#lore" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     Lore
                   </Link>
                 </li>
-                <li style={{backgroundImage: `url('/button-background.png')`, backgroundPosition: 'center' , backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className="w-[130px] pb-6 text-xl text-[#74acf7] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
-                  <Link href="#collection" onClick={() => setNavbar(!navbar)}>
+                <li className="pb-6 text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
+                  <Link href="#collection" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     Collection
                   </Link>
                 </li>
-                <li style={{backgroundImage: `url('/button-background.png')`, backgroundPosition: 'center' , backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}} className="w-[130px] pb-6 text-xl text-[#74acf7] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
-                  <Link href="#team" onClick={() => setNavbar(!navbar)}>
+                <li className="pb-6 text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd]  md:hover:text-[#4b1fcd] md:hover:bg-transparent">
+                  <Link href="#team" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     Team
                   </Link>
                 </li>
