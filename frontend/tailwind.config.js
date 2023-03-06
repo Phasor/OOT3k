@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        hero: ["Luckiest Guy", "cursive"],
+        lucky: ["Luckiest Guy", "cursive"],
+        leckton: ["Lekton", "sans-serif"],
       },
     },
   },

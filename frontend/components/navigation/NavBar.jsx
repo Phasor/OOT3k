@@ -1,70 +1,3 @@
-// import { ConnectButton } from "@rainbow-me/rainbowkit";
-// import styles from "../../styles/Navbar.module.css";
-// import Link from "next/link";
-// import { useState } from "react";
-// import Image from "next/image";
-
-// export default function Navbar() {
-// 	const [showNavBar, setShowNavBar] = useState(false);
-
-// 	return (
-// 		<nav className="absolute top-0 w-full z-50">
-// 			<div className="flex justify-between items-center p-4 mx-auto lg:max-w-7xl">
-// 				<a href="/">
-// 					<Image height={100} width={100} className="p-2" src="/logo.jpg"/>
-// 				</a>
-// 				<div className="hidden md:block">
-// 					<ConnectButton/>
-// 				</div>
-// 				<div className="sm:hidden">
-// 					<button 
-// 						className="p-2 text-gray-900 rounded-md outline-none focus:border-gray-400"
-// 						onClick={() => setShowNavBar(!showNavBar)}>
-// 							{showNavBar ? (
-// 								<Image src="/close.svg" height={30} width={30} alt="close"/>
-// 							) : (
-// 								<Image src="/burger.svg" height={30} width={30} alt="hamburger"/>
-// 							)}
-// 					</button>
-// 				</div>
-				
-// 				{/* Menu */}
-// 				<div
-//                  	className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-//                 	showNavBar ? 'p-12 md:p-0 block' : 'hidden'
-//               	}`}>
-// 					<ul className="h-screen md:h-auto items-center justify-center md:flex"  >
-// 						<div className="">
-// 							<li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-purple-900  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-// 							<Link href="#intro" onClick={() => setShowNavBar(!showNavBar)}>
-// 								Intro
-// 							</Link>
-// 							</li>
-// 							<li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-// 							<Link href="#lore" onClick={() => setShowNavBar(!showNavBar)}>
-// 								Lore
-// 							</Link>
-// 							</li>
-// 							<li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-// 							<Link href="#collection" onClick={() => setShowNavBar(!showNavBar)}>
-// 								3K Collection
-// 							</Link>
-// 							</li>
-// 							<li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-// 							<Link href="#team" onClick={() => setShowNavBar(!showNavBar)}>
-// 								Team
-// 							</Link>
-// 							</li>
-// 						</div>
-// 					</ul>
-// 				</div>
-
-// 			</div>
-
-// 		</nav>
-// 	);
-// }
-
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import styles from "../../styles/Navbar.module.css";
 import Link from "next/link";
@@ -115,22 +48,22 @@ function NavBar() {
               }`}
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center">
-                <li className="text-xl text-white py-5 md:px-6 md:py-1 text-center border-b-2 md:border md:rounded  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:border-blue-800  md:hover:bg-blue-400">
+                <li className="text-xl text-white font-leckton py-5 md:px-6 md:py-1 text-center border-b-2 md:border md:rounded  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:border-blue-800  md:hover:bg-blue-400">
                   <Link href="#intro" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     INTRO
                   </Link>
                 </li>
-                <li className="text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]   border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
+                <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]   border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link href="#lore" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     LORE
                   </Link>
                 </li>
-                <li className="text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
+                <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link href="#collection" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     COLLECTION
                   </Link>
                 </li>
-                <li className="text-xl text-white py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
+                <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link href="#team" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     TEAM
                   </Link>
@@ -143,7 +76,7 @@ function NavBar() {
                   </Link>
                 </li>
                 <li className="text-center md:px-6 border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
-                  <Link className="flex justify-center items-center text-center" href="https://twitter.com/OceansOfTerra" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <Link className="flex justify-center items-center text-center" href="https://discord.gg/CBZNXrRVjH" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <svg class="text-blue-600 fill-current h-8 w-8" viewBox="0 0 90 90">
                       <path d="M 78.527 20.998 c -10.973 -8.229 -21.412 -8.001 -21.412 -8.001 l -1.067 1.219 c 12.954 3.962 18.973 9.677 18.973 9.677 c -7.925 -4.343 -15.697 -6.477 -22.936 -7.315 c -5.486 -0.61 -10.744 -0.457 -15.392 0.152 c -0.457 0 -0.838 0.076 -1.295 0.152 c -2.667 0.229 -9.144 1.219 -17.297 4.801 c -2.819 1.295 -4.496 2.21 -4.496 2.21 s 6.325 -6.02 20.04 -9.982 l -0.762 -0.914 c 0 0 -10.439 -0.229 -21.412 8.001 c 0 0 -10.973 19.888 -10.973 44.424 c 0 0 6.401 11.049 23.241 11.582 c 0 0 2.819 -3.429 5.105 -6.324 c -9.677 -2.896 -13.335 -8.991 -13.335 -8.991 s 0.762 0.533 2.134 1.295 c 0.076 0.076 0.152 0.152 0.305 0.229 c 0.229 0.152 0.457 0.229 0.686 0.381 c 1.905 1.067 3.81 1.905 5.563 2.591 c 3.124 1.219 6.858 2.438 11.201 3.276 c 5.715 1.067 12.42 1.448 19.735 0.076 c 3.581 -0.61 7.239 -1.676 11.049 -3.277 c 2.667 -0.991 5.639 -2.438 8.763 -4.496 c 0 0 -3.81 6.248 -13.792 9.068 c 2.286 2.896 5.029 6.172 5.029 6.172 C 83.023 76.47 89.5 65.422 89.5 65.422 C 89.5 40.886 78.527 20.998 78.527 20.998 z M 30.751 58.335 c -4.267 0 -7.772 -3.81 -7.772 -8.458 s 3.429 -8.458 7.772 -8.458 s 7.848 3.81 7.772 8.458 C 38.523 54.525 35.094 58.335 30.751 58.335 z M 58.563 58.335 c -4.267 0 -7.772 -3.81 -7.772 -8.458 s 3.429 -8.458 7.772 -8.458 s 7.772 3.81 7.772 8.458 S 62.907 58.335 58.563 58.335 z"/>
                     </svg>
