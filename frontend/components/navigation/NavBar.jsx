@@ -1,11 +1,46 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import styles from "../../styles/Navbar.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 function NavBar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  useEffect(() => {
+    const menu = document.getElementById('menu');
+
+    function slideIn() {
+      menu.classList.remove('hidden');
+      menu.classList.add("slide-in");
+    }
+
+    function slideOut() {
+      menu.classList.add("slide-out");
+      setTimeout(() => {
+        // add the 'hidden' class to hide the menu
+        menu.classList.add('hidden');
+        // remove the 'slide-out' class to reset the animation
+        menu.classList.remove('slide-out');
+      }, 300);
+    }
+
+    if (showMobileMenu) {
+      slideIn();
+      // remove the 'hidden' class to show the menu
+      menu.classList.remove('hidden');
+      menu.classList.add('block');
+      menu.classList.add('md:p-0');
+    } else {
+      slideOut();
+    }
+  }, [showMobileMenu]);
+
+
+  function handleMenuClick() {
+    setShowMobileMenu(prev => !prev);
+  }
+
   return (
     <div>
       <nav className="w-full bg-[#74acf7] absolute top-0 left-0 right-0 z-10">
@@ -20,9 +55,9 @@ function NavBar() {
  				      </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
-                <button
+                <button id="toggleButton"
                   className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                  onClick={handleMenuClick}
                 >
                   {showMobileMenu ? (
                     <Image src="/close.svg" width={30} height={30} alt="logo" />
@@ -42,10 +77,8 @@ function NavBar() {
             
           {/* Menu Links */}
           <div>
-            <div
-              className={`pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                showMobileMenu ? 'p-12 md:p-0 block slide-left' : 'hidden'
-              }`}
+            <div id="menu"
+              className="pb-3 mt-8 md:block md:pb-0 md:mt-0 hidden"
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center">
                 <li className="text-xl text-white font-leckton py-5 md:px-6 md:py-1 text-center border-b-2 md:border md:rounded  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:border-blue-800  md:hover:bg-blue-400">
