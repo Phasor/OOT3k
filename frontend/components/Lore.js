@@ -36,7 +36,7 @@ export default function Lore() {
         </div>
         
         <div className='max-w-6xl flex flex-col justify-center items-center my-11'>
-          <p className='text-3xl md:text-5xl font-raleway font-semibold text-gray-100 my-10'>Once Upon a Time...</p>
+          <p className='text-3xl md:text-5xl font-leckton font-semibold text-gray-100 my-10'>Once Upon a Time...</p>
           <div className='h-[20rem] w-[20rem] md:h-[40rem] md:w-[60rem] bg-red-300 my-11 hide-left mr-[4rem] md:mr-[20rem] flex justify-center items-center text-4xl'>Story Board 1</div>
           <div className='h-[20rem] w-[20rem] md:h-[40rem] md:w-[60rem] bg-red-400 my-11 hide-right ml-[4rem] md:ml-[20rem] flex justify-center items-center text-4xl'>Story Board 2</div>
           <div className='h-[20rem] w-[20rem] md:h-[40rem] md:w-[60rem] bg-red-500 my-11 hide-left mr-[4rem] md:mr-[20rem] flex justify-center items-center text-4xl'>Story Board 3</div>
