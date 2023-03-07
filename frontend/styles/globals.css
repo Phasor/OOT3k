@@ -110,7 +110,7 @@
     .hide-left {
         opacity: 0;
         filter: blur(5px);
-        transform: translateX(-300%);
+        transform: translateX(-100%);
         transition: all 1s;
         animation-fill-mode: forwards;
     }
@@ -118,7 +118,7 @@
     .hide-right {
         opacity: 0;
         filter: blur(5px);
-        transform: translateX(300%);
+        transform: translateX(100%);
         transition: all 1s;
         animation-fill-mode: forwards;
     }
