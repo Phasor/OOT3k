@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         lucky: ["Luckiest Guy", "cursive"],
         leckton: ["Lekton", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"]
       },
     },
   },
