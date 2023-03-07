@@ -101,7 +101,7 @@ function NavBar() {
                 </li>
                 <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link href="#collection" onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                    COLLECTION
+                    MINT
                   </Link>
                 </li>
                 <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">

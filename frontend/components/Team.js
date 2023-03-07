@@ -14,7 +14,7 @@ export default function Team() {
   return (
     <section id="team" className='w-full  bg-[#74acf7] flex justify-center items-center'>
         <div className="max-w-8xl">
-          <h2 className='mt-20 mb-8 text-4xl p-2 font-lucky text-gray-100'>Oceans of Talent</h2>
+          <h2 className='mt-20 mb-8 text-6xl p-2 font-lucky text-gray-200'>Oceans of Talent</h2>
           <div className=' grid grid-col-1 md:grid-cols-4 gap-10'>
             {Team.map((member, index) => {
               return (

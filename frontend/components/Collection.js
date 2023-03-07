@@ -4,7 +4,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function Collection() {
   return (
-    <section id="collection" className='w-full bg-[#74acf7] p-20'>
+    <section id="collection" className='w-full bg-[#74acf7] px-20'>
       <div className='bg-[#3f8bee] relative'>
 
         <Image 
