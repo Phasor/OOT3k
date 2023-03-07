@@ -38,10 +38,10 @@ export default function Lore() {
           
           <div className='max-w-6xl flex flex-col justify-center items-center my-11'>
             <p className='text-5xl font-raleway font-semibold text-gray-100 my-10'>Once Upon a Time...</p>
-            <div className='h-[20rem] w-[20rem] bg-red-300 my-11 hide-left mr-[20rem] flex justify-center items-center'>Story Board 1</div>
-            <div className='h-[20rem] w-[20rem] bg-red-400 my-11 hide-right ml-[20rem] flex justify-center items-center'>Story Board 2</div>
-            <div className='h-[20rem] w-[20rem] bg-red-500 my-11 hide-left mr-[20rem] flex justify-center items-center'>Story Board 3</div>
-            <div className='h-[20rem] w-[20rem] bg-red-600 my-11 hide-right ml-[20rem] flex justify-center items-center'>Story Board 4</div>
+            <div className='h-[20rem] w-[20rem] bg-red-300 my-11 hide-left mr-[20rem] flex justify-center items-center text-2xl'>Story Board 1</div>
+            <div className='h-[20rem] w-[20rem] bg-red-400 my-11 hide-right ml-[20rem] flex justify-center items-center text-2xl'>Story Board 2</div>
+            <div className='h-[20rem] w-[20rem] bg-red-500 my-11 hide-left mr-[20rem] flex justify-center items-center text-2xl'>Story Board 3</div>
+            <div className='h-[20rem] w-[20rem] bg-red-600 my-11 hide-right ml-[20rem] flex justify-center items-center text-2xl'>Story Board 4</div>
           </div>
       </section>
     </>
