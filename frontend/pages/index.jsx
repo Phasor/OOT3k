@@ -7,7 +7,7 @@ import Team from "../components/Team";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <main className="flex flex-col justify-center items-center flex-1 relative">
         <Navbar/>
         <Hero/>

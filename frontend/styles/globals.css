@@ -112,6 +112,7 @@
         filter: blur(5px);
         transform: translateX(-300%);
         transition: all 1s;
+        animation-fill-mode: forwards;
     }
 
     .hide-right {
@@ -119,6 +120,7 @@
         filter: blur(5px);
         transform: translateX(300%);
         transition: all 1s;
+        animation-fill-mode: forwards;
     }
     
     .show {
