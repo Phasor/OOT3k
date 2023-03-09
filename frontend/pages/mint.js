@@ -24,7 +24,7 @@ export default function Mint() {
       <div className='w-full flex justify-center items-center'>
         
         {/* Navbar */}
-        <div className='mx-3 w-full h-20 border-b border-gray-600 flex justify-between items-center'>
+        <div className='mx-6 mt-2 w-full h-20 border-b border-gray-600 flex justify-between items-center'>
           
             <div className='flex flex-col mb-2 ml-8 justify-center items-center cursor-pointer hover:scale-105'>
               <p className='font-singleDay text-4xl'>Home</p> 
