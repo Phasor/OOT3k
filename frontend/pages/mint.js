@@ -1,10 +1,63 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import ConnectButtonCustom from '../components/ConnectButtonCustom'
+import {
+  useAccount,
+  useContractRead,
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+} from 'wagmi';
+import { abi } from '../ABI/contract-abi'  
+
+const contractConfig = {
+  address: '0xc5617A28f8494B131902DE5063e68E4Ed9B77f1E',
+  abi,
+};
 
 export default function Mint() {
+  const [mounted, setMounted] = useState(false);
   const [mintAmount, setMintAmount] = useState(1)
   const [error, setError] = useState(null)
+  const { isConnected } = useAccount();
+  const [totalMinted, setTotalMinted] = useState(0);
+
+  useEffect(() => setMounted(true), []);
+
+  const { config: contractWriteConfig } = usePrepareContractWrite({
+    ...contractConfig,
+    functionName: 'mint',
+  });
+
+  const {
+    data: mintData,
+    write: mint,
+    isLoading: isMintLoading,
+    isSuccess: isMintStarted,
+    error: mintError,
+  } = useContractWrite(contractWriteConfig);
+
+  const { data: totalSupplyData } = useContractRead({
+    ...contractConfig,
+    functionName: 'totalSupply',
+    watch: true,
+  });
+
+  const {
+    data: txData,
+    isSuccess: txSuccess,
+    error: txError,
+  } = useWaitForTransaction({
+    hash: mintData?.hash,
+  });
+
+  useEffect(() => {
+    if (totalSupplyData) {
+      setTotalMinted(totalSupplyData.toNumber());
+    }
+  }, [totalSupplyData]);
+
+  const isMinted = txSuccess;
 
   const handleIncrement = () => {
     if(mintAmount >= 10) {
@@ -18,6 +71,11 @@ export default function Mint() {
   const handleDecrement = () => {
     setMintAmount(prev => prev - 1)
   }
+
+  const handleMint = () => {
+    console.log('Minting')
+  }
+
 
   return (
     <div className='w-screen h-screen'>
@@ -61,6 +119,7 @@ export default function Mint() {
                 className="border-2 border-gray-500 rounded-sm"
             />
             <p className='font-singleDay text-2xl mt-10'>How many Terra's do you want to mint?</p>
+            <p className='font-singleDay text-2xl mt-10'>{totalMinted} minted so far!</p>
 
             <div className='flex justify-between w-[20%] mt-10'>
 
@@ -76,12 +135,24 @@ export default function Mint() {
 
               </div>
 
-              <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
+              <div onClick={handleMint} className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
                 <p className='font-singleDay text-2xl text-center text-white py-1 px-3'>MINT</p>
               </div>
 
             </div>
               {error && <p className='font-singleDay text-xl mt-2'>{error}</p>}
+
+              {mintError && (
+              <p style={{ marginTop: 24, color: '#FF6257' }}>
+                Error: {mintError.message}
+              </p>
+              )}
+
+              {txError && (
+                <p style={{ marginTop: 24, color: '#FF6257' }}>
+                  Error: {txError.message}
+                </p>
+              )}
         </div>
 
 
