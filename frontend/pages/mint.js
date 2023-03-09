@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
+import ConnectButtonCustom from '../components/ConnectButtonCustom'
 
 export default function Mint() {
   const [mintAmount, setMintAmount] = useState(1)
@@ -37,13 +38,15 @@ export default function Mint() {
           
           {/* Connect Button */}
           <div className='relative mt-2 mr-8 h-12 cursor-pointer hover:scale-105'>
-            <Image
+            {/* <Image
               src="/corner-scribble.png"
               height={200}
               width={200}
               className="absolute bottom-1"
-            />
-            <p className='font-singleDay text-3xl ml-4'>CONNECT</p>
+            /> */}
+            {/* <p className='font-singleDay text-3xl ml-4'>CONNECT</p> */}
+            <ConnectButtonCustom/>
+            
           </div>
         </div>
       </div>
