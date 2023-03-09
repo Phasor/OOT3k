@@ -9,6 +9,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet"></link>
       </Head>
       <body>
         <Main />
