@@ -28,7 +28,7 @@ export default function Mint() {
   const { config: contractWriteConfig } = usePrepareContractWrite({
     ...contractConfig,
     functionName: 'mint',
-    args: [1],
+    args: [mintAmount],
     chainId: goerli.id,
   });
 
@@ -111,7 +111,7 @@ export default function Mint() {
 
 
       {/* Minting Section */}
-        <div className='flex flex-col w-screen mt-[10rem] justify-center items-center'>
+        <div className='flex flex-col w-screen mt-[7rem] justify-center items-center'>
             <Image
                 src="/narwhale-sketch.png"
                 height={350}
@@ -119,7 +119,7 @@ export default function Mint() {
                 className="border-2 border-gray-500 rounded-sm"
             />
             <p className='font-singleDay text-2xl mt-10'>How many Terra's do you want to mint?</p>
-            <p className='font-singleDay text-2xl mt-10'>{totalMinted} minted so far!</p>
+            {totalMinted && (<p className='font-singleDay text-2xl mt-6'>{totalMinted} of 3333 are already gone.  </p>)}
 
             <div className='flex justify-between w-[20%] mt-10'>
               {/* + and 0 box */}
@@ -146,7 +146,7 @@ export default function Mint() {
                         mint?.()}
                       }
                     >
-                      {isMintLoading && 'Waiting for approval'}
+                      {isMintLoading && 'Pls Approve'}
                       {isMintStarted && 'Minting...'}
                       {!isMintLoading && !isMintStarted && 'Mint'}
                     </button>
@@ -155,27 +155,28 @@ export default function Mint() {
             </div>
 
 
-            {txSuccess && (
-              <>
-                <h1>MINTED!</h1>
-                <p className='font-singleDay text-2xl text-black'>
-                  <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl text-black'>
-                    Etherscan
-                  </a>
-                </p>
-              </>
-            )}
+              {txSuccess && (
+                  <>
+                    <h1 className='mt-5 font-singleDay text-3xl'>MINTED</h1>
+                    <p className='font-singleDay text-2xl text-blue-600'>
+                      <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl underline' target="_blank">
+                        View on Etherscan
+                      </a>
+                    </p>
+                  </>
+              )}
+            
 
               {error && <p className='font-singleDay text-xl mt-2'>{error}</p>}
 
               {mintError && (
-              <p style={{ marginTop: 24, color: '#FF6257' }}>
+              <p className="font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
                 Error: {mintError.message}
               </p>
               )}
 
               {txError && (
-                <p style={{ marginTop: 24, color: '#FF6257' }}>
+                <p className="font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
                   Error: {txError.message}
                 </p>
               )}
