@@ -16,18 +16,6 @@ module.exports = {
     }
   },
   etherscan: {
-	apiKey: {
-	  goerli: etherscanKey
-	},
-	customChains: [
-	  {
-		network: "goerli",
-		chainId: 5,
-		urls: {
-		  apiURL: "https://api-goerli.etherscan.io/api",
-		  browserURL: "https://goerli.etherscan.io"
-		}
-	  }
-	]
+	apiKey: etherscanKey
   }
 };
