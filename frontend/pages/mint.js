@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Spinner from '../components/Spinner'
 import ConnectButtonCustom from '../components/ConnectButtonCustom'
 import { goerli } from 'wagmi/chains'
 import {
@@ -116,13 +117,16 @@ export default function Mint() {
 
 
       {/* Minting Section */}
+      { mounted && !isMintStarted && (
         <div className='flex flex-col w-screen mt-[7rem] justify-center items-center'>
+          
             <Image
                 src="/narwhale-sketch.png"
                 height={350}
                 width={350}
                 className="border-2 border-gray-500 rounded-sm"
             />
+            
             <p className='font-singleDay text-2xl mt-10'>How many Terra's do you want to mint?</p>
             {totalMinted && (<p className='font-singleDay text-2xl mt-6'>{totalMinted} of 3333 are already gone.  </p>)}
 
@@ -142,6 +146,7 @@ export default function Mint() {
               <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
                   {mounted && isConnected && !isMinted && (
                     <button
+                      id="start-animation"
                       disabled={!mint || isMintLoading || isMintStarted}
                       className="button font-singleDay text-2xl text-center text-white py-1 px-3"
                       data-mint-loading={isMintLoading}
@@ -185,8 +190,16 @@ export default function Mint() {
                   Error: {txError.message}
                 </p>
               )}
+        
         </div>
+      )}
 
+      {/* Loading Spinner */}
+      { mounted && isMintStarted && (
+        <div className='flex flex-col w-screen mt-[35rem] justify-center items-center'>
+          <Spinner/>
+        </div>
+      )}
 
     </div>
   )
