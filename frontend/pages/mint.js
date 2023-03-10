@@ -73,7 +73,12 @@ export default function Mint() {
   }
 
   const handleDecrement = () => {
-    setMintAmount(prev => prev - 1)
+    if(mintAmount == 1) {
+      setError("Can't mint less than 1!")
+      return
+    } else {
+      setMintAmount(prev => prev - 1)
+    }
   }
 
 
