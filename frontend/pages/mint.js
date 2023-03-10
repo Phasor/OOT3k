@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import ConnectButtonCustom from '../components/ConnectButtonCustom'
+import { goerli } from 'wagmi/chains'
 import {
   useAccount,
   useContractRead,
@@ -27,6 +28,8 @@ export default function Mint() {
   const { config: contractWriteConfig } = usePrepareContractWrite({
     ...contractConfig,
     functionName: 'mint',
+    args: [1],
+    chainId: goerli.id,
   });
 
   const {
@@ -35,12 +38,13 @@ export default function Mint() {
     isLoading: isMintLoading,
     isSuccess: isMintStarted,
     error: mintError,
-  } = useContractWrite(contractWriteConfig);
+  } = useContractWrite({...contractWriteConfig});
 
   const { data: totalSupplyData } = useContractRead({
     ...contractConfig,
     functionName: 'totalSupply',
-    watch: true,
+    args: [0],
+    watch: false,
   });
 
   const {
@@ -70,10 +74,6 @@ export default function Mint() {
 
   const handleDecrement = () => {
     setMintAmount(prev => prev - 1)
-  }
-
-  const handleMint = () => {
-    console.log('Minting')
   }
 
 
@@ -122,7 +122,7 @@ export default function Mint() {
             <p className='font-singleDay text-2xl mt-10'>{totalMinted} minted so far!</p>
 
             <div className='flex justify-between w-[20%] mt-10'>
-
+              {/* + and 0 box */}
               <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
                 <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
                   <p onClick={handleDecrement} className="text-gray-100 text-2xl mb-2">-</p>
@@ -131,15 +131,41 @@ export default function Mint() {
                 <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer hover:scale-105">
                   <p onClick={handleIncrement} className="text-gray-100 text-2xl mb-1">+</p>
                 </div>
-
-
               </div>
 
-              <div onClick={handleMint} className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
-                <p className='font-singleDay text-2xl text-center text-white py-1 px-3'>MINT</p>
-              </div>
-
+              {/* Mint Button */}
+              <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
+                  {mounted && isConnected && !isMinted && (
+                    <button
+                      disabled={!mint || isMintLoading || isMintStarted}
+                      className="button font-singleDay text-2xl text-center text-white py-1 px-3"
+                      data-mint-loading={isMintLoading}
+                      data-mint-started={isMintStarted}
+                      onClick={() => {
+                        console.log("Minting")
+                        mint?.()}
+                      }
+                    >
+                      {isMintLoading && 'Waiting for approval'}
+                      {isMintStarted && 'Minting...'}
+                      {!isMintLoading && !isMintStarted && 'Mint'}
+                    </button>
+                  )}
+              </div> 
             </div>
+
+
+            {txSuccess && (
+              <>
+                <h1>MINTED!</h1>
+                <p className='font-singleDay text-2xl text-black'>
+                  <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl text-black'>
+                    Etherscan
+                  </a>
+                </p>
+              </>
+            )}
+
               {error && <p className='font-singleDay text-xl mt-2'>{error}</p>}
 
               {mintError && (

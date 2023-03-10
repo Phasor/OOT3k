@@ -5,34 +5,22 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import {
 	mainnet,
-	polygon,
-	optimism,
-	arbitrum,
 	goerli,
-	polygonMumbai,
-	optimismGoerli,
-	arbitrumGoerli,
 } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
-import { publicProvider } from "wagmi/providers/public";
-import MainLayout from "../layout/mainLayout";
-
+import { infuraProvider } from '@wagmi/core/providers/infura'
+import { publicProvider } from '@wagmi/core/providers/public'
 const { chains, provider } = configureChains(
+	[mainnet, goerli],
 	[
-		mainnet,
-		goerli,
-		polygon,
-		polygonMumbai,
-		optimism,
-		optimismGoerli,
-		arbitrum,
-		arbitrumGoerli,
-	],
-	[alchemyProvider({ apiKey: process.env.ALCHEMY_API_KEY }), publicProvider()]
-);
+	  alchemyProvider({ apiKey: process.env.ALCHEMY_API_KEY }),
+	  infuraProvider({ apiKey: process.env.INFURA_API_KEY }),
+	  publicProvider(),
+	]
+  )
 
 const { connectors } = getDefaultWallets({
-	appName: "My Alchemy DApp",
+	appName: "Oceans of Terra",
 	chains,
 });
 
@@ -43,6 +31,7 @@ const wagmiClient = createClient({
 });
 
 export { WagmiConfig, RainbowKitProvider };
+
 function MyApp({ Component, pageProps }) {
 	return (
 		<WagmiConfig client={wagmiClient}>
@@ -51,9 +40,7 @@ function MyApp({ Component, pageProps }) {
 				initialChain={process.env.NEXT_PUBLIC_DEFAULT_CHAIN}
 				chains={chains}
 			>
-				{/* <MainLayout> */}
-					<Component {...pageProps} />
-				{/* </MainLayout> */}
+				<Component {...pageProps} />
 			</RainbowKitProvider>
 		</WagmiConfig>
 	);
