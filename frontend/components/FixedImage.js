@@ -3,9 +3,11 @@ import Image from 'next/image'
 
 export default function FixedImage() {
   return (
-    <div className='h-screen w-screen bg-[#74acf7] px-20 flex-col justify-center items-center'>
-        <h3 className='text-[10rem] font-lucky text-center text-gray-200 my-10'>Enter the Deep</h3>
-        <div className="bg-[url('/banner2.jpeg')] p-[20rem] bg-no-repeat bg-cover bg-center bg-fixed"></div>
-    </div>
+  <div className='h-[700px] w-screen bg-[#74acf7] relative'>
+    <h3 className='text-[6rem] font-lucky text-gray-100 absolute top-1/2 left-[50%] transform -translate-x-1/2 -translate-y-1/2'>Danger is Brewing</h3>
+    <p className='text-2xl font-leckton text-gray-100 absolute top-[70%] left-[50%] transform -translate-x-1/2 -translate-y-1/2'>Something was brewing many moons away as if someone was analyzing earth's movements day by day. What was on the horizon? Seemingly, no one knew. Yet, our heroes could feel danger brewing… Can you?</p>
+    <div className="bg-[url('/OOT-many-moons.jpeg')] h-full bg-center bg-cover bg-fixed"></div>
+  </div>
+
   )
 }
