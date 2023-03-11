@@ -14,6 +14,7 @@ export default function Home() {
         <Hero/>
         <Intro/>
         <Lore/>
+        <Collection/>
         <FixedImage/>
         <Team/>
       </main>
