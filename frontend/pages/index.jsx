@@ -5,6 +5,7 @@ import Lore from "../components/Lore";
 import Collection from "../components/Collection";
 import Team from "../components/Team";
 import FixedImage from "../components/FixedImage";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Collection/>
         <FixedImage/>
         <Team/>
+        <Footer/>
       </main>
     </div>
   );
