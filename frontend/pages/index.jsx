@@ -6,6 +6,7 @@ import Collection from "../components/Collection";
 import Team from "../components/Team";
 import FixedImage from "../components/FixedImage";
 import Footer from "../components/Footer";
+import FAQ from "../components/FAQ";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Lore/>
         <Collection/>
         <FixedImage/>
+        <FAQ/>
         <Team/>
         <Footer/>
       </main>
