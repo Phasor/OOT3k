@@ -89,7 +89,7 @@ function NavBar() {
               className="pb-3 mt-8 md:pb-0 md:mt-0 hidden md:block"
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center">
-                <li className="text-xl text-white font-leckton py-5 md:px-6 md:py-1 text-center border-b-2 md:border md:rounded  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:border-blue-800  md:hover:bg-blue-400">
+                <li className="text-xl text-white font-leckton py-5 md:px-6 md:py-1 text-center md:hover:-translate-y-1.5">
                   <Link href="#intro" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     INTRO
                   </Link>

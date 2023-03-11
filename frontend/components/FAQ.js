@@ -32,7 +32,7 @@ export default function FAQ() {
 
         
             {/* Question 1 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[40%] mt-10">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-10">
                 <div
                     className="w-full p-4 cursor-pointer flex justify-between items-center"
                     onClick={toggleExpansion1}
@@ -69,7 +69,7 @@ export default function FAQ() {
         
 
             {/* Question 2 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[40%] mt-5">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
                 <div
                 className="w-full p-4 cursor-pointer flex justify-between items-center"
                 onClick={toggleExpansion2}
@@ -105,7 +105,7 @@ export default function FAQ() {
             </div>
 
             {/* Question 3 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[40%] mt-5">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
                 <div
                 className="w-full p-4 cursor-pointer flex justify-between items-center"
                 onClick={toggleExpansion3}
@@ -141,7 +141,7 @@ export default function FAQ() {
             </div>
 
                 {/* Question 4 */}
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[40%] mt-5">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
                 <div
                 className="w-full p-4 cursor-pointer flex justify-between items-center"
                 onClick={toggleExpansion4}
@@ -177,7 +177,7 @@ export default function FAQ() {
             </div>
 
                 {/* Question 5 */}
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[40%] mt-5">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
                 <div
                 className="w-full p-4 cursor-pointer flex justify-between items-center"
                 onClick={toggleExpansion5}
