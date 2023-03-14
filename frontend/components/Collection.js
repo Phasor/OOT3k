@@ -5,7 +5,7 @@ export default function Collection() {
 
   return (
     <section id="collection" className='w-full min-h-screen bg-[#E5E7EB] flex flex-col justify-center items-center text-center'>
-       <p className='p-1 text-3xl md:text-5xl font-lekton md:my-2 font-bold mt-4 md:mt-10'>Playable collectible avatars living on the</p>
+       <p className='p-1 text-3xl md:text-5xl font-lekton md:my-2 font-bold mt-10'>Playable collectible avatars living on the</p>
        <p className='p-1 text-3xl md:text-5xl font-lecton md:my-2 font-bold'>Ethereum blockchain</p>
        <p className='p-2 text-xl md:text-2xl font-lecton mt-6 '>3,333 cute NFTs contrived from over 140 unique, hand drawn traits with varying rarity.</p>
        <p className='p-2 text-xl md:text-2xl font-lecton '>Each one will be a fully playable character in the Oceans of Terra MMORPG.</p>
