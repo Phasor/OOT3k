@@ -6,7 +6,7 @@ export default function Footer() {
     <div className='w-full overflow-x-hidden overflow-y-hidden bg-[#74acf7]'>
         <div className='w-full max-w-8xl mx-auto flex justify-between mt-20'>
             {/* Socials */}
-            <div className='flex space-x-4 p-2 ml-10'>
+            <div className='flex space-x-4 p-2 ml-2 sm:ml-10'>
                 <Link className="flex justify-center items-center hover:scale-105" href="https://twitter.com/OceansOfTerra" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <svg class="text-gray-100 fill-current h-12 w-12" viewBox="0 0 60 60">
                         <path d="M41.05 18.44a6.6 6.6 0 00-4.84-2.29c-3.66-.06-6.62 3.04-6.62 6.91 0 .55.05 1.09.17 1.6a18.68 18.68 0 01-13.66-7.55 7.33 7.33 0 00-.9 3.55 7.3 7.3 0 002.95 5.92 6.34 6.34 0 01-3-.92v.1c0 3.42 2.28 6.3 5.31 6.97a6.24 6.24 0 01-3 .1 6.74 6.74 0 006.2 4.93 12.8 12.8 0 01-9.81 2.9A17.89 17.89 0 0024 43.85c12.19 0 18.86-10.61 18.86-19.81l-.02-.9c1.3-.97 2.42-2.18 3.3-3.56-1.18.54-2.46.9-3.8 1.04a6.8 6.8 0 002.91-3.8c-1.28.77-2.7 1.33-4.2 1.62z"/>
@@ -18,9 +18,9 @@ export default function Footer() {
                     </svg>
                 </Link>
             </div>
-            <div className='mr-10 font-raleway flex justify-center items-center'>
-                <p className='font-semibold'>Copyright Oceans of Terra 2023. All rights reserved.</p>
-                <img className='h-10 w-10 ml-2 hover:scale-105' src="/logo.jpg" alt="logo" />
+            <div className='mr-2 sm:mr-10 font-raleway flex justify-center items-center'>
+                <p className='font-semibold text-right'>Copyright Oceans of Terra 2023. All rights reserved.</p>
+                <img className='hidden sm:block h-10 w-10 ml-2 hover:scale-105' src="/logo.jpg" alt="logo" />
             </div>
 
         </div>
