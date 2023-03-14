@@ -292,7 +292,38 @@
             object-fit: cover;
           }
 
-    
+          /* Triangles Animated Icon */
+          #DarkGroup{
+            fill:#635bff;
+          }
+
+          #LightGroup{
+            fill:#80e9ff;;
+          }
+
+          #Light1,
+          #Dark1,
+          #Dark2{
+            transition: all 1s ease;
+          }
+
+          #Dark2{
+            transform: translateX(-100%);
+          }
+
+          .triangles:hover #Light1{
+            transform: translateX(20%);
+          }
+
+          .triangles:hover #Dark1{
+            transform: translateX(40%);
+            opacity: 0;
+          }
+
+          .triangles:hover #Dark2{
+            transform: translateX(00%);
+          }
+
 
   }
 
