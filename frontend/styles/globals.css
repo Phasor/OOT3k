@@ -27,7 +27,7 @@
         fill: #4B1FCD;
     }
 
-    /* Hero Animations */
+    /* Hero Animations
     @keyframes slide-up1 {
         from {
             transform: translateY(-100px);
@@ -52,7 +52,7 @@
     }
     .slide-up2 {
         animation: slide-up2 2s ease-out;
-    }
+    } */
 
     /* Lore divider */
     .custom-shape-divider-top-1677879891 {
@@ -321,7 +321,7 @@
           }
 
           .triangles:hover #Dark2{
-            transform: translateX(00%);
+            transform: translateX(0%);
           }
 
 
