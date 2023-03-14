@@ -105,8 +105,8 @@ function NavBar() {
                     Collection
                   </ScrollLink>
                 </li>
-                <li className="text-2xl text-gray-600  font-leckton font-semibold py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd] border-blue-400 md:hover:bg-transparent md:hover:-translate-y-1.5">
-                  <Link href="/mint" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <li className="text-2xl text-white font-leckton font-semibold py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd] border-blue-400 md:hover:bg-transparent md:hover:-translate-y-1.5">
+                  <Link className="border-2 border-blue-100 rounded-full px-3 " href="/mint" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     MINT
                   </Link>
                 </li>
