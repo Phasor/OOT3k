@@ -5,7 +5,7 @@ export default function Intro() {
  
 
   return (
-    <>
+    <div className=''>
         {/* Section 1 */}
         <div id="intro" className='w-full bg-[#E5E7EB] flex flex-col lg:flex-row relative'>
             <div className='flex flex-col items-center justify-center shrink lg:items-start'>
@@ -41,8 +41,8 @@ export default function Intro() {
         </div>
 
         <div id="intro" className='w-full bg-[#E5E7EB] flex flex-col justify-center items-center relative'>
-            <p className='text-black font-leckon text-4xl mb-2 mt-[20rem] p-4 font-semibold'>A JOURNEY OF <span className='text-6xl font-bold'>EPIC PROPORTION </span> BEGINS.</p>
-            <p className='text-black font-leckon text-4xl mt-2 mb-[20rem] p-4 font-semibold'>OUR HEROS SET OUT TO SAVE THE KINGDOM FROM DESTRUCTION...</p>
+            <p className='text-gray-800 font-leckon text-4xl mb-2 mt-[20rem] p-4 font-semibold'>A JOURNEY OF <span className='text-6xl font-bold'>EPIC PROPORTION </span> BEGINS.</p>
+            <p className='text-gray-800 font-leckon text-4xl mt-2 mb-[20rem] p-4 font-semibold'>OUR HEROS SET OUT TO SAVE THE KINGDOM FROM DESTRUCTION...</p>
             <Image
                 src="/fireworks.png"
                 alt="Picture of explosion"
@@ -52,6 +52,6 @@ export default function Intro() {
             />
     
         </div>
-    </>
+    </div>
   );
 }
