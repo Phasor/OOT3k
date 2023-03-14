@@ -5,6 +5,10 @@
 
 @layer components {
 
+    html {
+        scroll-behavior: smooth;
+      }
+
     /* Hero Wave Divider */
     .custom-shape-divider-bottom-1677869480 {
         position: absolute;

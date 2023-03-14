@@ -3,6 +3,7 @@ import styles from "../../styles/Navbar.module.css";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ScrollLink from "../ScrollLink";
 
 function NavBar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -89,35 +90,35 @@ function NavBar() {
               className="pb-3 mt-8 md:pb-0 md:mt-0 hidden md:block"
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center">
-                <li className="text-xl text-white font-leckton py-5 md:px-6 md:py-1 text-center md:hover:-translate-y-1.5">
-                  <Link href="#intro" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <li className="text-xl text-white font-leckton py-5 md:px-6 md:py-1 text-center md:hover:-translate-y-1.5 transition-transform duration-200">
+                  <ScrollLink href="#intro" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     INTRO
-                  </Link>
+                  </ScrollLink>
                 </li>
                 <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]   border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
-                  <Link href="#lore" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <ScrollLink href="#lore" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     LORE
-                  </Link>
+                  </ScrollLink>
                 </li>
                 <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]   border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
-                  <Link href="#collection" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <ScrollLink href="#collection" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     COLLECTION
-                  </Link>
+                  </ScrollLink>
                 </li>
-                <li className="text-xl text-gray-700 font-leckton font-semibold py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
+                <li className="text-xl text-gray-700  font-leckton font-semibold py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link href="/mint" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     MINT
                   </Link>
                 </li>
                 <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
-                  <Link href="#FAQ" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <ScrollLink href="#FAQ" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     FAQ
-                  </Link>
+                  </ScrollLink>
                 </li>
                 <li className="text-xl text-white font-leckton py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
-                  <Link href="#team" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <ScrollLink href="#team" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     TEAM
-                  </Link>
+                  </ScrollLink>
                 </li>
                 <li className="py-3 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd]  border-[#4b1fcd] md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <Link className="flex justify-center items-center" href="https://twitter.com/OceansOfTerra" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>

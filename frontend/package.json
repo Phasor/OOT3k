@@ -7,7 +7,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next link",
-		"marketplace": "npx create-web3-dapp marketplace"
+		"marketplace": "npx create-web3-dapp marketplace",
+		"analyze": "NODE_ENV=production npm run build --stats && webpack-bundle-analyzer .next/stats.json"
 	},
 	"dependencies": {
 		"@rainbow-me/rainbowkit": "^0.8.1",
