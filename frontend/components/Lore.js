@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'intersection-observer'; // import the polyfill
+import Image from 'next/image';
 
 export default function Lore() {
 
@@ -37,10 +38,19 @@ export default function Lore() {
         
         <div className='max-w-6xl flex flex-col justify-center items-center my-11'>
           <p className='text-3xl md:text-5xl font-leckton font-semibold text-gray-100 my-10'>Once Upon a Time...</p>
-          <div className='h-[20rem] w-[20rem] md:h-[40rem] md:w-[60rem] bg-red-300 my-11 hide-left mr-[4rem] md:mr-[20rem] flex justify-center items-center text-4xl'>Story Board 1</div>
-          <div className='h-[20rem] w-[20rem] md:h-[40rem] md:w-[60rem] bg-red-400 my-11 hide-right ml-[4rem] md:ml-[20rem] flex justify-center items-center text-4xl'>Story Board 2</div>
-          <div className='h-[20rem] w-[20rem] md:h-[40rem] md:w-[60rem] bg-red-500 my-11 hide-left mr-[4rem] md:mr-[20rem] flex justify-center items-center text-4xl'>Story Board 3</div>
-          <div className='h-[20rem] w-[20rem] md:h-[40rem] md:w-[60rem] bg-red-600 my-11 hide-right ml-[4rem] md:ml-[20rem] flex justify-center items-center text-4xl'>Story Board 4</div>
+          <div className="my-11 hide-left mr-[4rem] md:mr-[20rem]">
+            <Image src="/comic1.png" height={500} width={500} alt="Comic 2" className="object-cover h-[600px] w-[600px]" />
+          </div>
+          <div className="my-11 hide-right ml-[4rem] md:ml-[20rem]">
+            <Image src="/comic2.png" height={500} width={500} alt="Comic 2" className="object-cover h-[600px] w-[600px]" />
+          </div>
+          <div className="my-11 hide-left mr-[4rem] md:mr-[20rem]">
+            <Image src="/comic3.png" height={500} width={500} alt="Comic 2" className="object-cover h-[600px] w-[600px]" />
+          </div>
+          <div className="my-11 hide-right ml-[4rem] md:ml-[20rem]">
+            <Image src="/comic4.png" height={500} width={500} alt="Comic 2" className="object-cover h-[600px] w-[600px]" />
+          </div>
+   
         </div>
     </section>
   )
