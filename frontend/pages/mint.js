@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Spinner from '../components/Spinner'
 import ConnectButtonCustom from '../components/ConnectButtonCustom'
 import { goerli } from 'wagmi/chains'
+import lottie from 'lottie-web';
 import {
   useAccount,
   useContractRead,
@@ -24,6 +25,8 @@ export default function Mint() {
   const { isConnected } = useAccount();
   console.log(`isConnected: ${isConnected}`)
   const [totalMinted, setTotalMinted] = useState(0);
+  const animationContainerRef = useRef(null);
+  const [animation, setAnimation] = useState(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -56,6 +59,19 @@ export default function Mint() {
   } = useWaitForTransaction({
     hash: mintData?.hash,
   });
+
+  useEffect(() => {
+    if (txSuccess) {
+      const anim = lottie.loadAnimation({
+        container: animationContainerRef.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: require('../public/confetti.json'),
+      });
+      setAnimation(anim);
+    }
+  }, [txSuccess]);
 
   useEffect(() => {
     if (totalSupplyData) {
@@ -131,80 +147,81 @@ export default function Mint() {
 
 
           { isConnected ? ( 
-          <div className='flex flex-col'>
-              <p className='font-singleDay text-2xl mt-10'>How many Terra's do you want to mint?</p>
-              <p className='font-singleDay text-2xl mt-6 text-center'>{totalMinted} of 3333 are already gone.  </p>
-            <div className=' w-full flex justify-between mt-10'>
-              {/* + and 0 box */}
-              <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
-                <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
-                  <p onClick={handleDecrement} className="text-gray-100 text-2xl mb-2">-</p>
+            <div className='flex flex-col'>
+                <p className='font-singleDay text-2xl mt-10'>How many Terra's do you want to mint?</p>
+                <p className='font-singleDay text-2xl mt-6 text-center'>{totalMinted} of 3333 are already gone.  </p>
+              <div className=' w-full flex justify-between mt-10'>
+                {/* + and 0 box */}
+                <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
+                  <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
+                    <p onClick={handleDecrement} className="text-gray-100 text-2xl mb-2">-</p>
+                  </div>
+                  <p className='text-2xl font-singleDay'>{mintAmount}</p>
+                  <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer hover:scale-105">
+                    <p onClick={handleIncrement} className="text-gray-100 text-2xl mb-1">+</p>
+                  </div>
                 </div>
-                <p className='text-2xl font-singleDay'>{mintAmount}</p>
-                <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer hover:scale-105">
-                  <p onClick={handleIncrement} className="text-gray-100 text-2xl mb-1">+</p>
-                </div>
-              </div>
 
-              {/* Mint Button */}
-              <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
-                  {mounted && !isMinted && (
-                    <button
-                      id="start-animation"
-                      disabled={!mint || isMintLoading || isMintStarted}
-                      className="button font-singleDay text-2xl text-center text-white py-1 px-3"
-                      data-mint-loading={isMintLoading}
-                      data-mint-started={isMintStarted}
-                      onClick={() => {
-                        console.log("Minting")
-                        mint?.()}
-                      }
-                    >
-                      {isMintLoading && 'Pls Approve'}
-                      {isMintStarted && 'Minting...'}
-                      {!isMintLoading && !isMintStarted && 'Mint'}
-                    </button>
-                  )}
-              </div> 
+                {/* Mint Button */}
+                <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
+                    {mounted && !isMinted && (
+                      <button
+                        id="start-animation"
+                        disabled={!mint || isMintLoading || isMintStarted}
+                        className="button font-singleDay text-2xl text-center text-white py-1 px-3"
+                        data-mint-loading={isMintLoading}
+                        data-mint-started={isMintStarted}
+                        onClick={() => {
+                          console.log("Minting")
+                          mint?.()}
+                        }
+                      >
+                        {isMintLoading && 'Pls Approve'}
+                        {isMintStarted && 'Minting...'}
+                        {!isMintLoading && !isMintStarted && 'Mint'}
+                      </button>
+                    )}
+                </div> 
+              </div>
             </div>
-          </div>
           ) : (
             <p className="font-singleDay text-2xl text-center mt-8" >Connect Your Wallet!</p>
-          )
+            )
           }
-
-
-              {txSuccess && (
-                  <>
-                    <h1 className='mt-5 font-singleDay text-3xl'>MINTED</h1>
-                    <p className='font-singleDay text-2xl text-blue-600'>
-                      <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl underline' target="_blank">
-                        View on Etherscan
-                      </a>
-                    </p>
-                  </>
-              )}
-            
-
-              {error && <p className='font-singleDay text-xl mt-2'>{error}</p>}
-
-              {mintError && (
-              <p className="font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
-                Error: {mintError.message}
-              </p>
-              )}
-
-              {txError && (
-                <p className="font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
-                  Error: {txError.message}
-                </p>
-              )}
-        
         </div>
       )}
 
+      
+        {txSuccess && (
+          <div className='flex flex-col justify-center items-center h-screen w-full bg-yellow-500'>
+            <div className='animation' ref={animationContainerRef}></div>
+            <h1 className='mt-5 font-singleDay text-5xl text-center'>MINTED!</h1>
+            <p className='font-singleDay text-2xl text-blue-600 text-center'>
+              <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl underline' target="_blank">
+                View on Etherscan
+              </a>
+            </p>
+          </div>
+        )}
+
+      
+
+        {error && <p className='font-singleDay text-xl mt-2'>{error}</p>}
+
+        {mintError && (
+        <p className="font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
+          Error: {mintError.message}
+        </p>
+        )}
+
+        {txError && (
+          <p className="font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
+            Error: {txError.message}
+          </p>
+        )}
+
       {/* Loading Spinner */}
-      { mounted && isMintStarted && (
+      { mounted && isMintStarted && !txSuccess && (
         <div className='flex flex-col w-screen mt-[35rem] justify-center items-center'>
           <Spinner/>
         </div>
