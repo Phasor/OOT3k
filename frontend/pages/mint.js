@@ -22,6 +22,7 @@ export default function Mint() {
   const [mintAmount, setMintAmount] = useState(1)
   const [error, setError] = useState(null)
   const { isConnected } = useAccount();
+  console.log(`isConnected: ${isConnected}`)
   const [totalMinted, setTotalMinted] = useState(0);
 
   useEffect(() => setMounted(true), []);
@@ -127,10 +128,13 @@ export default function Mint() {
                 className="border-2 border-gray-500 rounded-sm"
             />
             
-            <p className='font-singleDay text-2xl mt-10'>How many Terra's do you want to mint?</p>
-            {totalMinted && (<p className='font-singleDay text-2xl mt-6'>{totalMinted} of 3333 are already gone.  </p>)}
 
-            <div className='flex justify-between w-[20%] mt-10'>
+
+          { isConnected ? ( 
+          <div className='flex flex-col'>
+              <p className='font-singleDay text-2xl mt-10'>How many Terra's do you want to mint?</p>
+              <p className='font-singleDay text-2xl mt-6 text-center'>{totalMinted} of 3333 are already gone.  </p>
+            <div className=' w-full flex justify-between mt-10'>
               {/* + and 0 box */}
               <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
                 <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
@@ -144,7 +148,7 @@ export default function Mint() {
 
               {/* Mint Button */}
               <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
-                  {mounted && isConnected && !isMinted && (
+                  {mounted && !isMinted && (
                     <button
                       id="start-animation"
                       disabled={!mint || isMintLoading || isMintStarted}
@@ -163,6 +167,11 @@ export default function Mint() {
                   )}
               </div> 
             </div>
+          </div>
+          ) : (
+            <p className="font-singleDay text-2xl text-center mt-8" >Connect Your Wallet!</p>
+          )
+          }
 
 
               {txSuccess && (
