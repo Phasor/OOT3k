@@ -65,7 +65,7 @@ export default function Mint() {
       const anim = lottie.loadAnimation({
         container: animationContainerRef.current,
         renderer: 'svg',
-        loop: true,
+        loop: false,
         autoplay: true,
         animationData: require('../public/confetti.json'),
       });
@@ -193,18 +193,27 @@ export default function Mint() {
 
       
         {txSuccess && (
-          <div className='flex flex-col justify-center items-center h-screen w-full bg-yellow-500'>
-            <div className='animation' ref={animationContainerRef}></div>
-            <h1 className='mt-5 font-singleDay text-5xl text-center'>MINTED!</h1>
-            <p className='font-singleDay text-2xl text-blue-600 text-center'>
-              <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl underline' target="_blank">
-                View on Etherscan
-              </a>
-            </p>
-          </div>
-        )}
+          <div className='h-screen w-screen'>
 
-      
+            <div className='flex flex-col h-screen justify-center items-center'>
+              <h1 className=' font-singleDay text-5xl text-center bg-transparent'>MINTED!</h1>
+              <p className='font-singleDay text-2xl text-blue-600 text-center bg-transparent'>
+                <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl underline' target="_blank">
+                  View on Etherscan
+                </a>
+              </p>
+            </div>
+
+            <div class="bg"></div>
+              <div class="bg bg2"></div>
+                <div class="bg bg3"></div>
+                  <div class="success-content bg-transparent">
+                    <div className='flex flex-col justify-center items-center bg-transparent'>
+                      <div className='animation' ref={animationContainerRef}></div>
+                    </div>
+                  </div>
+            </div>     
+         )}
 
         {error && <p className='font-singleDay text-xl mt-2'>{error}</p>}
 
