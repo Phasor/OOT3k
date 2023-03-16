@@ -153,8 +153,30 @@ export default function Mint() {
   useEffect(() => {
     if (audio) {
       audio.play();
+      audio.playbackRate = 1.0;
+
+      setTimeout(() => {
+        audio.playbackRate = 1.2;
+      }, 2000);
+
+      setTimeout(() => {
+        audio.playbackRate = 1.4;
+      }, 4000);
+
+      setTimeout(() => {
+        audio.playbackRate = 1.6;
+      }, 6000);
+
+      setTimeout(() => {
+        audio.playbackRate = 1.8;
+      }, 8000);
+
+      setTimeout(() => {
+        audio.playbackRate = 2.0;
+      }, 10000);
     }
   }, [audio]);
+
 
 
   useEffect(() => {
