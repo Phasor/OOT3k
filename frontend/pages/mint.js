@@ -160,28 +160,31 @@ export default function Mint() {
 
       setTimeout(() => {
         audio.playbackRate = 1.2;
-      }, 2000);
+      }, 3000);
 
       setTimeout(() => {
-        audio.playbackRate = 1.4;
+        audio.playbackRate = 1.3;
       }, 4000);
 
       setTimeout(() => {
-        audio.playbackRate = 1.6;
+        audio.playbackRate = 1.4;
       }, 6000);
 
       setTimeout(() => {
-        audio.playbackRate = 1.8;
+        audio.playbackRate = 1.5;
       }, 8000);
 
       setTimeout(() => {
-        audio.playbackRate = 2.0;
+        audio.playbackRate = 1.6;
       }, 10000);
     }
   }, [audio]);
 
   useEffect(() => {
     if (txSuccess) {
+      audio.pause();
+      audio.currentTime = 0;
+      audio.loop = false;
       endAudio.loop = true;
       endAudio.play();
     }
@@ -321,7 +324,7 @@ export default function Mint() {
                           {image && (
                             <NFTCard url={image} className="z-10"/>
                           )}
-                        <h1 className=' font-singleDay text-5xl text-center bg-transparent mt-5'>SUCCESS!</h1>
+                        <h1 className=' font-singleDay text-5xl text-center bg-transparent mt-5'>YEAH!</h1>
                         { mintData.hash && (
                           <a href={`https://goerli.etherscan.io/tx/${mintData.hash}`} className='font-singleDay text-xl' target="_blank">
                             <p className='font-singleDay text-2xl text-blue-600 text-center bg-transparent cursor-pointer'>Etherscan</p>
