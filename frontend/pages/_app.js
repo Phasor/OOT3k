@@ -43,6 +43,7 @@ const router = useRouter();
 				initialChain={process.env.NEXT_PUBLIC_DEFAULT_CHAIN}
 				chains={chains}
 			>
+				{/* Fade in and out between page changes */}
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={router.pathname}

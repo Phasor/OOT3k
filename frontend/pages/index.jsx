@@ -7,7 +7,6 @@ import Team from "../components/Team";
 import FixedImage from "../components/FixedImage";
 import Footer from "../components/Footer";
 import FAQ from "../components/FAQ";
-import { useRouter } from "next/router";
 
 export default function Home() {
   return (

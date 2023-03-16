@@ -14,7 +14,6 @@ import {
 import { abi } from '../ABI/contract-abi'  
 import Link from 'next/link'
 import NFTCard from '../components/NFTCard'
-import { useRouter } from "next/router";
 
 const contractConfig = {
   address: '0xc5617A28f8494B131902DE5063e68E4Ed9B77f1E',
@@ -29,6 +28,7 @@ export default function Mint() {
   console.log(`isConnected: ${isConnected}`)
   const [totalMinted, setTotalMinted] = useState(0);
   const animationContainerRef = useRef(null);
+  const animationLoadingContainerRef = useRef(null);
   const [animation, setAnimation] = useState(null);
   const [image, setImage] = useState(null);
 
@@ -101,6 +101,18 @@ export default function Mint() {
       setAnimation(anim);
     }
   }, [txSuccess]);
+
+    useEffect(() => {
+    if (isMintStarted) {
+      const anim = lottie.loadAnimation({
+        container: animationLoadingContainerRef.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: require('../public/loading.json'),
+      });
+    }
+  }, [isMintStarted]);
 
   useEffect(() => {
     if (totalSupplyData) {
@@ -267,12 +279,18 @@ export default function Mint() {
           </p>
         )}
 
-      {/* Loading Spinner */}
+      {/* Loading Spinner
       { mounted && isMintStarted && !txSuccess && (
         <div className='flex flex-col w-screen mt-[35rem] justify-center items-center'>
           <Spinner/>
         </div>
-      )}
+      )} */}
+     
+      { mounted && isMintStarted && !txSuccess && (
+        <div className='flex flex-col w-screen mt-[100px] justify-center items-center'>
+          <div className='animation' ref={animationLoadingContainerRef}></div>
+        </div>
+      )} 
 
     </div>
   )
