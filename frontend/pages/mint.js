@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import Spinner from '../components/Spinner'
 import ConnectButtonCustom from '../components/ConnectButtonCustom'
 import { goerli } from 'wagmi/chains'
 import lottie from 'lottie-web';
@@ -102,17 +101,47 @@ export default function Mint() {
     }
   }, [txSuccess]);
 
-    useEffect(() => {
+  //   useEffect(() => {
+  //   if (isMintStarted) {
+  //     const anim = lottie.loadAnimation({
+  //       container: animationLoadingContainerRef.current,
+  //       renderer: 'svg',
+  //       loop: true,
+  //       autoplay: true,
+  //       animationData: require('../public/loading.json'),
+  //     });
+  //   }
+  //  }, [isMintStarted]);
+
+  useEffect(() => {
     if (isMintStarted) {
-      const anim = lottie.loadAnimation({
+      const animation = lottie.loadAnimation({
         container: animationLoadingContainerRef.current,
-        renderer: 'svg',
+        animationData: require('../public/loading.json'),
         loop: true,
         autoplay: true,
-        animationData: require('../public/loading.json'),
+        renderer: 'svg'
       });
+
+      animation.setSpeed(0.7); // Set the initial speed
+      setTimeout(() => {
+        animation.setSpeed(1.0); // Increase the speed 
+      }, 2000);
+      setTimeout(() => {
+        animation.setSpeed(1.25); // Increase the speed
+      }, 4000);
+      setTimeout(() => {
+        animation.setSpeed(1.5); // Increase the speed
+      }, 6000);
+      setTimeout(() => {
+        animation.setSpeed(2.0); // Increase the speed
+      }, 8000);
+      setTimeout(() => {
+        animation.setSpeed(2.5); // Increase the speed
+      }, 10000);
     }
   }, [isMintStarted]);
+
 
   useEffect(() => {
     if (totalSupplyData) {
