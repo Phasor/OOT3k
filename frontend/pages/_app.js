@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { AnimatePresence, motion } from "framer-motion"; 
-import { ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
