@@ -14,6 +14,7 @@ import {
 import { abi } from '../ABI/contract-abi'  
 import Link from 'next/link'
 import NFTCard from '../components/NFTCard'
+import { useRouter } from "next/router";
 
 const contractConfig = {
   address: '0xc5617A28f8494B131902DE5063e68E4Ed9B77f1E',

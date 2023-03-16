@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
-
+import { AnimatePresence, motion } from "framer-motion"; 
+import { useRouter } from "next/router";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import {
@@ -33,6 +34,8 @@ const wagmiClient = createClient({
 export { WagmiConfig, RainbowKitProvider };
 
 function MyApp({ Component, pageProps }) {
+const router = useRouter();
+
 	return (
 		<WagmiConfig client={wagmiClient}>
 			<RainbowKitProvider
@@ -40,7 +43,30 @@ function MyApp({ Component, pageProps }) {
 				initialChain={process.env.NEXT_PUBLIC_DEFAULT_CHAIN}
 				chains={chains}
 			>
-				<Component {...pageProps} />
+				<AnimatePresence mode="wait">
+					<motion.div
+						key={router.pathname}
+						initial="initialState"
+						animate="animateState"
+						exit="exitState"
+						transition={{
+							duration: 0.25,
+						}}
+						variants={{
+							initialState: {
+								opacity: 0,
+							},
+							animateState: {
+								opacity: 1,
+							},
+							exitState: {
+								opacity: 0,
+							}
+						}}
+					>
+						<Component {...pageProps} />
+					</motion.div>
+				</AnimatePresence>
 			</RainbowKitProvider>
 		</WagmiConfig>
 	);
