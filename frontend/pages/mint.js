@@ -31,6 +31,7 @@ export default function Mint() {
   const [animation, setAnimation] = useState(null);
   const [image, setImage] = useState(null);
   const [audio, setAudio] = useState(null);
+  const [endAudio, setEndAudio] = useState(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -120,6 +121,7 @@ export default function Mint() {
       // play audio
       if (typeof window !== 'undefined') {
         setAudio(new Audio('/elevator.mp3'));
+        setEndAudio(new Audio('/yeah.mp3'));
       }
 
       //run loading animation
@@ -152,6 +154,7 @@ export default function Mint() {
 
   useEffect(() => {
     if (audio) {
+      audio.loop = true;
       audio.play();
       audio.playbackRate = 1.0;
 
@@ -176,6 +179,13 @@ export default function Mint() {
       }, 10000);
     }
   }, [audio]);
+
+  useEffect(() => {
+    if (txSuccess) {
+      endAudio.loop = true;
+      endAudio.play();
+    }
+  }, [endAudio, txSuccess]);
 
 
 
