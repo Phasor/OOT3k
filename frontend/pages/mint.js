@@ -95,7 +95,7 @@ export default function Mint() {
         renderer: 'svg',
         loop: false,
         autoplay: true,
-        animationData: require('../public/confetti.json'),
+        animationData: require('../public/fireworks.json'),
       });
       setAnimation(anim);
     }
@@ -220,34 +220,34 @@ export default function Mint() {
       )}
 
         {txSuccess && (
-          <div className='h-screen w-screen'>
-
-            <div className='flex flex-col h-screen justify-center items-center' style={{ perspective: 3000}}>
-                {image && (
-                // <img
-                //   src={image}
-                //   height={350}
-                //   width={350}
-                //   />
-                <NFTCard url={image} className="z-10"/>
-              )}
-              <h1 className=' font-singleDay text-5xl text-center bg-transparent mt-5'>MINTED!</h1>
-              <p className='font-singleDay text-2xl text-blue-600 text-center bg-transparent'>
-                <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl underline' target="_blank">
-                  View on Etherscan
-                </a>
-              </p>
-            </div>
+          <div className='h-screen w-screen relative'>
 
             <div class="bg"></div>
               <div class="bg bg2"></div>
                 <div class="bg bg3"></div>
                   <div class="success-content bg-transparent">
-                    <div className='flex flex-col justify-center items-center bg-transparent'>
+                    <div className=''>
+                      
+                      {/* Content here */}
+                      <div className='absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2' >
+                          {image && (
+                            <NFTCard url={image} className="z-10"/>
+                          )}
+                        <h1 className=' font-singleDay text-5xl text-center bg-transparent mt-5'>SUCCESS!</h1>
+                        { mintData.hash && (
+                          <a href={`https://goerli.etherscan.io/tx/${mintData.hash}`} className='font-singleDay text-xl' target="_blank">
+                            <p className='font-singleDay text-2xl text-blue-600 text-center bg-transparent cursor-pointer'>Etherscan</p>
+                          </a>
+                        )}
+
+                      </div>
+
                       <div className='animation' ref={animationContainerRef}></div>
+
+
                     </div>
                   </div>
-            </div>     
+          </div>     
          )}
 
 
