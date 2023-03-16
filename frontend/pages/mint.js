@@ -160,22 +160,18 @@ export default function Mint() {
 
       setTimeout(() => {
         audio.playbackRate = 1.2;
-      }, 3000);
-
-      setTimeout(() => {
-        audio.playbackRate = 1.3;
       }, 4000);
 
       setTimeout(() => {
-        audio.playbackRate = 1.4;
+        audio.playbackRate = 1.3;
       }, 6000);
 
       setTimeout(() => {
-        audio.playbackRate = 1.5;
+        audio.playbackRate = 1.4;
       }, 8000);
 
       setTimeout(() => {
-        audio.playbackRate = 1.6;
+        audio.playbackRate = 1.5;
       }, 10000);
     }
   }, [audio]);
