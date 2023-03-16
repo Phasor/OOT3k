@@ -31,7 +31,7 @@ export default function Spinner() {
       
 
   return (
-    <div id="windmill" className='border-2 border-yellow-500'>
+    <div id="windmill" >
         <div className="spinner">
             <div className="blade1">
                 <div></div>

@@ -13,6 +13,7 @@ import {
 } from 'wagmi';
 import { abi } from '../ABI/contract-abi'  
 import Link from 'next/link'
+import NFTCard from '../components/NFTCard'
 
 const contractConfig = {
   address: '0xc5617A28f8494B131902DE5063e68E4Ed9B77f1E',
@@ -218,17 +219,17 @@ export default function Mint() {
         </div>
       )}
 
-      
         {txSuccess && (
           <div className='h-screen w-screen'>
 
-            <div className='flex flex-col h-screen justify-center items-center'>
+            <div className='flex flex-col h-screen justify-center items-center' style={{ perspective: 3000}}>
                 {image && (
-                <img
-                  src={image}
-                  height={350}
-                  width={350}
-                  />
+                // <img
+                //   src={image}
+                //   height={350}
+                //   width={350}
+                //   />
+                <NFTCard url={image} className="z-10"/>
               )}
               <h1 className=' font-singleDay text-5xl text-center bg-transparent mt-5'>MINTED!</h1>
               <p className='font-singleDay text-2xl text-blue-600 text-center bg-transparent'>
@@ -248,6 +249,8 @@ export default function Mint() {
                   </div>
             </div>     
          )}
+
+
 
         {error && <p className='font-singleDay text-xl mt-2'>{error}</p>}
 
