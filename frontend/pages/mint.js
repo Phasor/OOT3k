@@ -30,6 +30,7 @@ export default function Mint() {
   const animationLoadingContainerRef = useRef(null);
   const [animation, setAnimation] = useState(null);
   const [image, setImage] = useState(null);
+  const [audio, setAudio] = useState(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -115,6 +116,13 @@ export default function Mint() {
 
   useEffect(() => {
     if (isMintStarted) {
+
+      // play audio
+      if (typeof window !== 'undefined') {
+        setAudio(new Audio('/elevator.mp3'));
+      }
+
+      //run loading animation
       const animation = lottie.loadAnimation({
         container: animationLoadingContainerRef.current,
         animationData: require('../public/loading.json'),
@@ -141,6 +149,12 @@ export default function Mint() {
       }, 10000);
     }
   }, [isMintStarted]);
+
+  useEffect(() => {
+    if (audio) {
+      audio.play();
+    }
+  }, [audio]);
 
 
   useEffect(() => {
