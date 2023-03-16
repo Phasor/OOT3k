@@ -12,6 +12,7 @@ import {
   useWaitForTransaction,
 } from 'wagmi';
 import { abi } from '../ABI/contract-abi'  
+import Link from 'next/link'
 
 const contractConfig = {
   address: '0xc5617A28f8494B131902DE5063e68E4Ed9B77f1E',
@@ -27,6 +28,7 @@ export default function Mint() {
   const [totalMinted, setTotalMinted] = useState(0);
   const animationContainerRef = useRef(null);
   const [animation, setAnimation] = useState(null);
+  const [image, setImage] = useState(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -45,6 +47,7 @@ export default function Mint() {
     error: mintError,
   } = useContractWrite({...contractWriteConfig});
 
+  // get total supply
   const { data: totalSupplyData } = useContractRead({
     ...contractConfig,
     functionName: 'totalSupply',
@@ -52,6 +55,30 @@ export default function Mint() {
     watch: false,
   });
 
+  // get token uri
+  const { data: tokenUri } = useContractRead({
+    ...contractConfig,
+    functionName: 'uri',
+    args: [0],
+    watch: false,
+  });
+
+  useEffect(() => {
+    async function fetchImage() {
+      const metaDataURL = tokenUri?.replace('ipfs://', 'https://ipfs.io/ipfs/')
+      const response = await fetch(metaDataURL);
+      const metadata = await response.json();
+      const ipfsUrl = metadata.image;
+      const imageUrl = 'https://ipfs.io/ipfs/' + ipfsUrl.substring('ipfs://'.length);
+      setImage(imageUrl);
+    }
+
+    fetchImage();
+  }, [tokenUri]);
+
+
+  // ipfs://QmbFJhXoWQEGhv6nufAc93R5T57G9Rj3fsf8ARfLZQumAn/metadata.json
+ 
   const {
     data: txData,
     isSuccess: txSuccess,
@@ -108,7 +135,7 @@ export default function Mint() {
         <div className='mx-6 mt-2 w-full h-20 border-b border-gray-600 flex justify-between items-center'>
           
             <div className='flex flex-col mb-2 ml-8 justify-center items-center cursor-pointer hover:scale-105'>
-              <p className='font-singleDay text-4xl'>Home</p> 
+              <Link href="/"><p className='font-singleDay text-4xl'>Home</p></Link>
               <Image
                 src="/waves.png"
                 height={80}
@@ -196,7 +223,14 @@ export default function Mint() {
           <div className='h-screen w-screen'>
 
             <div className='flex flex-col h-screen justify-center items-center'>
-              <h1 className=' font-singleDay text-5xl text-center bg-transparent'>MINTED!</h1>
+                {image && (
+                <img
+                  src={image}
+                  height={350}
+                  width={350}
+                  />
+              )}
+              <h1 className=' font-singleDay text-5xl text-center bg-transparent mt-5'>MINTED!</h1>
               <p className='font-singleDay text-2xl text-blue-600 text-center bg-transparent'>
                 <a href={`https://goerli.etherscan.io/tx/${mintData?.hash}`} className='font-singleDay text-2xl underline' target="_blank">
                   View on Etherscan
