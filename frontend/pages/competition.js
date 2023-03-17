@@ -93,48 +93,59 @@ export default function competition() {
           pauseOnHover
           theme="light"
         />
-        <div className='flex flex-col justify-center items-center mx-auto'>
-            <h1 className='mt-[100px] text-4xl font-leckton font-semibold text-center'>Oceans of Terra Whitelist</h1>
-            <div className='my-6'>
-                <p className='mt-4 text-xl font-leckton font-semibold'> INSTRUCTIONS</p>
-                <p className='text-xl font-leckton'> 1. Connect Wallet</p>
-                <p className='text-xl font-leckton'> 2. See if you are already on the whitelist</p>
-                <p className='text-xl font-leckton'> 3. If not, answer the question below correctly to be put on it</p>
-            </div>
-            <ConnectButton/>
 
-            {onWhitelist && <p className='my-4 text-xl font-leckton'>{onWhitelist}</p>}
+        <div className='flex flex-col justify-center items-center w-full'>
 
-            <h2 className='mt-[60px] text-4xl font-leckton font-semibold text-center'>Whitelist Competition #1</h2>
-            <p className='text-2xl font-leckton font-bold mt-6'>The sun is highest at noon but it looks blue. What am I?</p>
-            <form onSubmit={handleSubmit}>
-                <div className='space-x-3 mt-6'>
-                    <input
-                        name="answer"
-                        id="answer"
-                        type="text"
-                        placeholder="What is the answer?"
-                        className="w-96 h-12 mt-4 border-2 border-gray-300 rounded-lg px-4 focus:outline-none focus:border-[#FBBF24]"
-                        required
-                    />
-                  
-                    <button
-                        type="submit"
-                        disabled={!botCheckPass}
-                        className={`bg-blue-500 hover:bg-blue-600 border rounded-xl py-3 px-4 text-white ${!botCheckPass ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    >SUBMIT
-                    </button>
-                    
-                    <ReCAPTCHA
-                        sitekey={googSiteKey}
-                        onChange={onChange}
-                        type="image"
-                        ref={recaptchaRef}
-                        className='mt-4'
-                    />,
+            <div className='mt-10 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-gray-100 border border-gray-100 rounded-lg shadow'>
+                <h1 className='text-4xl font-leckton font-semibold text-center'>Oceans of Terra Whitelist</h1>
+                <div className='my-6'>
+                    <p className='mt-4 text-xl font-leckton font-semibold'> INSTRUCTIONS</p>
+                    <p className='text-xl font-leckton'> 1. Connect Wallet</p>
+                    <p className='text-xl font-leckton'> 2. See if you are already on the whitelist</p>
+                    <p className='text-xl font-leckton'> 3. If not, answer the question below correctly to be put on it</p>
                 </div>
-            </form>
-            { error && <p className='text-red-500 text-xl font-leckton'>{error}</p>}
+            </div>
+
+            <div className='mt-10 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-gray-100 border border-gray-100 rounded-lg shadow'>
+                <h1 className='text-4xl font-leckton font-semibold text-center mb-6'>Already on the Whitelist? Check.</h1>
+                <ConnectButton/>
+
+                {onWhitelist && <p className='my-4 text-xl font-leckton'>{onWhitelist}</p>}
+            </div>
+
+            <div className='mt-6 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-gray-100 border border-gray-100 rounded-lg shadow'>
+                <h2 className='mt-6 text-4xl font-leckton font-semibold text-center'>Whitelist Competition #1</h2>
+                <p className='text-2xl font-leckton font-bold mt-6'>Q:The sun is highest at noon but it looks blue. What am I?</p>
+                <form onSubmit={handleSubmit}>
+                    <div className='space-x-3 mt-6'>
+                        <input
+                            name="answer"
+                            id="answer"
+                            type="text"
+                            placeholder="What is the answer?"
+                            className="w-96 h-12 mt-4 border-2 border-gray-300 rounded-lg px-4 focus:outline-none focus:border-[#FBBF24]"
+                            required
+                        />
+                    
+                        <button
+                            type="submit"
+                            disabled={!botCheckPass}
+                            className={`bg-blue-500 hover:bg-blue-600 border rounded-xl py-3 px-4 text-white ${!botCheckPass ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >SUBMIT
+                        </button>
+                        
+                        <ReCAPTCHA
+                            sitekey={googSiteKey}
+                            onChange={onChange}
+                            type="image"
+                            ref={recaptchaRef}
+                            className='mt-4'
+                        />,
+                    </div>
+                </form>
+                { error && <p className='text-red-500 text-xl font-leckton'>{error}</p>}
+            </div>
+
         </div>
     </div>
   )
