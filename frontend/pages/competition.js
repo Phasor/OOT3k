@@ -9,7 +9,7 @@ export default function competition() {
     const { address, isConnected } = useAccount();
     const [error, setError] = useState(null);
     const [onWhitelist, setOnWhitelist] = useState(false)
-    const googSiteKey = "6LfKzA0lAAAAAKi0rxx7MJSGJPMq6-TOJ3wx43xS"
+    const goSiK = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY;
     const recaptchaRef = useRef();
     const [botCheckPass, setBotCheckPass] = useState(false);
 
@@ -138,7 +138,7 @@ export default function competition() {
                         </button>
                         
                         <ReCAPTCHA
-                            sitekey={googSiteKey}
+                            sitekey={goSiK}
                             onChange={onChange}
                             type="image"
                             ref={recaptchaRef}
