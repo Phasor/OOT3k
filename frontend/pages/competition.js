@@ -1,12 +1,53 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function competition() {
     const { address, isConnected } = useAccount();
     const [error, setError] = useState(null);
+    const [onWhitelist, setOnWhitelist] = useState(null)
+
+    // useEffect(() => {
+    //     try{
+    //         const checkWL = async () => {
+    //             const res = await fetch('/api/check-whitelist', {
+    //                 method: 'GET',
+    //                 headers: {
+    //                     'Conten-Type': 'application/json',
+    //                 },
+    //                 body: JSON.stringify(address)
+    //             })
+    //             const data = await res.json();
+    //             console.log(`data: ${data}`)
+    //             setOnWhitelist(data.message);
+    //         }
+    //          checkWL();
+    //     } catch(err){
+    //         console.log(err);
+    //     }
+    // }, [address])
+
+    useEffect(() => {
+        const checkWL = async () => {
+          try {
+            const res = await fetch(`/api/check-whitelist?address=${address}`, {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+            const data = await res.json();
+            console.log(`data: ${JSON.stringify(data)}`);
+            setOnWhitelist(data.message);
+          } catch (err) {
+            console.log(err);
+          }
+        };
+        checkWL();
+      }, [address]);
+      
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -56,16 +97,19 @@ export default function competition() {
           theme="light"
         />
         <div className='flex flex-col justify-center items-center mx-auto'>
-            <h1 className='mt-[16rem] text-4xl font-leckton font-semibold text-center'>Oceans of Terra Whitelist Competition #1</h1>
-            <div className='my-4'>
+            <h1 className='mt-[100px] text-4xl font-leckton font-semibold text-center'>Oceans of Terra Whitelist</h1>
+            <div className='my-6'>
                 <p className='mt-4 text-xl font-leckton font-semibold'> INSTRUCTIONS</p>
                 <p className='text-xl font-leckton'> 1. Connect Wallet</p>
-                <p className='text-xl font-leckton'> 2. Type in Answer</p>
-                <p className='text-xl font-leckton'> 3. Hit Submit</p>
+                <p className='text-xl font-leckton'> 2. See if you are already on the whitelist</p>
+                <p className='text-xl font-leckton'> 3. If not, answer the question below correctly to be put on it</p>
             </div>
             <ConnectButton/>
-            <p className='text-2xl font-leckton font-bold mt-6'>The sun is highest at noon but it looks blue. What am I?</p>
 
+            {onWhitelist && <p className='my-4 text-xl font-leckton'>{onWhitelist}</p>}
+
+            <h2 className='mt-[60px] text-4xl font-leckton font-semibold text-center'>Whitelist Competition #1</h2>
+            <p className='text-2xl font-leckton font-bold mt-6'>The sun is highest at noon but it looks blue. What am I?</p>
             <form onSubmit={handleSubmit}>
                 <div className='space-x-3 mt-6'>
                     <input

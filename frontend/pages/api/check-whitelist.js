@@ -20,20 +20,23 @@ const checkUser = async (address) => {
 
 
 export default async function handler(req, res) {
-  //  params: { address, answer }
-  if (req.method === "POST") {
+  //  params: { address }
+  if (req.method === "GET") {
+    const address = req.query.address;
+    console.log(`address: ${address}`);
     
     // sanitize and trim the data
-      const address = xss(req.body.address.trim());
+      const cleanAddress = xss(address);
+      
 
     try {
       // check they are not already whitelisted
       await dbConnect();
-      const userExists = await checkUser(address)
+      const userExists = await checkUser(cleanAddress)
       if (userExists) {
-        return res.status(200).json({ success: false, message: `Address ${address} is on the whitelist!` });
+        return res.status(200).json({ success: true, message: `Address ${address} is on the whitelist!` });
       } else {
-        return res.status(200).json({ success: false, message: `Address ${address} is not on the whitelist!` });
+        return res.status(200).json({ success: true, message: `Address ${address} is not on the whitelist!` });
       }
     } catch (err) {
       return res.status(500).json({ success: false, message: err.message });
