@@ -8,7 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 export default function competition() {
     const { address, isConnected } = useAccount();
     const [error, setError] = useState(null);
-    const [onWhitelist, setOnWhitelist] = useState(null)
+    const [onWhitelist, setOnWhitelist] = useState(false)
     const googSiteKey = "6LfKzA0lAAAAAKi0rxx7MJSGJPMq6-TOJ3wx43xS"
     const recaptchaRef = useRef();
     const [botCheckPass, setBotCheckPass] = useState(false);
@@ -29,7 +29,9 @@ export default function competition() {
             console.log(err);
           }
         };
-        checkWL();
+        if (address){
+            checkWL();
+        }
       }, [address]);
 
       function onChange(value) {
@@ -96,25 +98,26 @@ export default function competition() {
 
         <div className='flex flex-col justify-center items-center w-full'>
 
-            <div className='mt-10 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-gray-100 border border-gray-100 rounded-lg shadow'>
-                <h1 className='text-4xl font-leckton font-semibold text-center'>Oceans of Terra Whitelist</h1>
+            <div className='mt-10 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-blue-100 border border-gray-100 rounded-lg shadow'>
+                <h1 className='text-5xl font-leckton font-bold text-center'>Oceans of Terra Whitelist</h1>
                 <div className='my-6'>
                     <p className='mt-4 text-xl font-leckton font-semibold'> INSTRUCTIONS</p>
-                    <p className='text-xl font-leckton'> 1. Connect Wallet</p>
+                    <p className='text-xl font-leckton'> 1. Connect wallet below</p>
                     <p className='text-xl font-leckton'> 2. See if you are already on the whitelist</p>
                     <p className='text-xl font-leckton'> 3. If not, answer the question below correctly to be put on it</p>
                 </div>
             </div>
 
-            <div className='mt-10 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-gray-100 border border-gray-100 rounded-lg shadow'>
+            <div className='mt-10 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-blue-200 border border-gray-100 rounded-lg shadow'>
                 <h1 className='text-4xl font-leckton font-semibold text-center mb-6'>Already on the Whitelist? Check.</h1>
                 <ConnectButton/>
 
                 {onWhitelist && <p className='my-4 text-xl font-leckton'>{onWhitelist}</p>}
             </div>
 
-            <div className='mt-6 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-gray-100 border border-gray-100 rounded-lg shadow'>
+            <div className='mt-6 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-blue-300 border border-gray-100 rounded-lg shadow'>
                 <h2 className='mt-6 text-4xl font-leckton font-semibold text-center'>Whitelist Competition #1</h2>
+                <h3 className='mt-6 text-2xl font-leckton text-center'>Answer the question below correctly to win a WL spot.</h3>
                 <p className='text-2xl font-leckton font-bold mt-6'>Q:The sun is highest at noon but it looks blue. What am I?</p>
                 <form onSubmit={handleSubmit}>
                     <div className='space-x-3 mt-6'>
