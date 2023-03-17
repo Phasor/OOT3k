@@ -348,7 +348,7 @@ export default function Mint() {
         )}
 
         {txError && (
-          <p className="font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
+          <p className="flex justify-center font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
             Error: {txError.message}
           </p>
         )}
