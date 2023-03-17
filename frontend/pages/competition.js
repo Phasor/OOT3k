@@ -1,33 +1,17 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function competition() {
     const { address, isConnected } = useAccount();
     const [error, setError] = useState(null);
     const [onWhitelist, setOnWhitelist] = useState(null)
-
-    // useEffect(() => {
-    //     try{
-    //         const checkWL = async () => {
-    //             const res = await fetch('/api/check-whitelist', {
-    //                 method: 'GET',
-    //                 headers: {
-    //                     'Conten-Type': 'application/json',
-    //                 },
-    //                 body: JSON.stringify(address)
-    //             })
-    //             const data = await res.json();
-    //             console.log(`data: ${data}`)
-    //             setOnWhitelist(data.message);
-    //         }
-    //          checkWL();
-    //     } catch(err){
-    //         console.log(err);
-    //     }
-    // }, [address])
+    const googSiteKey = "6LfKzA0lAAAAAKi0rxx7MJSGJPMq6-TOJ3wx43xS"
+    const recaptchaRef = useRef();
+    const [botCheckPass, setBotCheckPass] = useState(false);
 
     useEffect(() => {
         const checkWL = async () => {
@@ -47,38 +31,51 @@ export default function competition() {
         };
         checkWL();
       }, [address]);
+
+      function onChange(value) {
+        // console.log("Captcha value:", value);
+        setBotCheckPass(true);
+      }
       
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        try{
-            const answer = e.target.answer.value
-            const submission = { address, answer }
-            
-            const sendAnswer = async (data) => {
-                const res = await fetch('/api/add-address', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-                })
-                return res
-            }
+        const recaptchaValue = recaptchaRef.current.getValue();
+        // console.log(`recaptchaValue: ${recaptchaValue}`)
 
-            const res = await sendAnswer(submission)
-            const data = await res.json()
-            console.log(`data: ${data}`)
-            if (data.success) {
-                console.log(data.message)
-                toast.success(data.message);
-            } else {
-                console.log(data.message)
-                toast.error(data.message);
+        if(!recaptchaValue){
+            toast.error("Please verify you are not a robot");
+            return;
+        } else {
+            try{
+                const answer = e.target.answer.value
+                const submission = { address, answer }
+                
+                const sendAnswer = async (data) => {
+                    const res = await fetch('/api/add-address', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                    })
+                    return res
+                }
+
+                const res = await sendAnswer(submission)
+                const data = await res.json()
+                console.log(`data: ${data}`)
+                if (data.success) {
+                    console.log(data.message)
+                    toast.success(data.message);
+                } else {
+                    console.log(data.message)
+                    toast.error(data.message);
+                }
+            } catch(err){
+                console.log(err)
+                setError(err.message)
             }
-        } catch(err){
-            console.log(err)
-            setError(err.message)
         }
     }
 
@@ -120,12 +117,21 @@ export default function competition() {
                         className="w-96 h-12 mt-4 border-2 border-gray-300 rounded-lg px-4 focus:outline-none focus:border-[#FBBF24]"
                         required
                     />
+                  
                     <button
                         type="submit"
-                        
-                        className='bg-blue-500 hover:bg-blue-600 border rounded-xl py-3 px-4 text-white'
+                        disabled={!botCheckPass}
+                        className={`bg-blue-500 hover:bg-blue-600 border rounded-xl py-3 px-4 text-white ${!botCheckPass ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >SUBMIT
                     </button>
+                    
+                    <ReCAPTCHA
+                        sitekey={googSiteKey}
+                        onChange={onChange}
+                        type="image"
+                        ref={recaptchaRef}
+                        className='mt-4'
+                    />,
                 </div>
             </form>
             { error && <p className='text-red-500 text-xl font-leckton'>{error}</p>}
