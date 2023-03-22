@@ -19,7 +19,7 @@ export default function Collection() {
          </div> */}
          <div className="bg-[#E5E7EB]">
          <svg className="triangles" width="60" height="60" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="Triangles" clip-path="url(#clip0_0_1)">
+            <g id="Triangles" clipPath="url(#clip0_0_1)">
             <rect width="120" height="120" fill="#E5E7EB"/>
             <g id="LightGroup">
             <path  id="Light1" opacity="0.7" d="M44.0642 55.5528C45.2312 56.3558 45.2166 58.0841 44.0361 58.8671L8.13744 82.6795C6.80162 83.5656 5.01836 82.5988 5.03197 80.9959L5.44161 32.7648C5.45523 31.1619 7.25465 30.2255 8.57523 31.1341L44.0642 55.5528Z" />

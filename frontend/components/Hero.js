@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-        <div className="w-full h-screen flex justify-center items-center bg-[#74acf7] relative">
+        <div className="w-full min-h-screen flex justify-center items-center relative bg-[url('/Muacademy.png')] bg-center bg-cover bg-no-repeat mt-[70px] ">
             <div className='text-center '>
-                <p className='font-leckton font-bold text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-gray-200 drop-shadow-xl'>Oceans</p>
+                {/* <p className='font-leckton font-bold text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-gray-200 drop-shadow-xl'>Oceans</p>
                 <p className='font-leckton font-bold text-[12vw] md:text-[10vw] lg:text-[8vw] xl:text-[4vw] text-gray-200 drop-shadow-xl'>of</p>
-                <p className='font-leckton font-bold text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-gray-200 drop-shadow-xl'>Terra</p>
+                <p className='font-leckton font-bold text-[18vw] md:text-[16vw] lg:text-[12vw] xl:text-[8vw] text-gray-200 drop-shadow-xl'>Terra</p> */}
             </div>
 
   
