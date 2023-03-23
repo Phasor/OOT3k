@@ -1,6 +1,7 @@
 import Navbar from "../components/navigation/NavBar";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
+import Banner from "../components/Banner";
 import Lore from "../components/Lore";
 import Collection from "../components/Collection";
 import Team from "../components/Team";
@@ -15,6 +16,7 @@ export default function Home() {
         <Navbar/>
         <Hero/>
         <Intro/>
+        <Banner/>
         <Lore/>
         <Collection/>
         <FixedImage/>
