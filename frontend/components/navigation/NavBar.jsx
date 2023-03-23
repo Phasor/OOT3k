@@ -90,11 +90,11 @@ function NavBar() {
               className="pb-3 md:pb-0 md:mt-0 hidden md:block"
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center">
-                <li className="text-2xl text-[#C9E5EB] font-raleway font-regular py-5 md:px-6 md:py-1 text-center md:hover:-translate-y-1.5 transition-transform duration-200  hover:bg-[#4b1fcd] md:hover:bg-transparent  border-blue-400">
+                {/* <li className="text-2xl text-[#C9E5EB] font-raleway font-regular py-5 md:px-6 md:py-1 text-center md:hover:-translate-y-1.5 transition-transform duration-200  hover:bg-[#4b1fcd] md:hover:bg-transparent  border-blue-400">
                   <ScrollLink href="#intro" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     Intro
                   </ScrollLink>
-                </li>
+                </li> */}
                 <li className="text-2xl text-[#C9E5EB] font-raleway font-regular py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#4b1fcd] border-blue-400 md:hover:bg-transparent md:hover:-translate-y-1.5">
                   <ScrollLink href="#lore" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     Lore
