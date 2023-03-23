@@ -3,7 +3,7 @@ import { useAccount } from 'wagmi';
 import { useState, useEffect, useRef } from 'react';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha"; //
 
 export default function competition() {
     const { address, isConnected } = useAccount();
