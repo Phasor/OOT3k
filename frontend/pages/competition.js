@@ -109,13 +109,13 @@ export default function competition() {
             </div>
 
             <div className='mt-10 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-blue-200 border border-gray-100 rounded-lg shadow'>
-                <h1 className='text-4xl font-leckton font-semibold text-center mb-6'>Already on the Whitelist? Check.</h1>
+                <h1 className='text-4xl font-leckton font-semibold text-center mb-6'>On the Whitelist? Check Here.</h1>
                 <ConnectButton/>
 
                 {onWhitelist && <p className='my-4 text-xl font-leckton'>{onWhitelist}</p>}
             </div>
 
-            <div className='mt-6 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-blue-300 border border-gray-100 rounded-lg shadow'>
+            <div className='my-6 flex flex-col justify-center items-center max-w-4xl w-full p-4 bg-blue-300 border border-gray-100 rounded-lg shadow'>
                 <h2 className='mt-6 text-4xl font-leckton font-semibold text-center'>Whitelist Competition #1</h2>
                 <h3 className='mt-6 text-2xl font-leckton text-center'>Answer the question below correctly to win a WL spot.</h3>
                 <p className='text-2xl font-leckton font-bold mt-6'>Q:The sun is highest at noon but it looks blue. What am I?</p>
