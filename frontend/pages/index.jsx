@@ -15,8 +15,8 @@ export default function Home() {
       <main className="flex flex-col justify-center items-center flex-1 relative">
         <Navbar/>
         <Hero/>
-        <Intro/>
         <Banner/>
+        <Intro/>
         <Lore/>
         <Collection/>
         <FixedImage/>

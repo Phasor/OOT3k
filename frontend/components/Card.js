@@ -15,7 +15,7 @@ export default function Card({profile}) {
             </div>
 
             <div className='flex justify-between mt-3'>
-                <p className='p-2 text-2xl font-leckton font-semibold'>{profile.name}</p>
+                <p className='p-2 text-2xl font-poppins font-medium text-gray-800'>{profile.name}</p>
                 <div className='bg-blue-500 h-10 w-10 rounded-lg flex justify-center items-center text-center p-2 mr-2 hover:scale-105'>
                     <Link href="https://twitter.com/cryptotoolhub">
                         <svg class="text-gray-100 fill-current h-12 w-12" viewBox="0 0 60 60">
@@ -24,8 +24,8 @@ export default function Card({profile}) {
                     </Link>
                 </div>
             </div>
-            <p className='font-raleway p-2 text-xl py-0 text-gray-100'>{profile.role}</p>
-            <p className=' font-raleway p-2 text-l wrap'>{profile.description}</p>
+            <p className='font-raleway font-semibold p-2 text-xl py-0 text-gray-100'>{profile.role}</p>
+            <p className='font-raleway text-gray-800 p-2 text-l wrap'>{profile.description}</p>
         </div>
     </div>
   )

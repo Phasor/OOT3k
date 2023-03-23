@@ -14,7 +14,8 @@ module.exports = {
         lucky: ["Luckiest Guy", "cursive"],
         leckton: ["Lekton", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
-        singleDay: ["Single Day", "cursive"]
+        singleDay: ["Single Day", "cursive"],
+        poppins: ["Poppins", "sans-serif"]
       },
     },
   },

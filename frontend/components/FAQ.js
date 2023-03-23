@@ -27,7 +27,7 @@ export default function FAQ() {
     <section id="FAQ" class="w-full py-10 bg-[#C9E5EB] sm:py-16 lg:py-24">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl flex flex-col justify-center items-center">
             <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Frequently Asked Questions</h2>
+            <h2 class="text-3xl font-raleway font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Frequently Asked Questions</h2>
         </div>
 
         
@@ -37,7 +37,7 @@ export default function FAQ() {
                     className="w-full p-4 cursor-pointer flex justify-between items-center"
                     onClick={toggleExpansion1}
                 >
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-lg font-raleway font-semibold text-gray-900">
                     Is there a Discord?
                     </h3>
                     <svg
@@ -61,7 +61,7 @@ export default function FAQ() {
                     isExpanded1 ? "max-h-96" : "max-h-0"
                     } overflow-hidden`}
                 >
-                    <p className="text-gray-700 mt-5">
+                    <p className="text-gray-700 mt-5 font-raleway">
                     We don't have discord access for now but please head to our Twitter to find out more info.
                     </p>
                 </div>
@@ -74,7 +74,7 @@ export default function FAQ() {
                 className="w-full p-4 cursor-pointer flex justify-between items-center"
                 onClick={toggleExpansion2}
                 >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-raleway font-semibold text-gray-900">
                     Wen mint?
                 </h3>
                 <svg
@@ -98,7 +98,7 @@ export default function FAQ() {
                     isExpanded2 ? "max-h-96" : "max-h-0"
                 } overflow-hidden`}
                 >
-                <p className="text-gray-700 mt-5">
+                <p className="text-gray-700 mt-5 font-raleway">
                 Sometime in April 2023. Keep an eye on our Twitter for updates.
                 </p>
                 </div>
@@ -110,7 +110,7 @@ export default function FAQ() {
                 className="w-full p-4 cursor-pointer flex justify-between items-center"
                 onClick={toggleExpansion3}
                 >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="font-raleway text-lg font-semibold text-gray-900">
                     What are the maximum #mints per wallet?
                 </h3>
                 <svg
@@ -134,7 +134,7 @@ export default function FAQ() {
                     isExpanded3 ? "max-h-96" : "max-h-0"
                 } overflow-hidden`}
                 >
-                <p className="text-gray-700 mt-5">
+                <p className="text-gray-700 mt-5 font-raleway">
                 Ten (10) per wallet.
                 </p>
                 </div>
@@ -146,7 +146,7 @@ export default function FAQ() {
                 className="w-full p-4 cursor-pointer flex justify-between items-center"
                 onClick={toggleExpansion4}
                 >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-raleway font-semibold text-gray-900">
                     Will my Terra's be revealed straight after minting?
                 </h3>
                 <svg
@@ -170,7 +170,7 @@ export default function FAQ() {
                     isExpanded4 ? "max-h-96" : "max-h-0"
                 } overflow-hidden`}
                 >
-                <p className="text-gray-700 mt-5">
+                <p className="text-gray-700 font-raleway mt-5">
                 No. It Terras will reveal over a 1 week period.
                 </p>
                 </div>
@@ -182,7 +182,7 @@ export default function FAQ() {
                 className="w-full p-4 cursor-pointer flex justify-between items-center"
                 onClick={toggleExpansion5}
                 >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-raleway font-semibold text-gray-900">
                     How do I get on the whitelist?
                 </h3>
                 <svg
@@ -206,7 +206,7 @@ export default function FAQ() {
                     isExpanded5 ? "max-h-96" : "max-h-0"
                 } overflow-hidden`}
                 >
-                <p className="text-gray-700 mt-5">
+                <p className="text-gray-700  font-raleway mt-5">
                 We will be running several giveaways on our Twitter. Follow us and keep an eye out for the next one.
                 </p>
                 </div>
