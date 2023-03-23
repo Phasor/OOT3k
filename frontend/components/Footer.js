@@ -19,7 +19,7 @@ export default function Footer() {
                 </Link>
             </div>
             <div className='mr-2 sm:mr-10 font-raleway flex justify-center items-center'>
-                <p className='font-semibold text-right text-[#C9E5EB]'>Copyright Oceans of Terra 2023.  All rights reserved.</p>
+                <p className='font-raleway font-semibold text-right text-[#C9E5EB] whitespace-pre'>Copyright Oceans of Terra 2023.   All rights reserved.</p>
                 <img className='hidden sm:block h-10 w-10 ml-2 hover:scale-105' src="/logo.jpg" alt="logo" />
             </div>
 
