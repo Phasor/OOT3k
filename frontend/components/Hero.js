@@ -42,7 +42,7 @@ export default function Hero() {
                 height={1500}
                 width={1500}
                 quality={90}
-          
+                priority
                 placeholder="blur"
                 blurDataURL="/muLoading.jpeg"
                 className="object-cover h-full w-full"

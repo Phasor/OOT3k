@@ -9,9 +9,11 @@ export default function Banner() {
         <Image
             src="/fireworks.png"
             alt="Picture of explosion"
-            width={800}
-            height={800}
-            className="absolute opacity-10 top-[5rem] md:top-[10%]"
+            width={500}
+            height={500}
+            className="absolute opacity-10 top-[5rem] md:top-[10%] sm:h-[800px] sm:w-[800px]"
+            loading='lazy'
+            fallback='/fireworks.png'
         />
     </div>
   )
