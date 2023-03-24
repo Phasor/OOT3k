@@ -37,7 +37,7 @@ export default function Hero() {
         ( 
           <div className="w-full h-[110vh] flex justify-center items-center md:mt-[70px]">
               <Image
-                src="/muCompressed.png"
+                src="/muCompressed2.jpg"
                 alt="Picture of the Mu Academy, underwater sunken ship scene."
                 height={1500}
                 width={1500}

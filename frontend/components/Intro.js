@@ -13,7 +13,7 @@ export default function Intro() {
 
             <div className='flex flex-row items-center justify-center mx-6 lg:mr-0 lg:p-0 mt-4 md:mb-16 lg:mt-14'>
                 <Image
-                    src="/town.png"
+                    src="/town.jpg"
                     alt="Picture of the town in the game"
                     width={600}
                     height={600}
