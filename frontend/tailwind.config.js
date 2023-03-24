@@ -11,8 +11,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        lucky: ["Luckiest Guy", "cursive"],
-        leckton: ["Lekton", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
         singleDay: ["Single Day", "cursive"],
         poppins: ["Poppins", "sans-serif"]

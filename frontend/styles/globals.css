@@ -44,7 +44,7 @@
 
     /* dots background */
     .bgdots {
-      background-image: url('/dots.webp'), url('/dots.jpg');
+      background-image: url('/dots.webp'), url('/dotscompressed.jpg');
       background-repeat: repeat;
       background-size: 500px 500px;
       background-position: center;
