@@ -60,7 +60,7 @@ function NavBar() {
             <div className="flex items-center justify-between py-3 md:py-1 md:block">
               {/* LOGO */}
               <Link href="/">
-					    < Image height={60} width={60} className="p-1" src="/logo.jpg"/>
+					    < Image height={60} width={60} className="p-1" src="/logocompressed.png"/>
  				      </Link>
               
               {/* HAMBURGER BUTTON FOR MOBILE */}

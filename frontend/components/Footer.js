@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -20,7 +21,7 @@ export default function Footer() {
             </div>
             <div className='mr-2 sm:mr-10 font-raleway flex justify-center items-center'>
                 <p className='font-raleway font-semibold text-right text-[#C9E5EB] whitespace-pre'>Copyright Oceans of Terra 2023</p>
-                <img className='hidden sm:block h-10 w-10 ml-2 hover:scale-105' src="/logo.jpg" alt="logo" />
+                <Image className='hidden sm:block h-10 w-10 ml-2 hover:scale-105' src="/logocompressed.png" alt="logo" width={30} height={30} />
             </div>
 
         </div>

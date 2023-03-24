@@ -31,7 +31,7 @@ export default function Hero() {
     <>
       { mobile ? 
         (
-            <div className="w-full h-[100vh] flex justify-center items-center relative bg-[url('/muacademymobile2.jpg')] bg-center bg-cover bg-no-repeat"></div>
+            <div className="w-full h-[100vh] flex justify-center items-center relative bg-[url('/muacademymobile2.jpg')] bg-center bg-cover bg-no-repeat" priority></div>
         ) : 
         
         ( 
@@ -42,7 +42,7 @@ export default function Hero() {
                 height={1500}
                 width={1500}
                 quality={90}
-                priority
+                priority={true}
                 placeholder="blur"
                 blurDataURL="/muLoading.jpeg"
                 className="object-cover h-full w-full"

@@ -13,6 +13,7 @@ import {
 import { abi } from '../ABI/contract-abi'  
 import Link from 'next/link'
 import NFTCard from '../components/NFTCard'
+import Head from 'next/head'
 
 const contractConfig = {
   address: '0xc5617A28f8494B131902DE5063e68E4Ed9B77f1E',
@@ -217,6 +218,9 @@ export default function Mint() {
 
   return (
     <div className='w-screen h-screen'>
+      <Head>
+        <title>Oceans of Terra | Mint </title>
+      </Head>
       <div className='w-full flex justify-center items-center'>
         
         {/* Navbar */}
