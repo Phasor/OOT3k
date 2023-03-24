@@ -62,21 +62,22 @@ function NavBar() {
               <Link href="/">
 					    < Image height={60} width={60} className="p-1" src="/logo.jpg"/>
  				      </Link>
+              
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
                 <button id="toggleButton"
-                  className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                  className="p-2 text-gray-200 rounded-md outline-none focus:border-gray-200 focus:border"
                   onClick={handleMenuClick}
                 >
                   {showMobileMenu ? (
-                    <Image src="/close.svg" width={30} height={30} alt="logo" />
+                    <Image src="/close.svg" width={30} height={30} alt="logo" className="text-white"/>
                   ) : (
                     <Image
                       src="/burger.svg"
                       width={30}
                       height={30}
                       alt="logo"
-                      className="focus:border-none active:border-none"
+                      className="focus:border-none active:border-none text-white"
                     />
                   )}
                 </button>

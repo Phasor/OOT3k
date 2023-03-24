@@ -29,7 +29,7 @@ export default function Lore() {
   }, []);
 
   return (
-    <section id="lore" className="w-full min-h-screen relative flex justify-center items-center bg-[url('/dots.jpg')] bg-repeat bg-contain bg-center border-b-[0.5rem] border-t-[0.5rem] border-black">
+    <section id="lore" className="w-full min-h-screen relative flex justify-center items-center bg-[url('/dots.jpg')] bg-repeat bg-contain bg-center border-b-[0.3rem] md:border-b-[0.5rem] border-t-[0.3rem] md:border-t-[0.5rem] border-black">
         
         <div className='max-w-6xl flex flex-col justify-center items-center my-6 md:my-11'>
           <div className="p-2 my-2 md:my-11 hide-left sm:mr-[4rem] md:mr-[20rem]">
