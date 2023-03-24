@@ -15,6 +15,9 @@ module.exports = {
         singleDay: ["Single Day", "cursive"],
         poppins: ["Poppins", "sans-serif"]
       },
+      colors: {
+        'nav-link': 'black',
+      }
     },
   },
   plugins: [],
