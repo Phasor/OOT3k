@@ -31,13 +31,13 @@ export default function Hero() {
     <>
       { mobile ? 
         (
-            <div className="w-full h-[110vh] flex justify-center items-center relative bg-[url('/muCompressed.png')] bg-top bg-cover bg-no-repeat"></div>
+            <div className="w-full h-[100vh] flex justify-center items-center relative bg-[url('/muacademymobile2.jpg')] bg-center bg-cover bg-no-repeat"></div>
         ) : 
         
         ( 
           <div className="w-full h-[110vh] flex justify-center items-center md:mt-[70px]">
               <Image
-                src="/Muacademy.png"
+                src="/muCompressed.png"
                 alt="Picture of the Mu Academy, underwater sunken ship scene."
                 height={1500}
                 width={1500}
