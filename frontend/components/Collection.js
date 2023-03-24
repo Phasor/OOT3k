@@ -4,7 +4,7 @@ import Carousel from './Carousel'
 export default function Collection() {
 
   return (
-    <section id="collection" className='w-full min-h-screen bg-[#65C5EA] flex flex-col justify-center items-center text-center'>
+    <section id="collection" className='w-full min-h-screen bg-[#44CFED] flex flex-col justify-center items-center text-center'>
        <p className='p-1 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2 mt-10'>Playable collectible avatars living on the</p>
        <p className='p-1 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2'>Ethereum blockchain</p>
        <p className='p-2 text-xl text-gray-800 md:text-2xl font-raleway font-normal mt-6 '>3,535 cute NFTs contrived from over 140 unique, hand drawn traits with varying rarity.</p>
