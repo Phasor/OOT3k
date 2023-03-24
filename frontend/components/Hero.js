@@ -1,5 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
+import { useEffect, useState } from 'react';
 
 function isMobile() {
   if (typeof window !== "undefined") {
@@ -10,18 +10,32 @@ function isMobile() {
 
 
 export default function Hero() {
+  const [mobile, setMobile] = useState(false);
 
-  const mobile = isMobile();
+  useEffect(() => {
+    function handleResize() {
+      setMobile(isMobile());
+    }
+
+    if (typeof window !== "undefined") {
+      window.addEventListener('resize', handleResize);
+      setMobile(isMobile());
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
+
 
   return (
     <>
       { mobile ? 
         (
-            <div className="w-full h-[110vh] flex justify-center items-center relative bg-[url('/muCompressed.png')] bg-top bg-cover bg-no-repeat mt-[75px]"></div>
+            <div className="w-full h-[110vh] flex justify-center items-center relative bg-[url('/muCompressed.png')] bg-top bg-cover bg-no-repeat"></div>
         ) : 
         
         ( 
-          <div className="w-full h-[110vh] flex justify-center items-center mt-[80px] md:mt-[70px]">
+          <div className="w-full h-[110vh] flex justify-center items-center md:mt-[70px]">
               <Image
                 src="/Muacademy.png"
                 alt="Picture of the Mu Academy, underwater sunken ship scene."
