@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <div className='w-full overflow-x-hidden overflow-y-hidden bg-white max-h-[150px]'>
+    <div className='w-full overflow-x-hidden overflow-y-hidden bg-[#BDF0FA] max-h-[150px]'>
         <div className='w-full max-w-8xl mx-auto flex justify-between'>
             {/* Socials */}
             <div className='flex space-x-4 p-2 ml-2 sm:ml-10'>

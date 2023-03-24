@@ -52,7 +52,7 @@ function NavBar() {
 //#000447
   return (
     <div className="w-full">
-      <nav className="w-full bg-white opacity-90 sm:fixed top-0 left-0 right-0 z-10">
+      <nav className="w-full bg-[#BDF0FA] opacity-90 sm:fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
 
           {/* Icons */}
