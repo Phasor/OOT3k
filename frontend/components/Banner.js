@@ -3,8 +3,8 @@ import Image from 'next/image'
 export default function Banner() {
   return (
     <div id="intro" className='w-full h-screen bg-gradient-to-b from-[#1424BD] to-bg-blue flex flex-col justify-center items-center relative'>
-        <p className='text-gray-800 font-poppins font-medium text-2xl md:text-4xl mb-2 md:mt-[20rem] p-4 text-center filter drop-shadow-md opacity-100 z-40'>A JOURNEY OF <span className='text-4xl md:text-8xl font-extrabold'>EPIC PROPORTION </span> BEGINS.</p>
-        <p className='text-gray-800 font-poppins font-medium text-center text-2xl md:text-4xl mt-2 mb-[6rem] md:mb-[20rem] p-4 filter drop-shadow-md opacity-100 z-40'>OUR HEROS SET OUT TO SAVE THE SEA FROM DESTRUCTION...</p>
+        <p className='text-gray-900 font-poppins font-medium text-2xl md:text-4xl mb-2 md:mt-[20rem] p-4 text-center filter drop-shadow-lg opacity-100 z-40'>A JOURNEY OF <span className='text-4xl md:text-8xl font-extrabold text-black'>EPIC PROPORTION </span> BEGINS.</p>
+        <p className='text-gray-900 font-poppins font-medium text-center text-2xl md:text-4xl mt-2 mb-[6rem] md:mb-[20rem] p-4 filter drop-shadow-md opacity-100 z-40'>OUR HEROS SET OUT TO SAVE THE SEA FROM DESTRUCTION...</p>
         <Image
             src="/fireworks.png"
             alt="Picture of explosion"
@@ -15,7 +15,7 @@ export default function Banner() {
             fallback='/fireworks.png'
         />
         <div
-          className='absolute  p-[8rem] bg-[#F9FE67] border rounded-full filter blur-xl'
+          className='absolute  p-[8rem] bg-[#F9FE67] border rounded-full filter blur-2xl'
         />
     </div>
   )
