@@ -6,10 +6,11 @@ export default function Collection() {
 
   return (
     <section id="collection" className='w-full  bg-bg-blue flex flex-col items-center text-center'>
-       <p className='px-1 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2 mt-10'>Playable collectible avatars living on the</p>
-       <p className='p-1 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2'>Ethereum blockchain</p>
-       <p className='p-2 text-xl text-gray-800  px-4 text-center md:text-2xl font-raleway font-normal mt-6 '>3,600 cute NFTs contrived from over 140 unique, hand drawn traits with varying rarity.</p>
-       <p className='p-2 text-xl  text-gray-800 px-4 text-center md:text-2xl font-raleway font-normal'>Each one will be a fully playable character in the Oceans of Terra MMORPG.</p>
+       <p className='px-2 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2 mt-10'>Playable collectible avatars living on the</p>
+       <p className='px-2 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2'>Ethereum blockchain</p>
+       
+       <p className='px-10 text-xl text-gray-800 text-justify md:text-2xl font-raleway font-normal mt-6 '>3600 cute NFTs contrived from over 140 unique, hand drawn traits with varying rarity.</p>
+       <p className='px-10 text-xl  text-gray-800  text-justify md:text-2xl font-raleway font-normal my-6'>Each one will be a fully playable character in the Oceans of Terra MMORPG.</p>
       <div className="w-full flex justify-center items-center sm:max-w-[90rem] md:mt-20 p-1 sm:p-0 cursor-grab">
         <Carousel/>
       </div>
