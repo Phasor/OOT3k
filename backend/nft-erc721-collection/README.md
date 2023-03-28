@@ -1,3 +1,6 @@
+# Rename contract and generate typings
+`yarn rename-contract [contract name]`
+
 # Deploy
 1. Get truffle dashboard up with `truffle dashboard`
 2. yarn deploy --network truffle
