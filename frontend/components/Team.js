@@ -12,10 +12,10 @@ export default function Team() {
   ]
    
   return (
-    <section id="team" className='w-full bg-main-bg flex justify-center items-center pb-10'>
-        <div className="max-w-8xl flex flex-col justify-center items-center">
-          <h2 className='mt-20 mb-8 text-6xl p-2 font-raleway font-bold text-gray-800 text-center'>Oceans of Talent</h2>
-          <div className='grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 am:gap-4 gap-10'>
+    <section id="team" className='w-full bg-bg-blue flex justify-center items-center pb-10'>
+        <div className="sm:max-w-[90rem] flex flex-col justify-center items-center">
+          <h2 className='mt-20 mb-8 text-6xl p-2 font-raleway font-bold text-gray-50 text-center'>Oceans of Talent</h2>
+          <div className='grid grid-col-2 md:grid-cols-3 lg:grid-cols-4 am:gap-4 gap-10'>
             {Team.map((member, index) => {
               return (
                 <Card key={index} profile={member}/>

@@ -26,11 +26,11 @@ export default function Carousel() {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 40,
             },
             1024: {
-              slidesPerView: 5,
+              slidesPerView: 3,
               spaceBetween: 50,
             },
           }}
@@ -42,7 +42,7 @@ export default function Carousel() {
                 <SwiperSlide key={image.img}>
                     <Image
                         src={image.img}
-                        alt="Picture of the author"
+                        alt="Picture of Oceans of Terra NFT"
                         width={400}
                         height={400}
                         className="object-cover"

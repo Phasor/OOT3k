@@ -9,7 +9,7 @@ export default function Collection() {
        <p className='p-1 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2'>Ethereum blockchain</p>
        <p className='p-2 text-xl text-gray-800 md:text-2xl font-raleway font-normal mt-6 '>3,600 cute NFTs contrived from over 140 unique, hand drawn traits with varying rarity.</p>
        <p className='p-2 text-xl  text-gray-800 md:text-2xl font-raleway font-normal'>Each one will be a fully playable character in the Oceans of Terra MMORPG.</p>
-      <div className="w-full md:mt-20 p-10 cursor-grab">
+      <div className="sm:max-w-[90rem] md:mt-20 p-2 sm:p-0 cursor-grab">
         <Carousel/>
       </div>
       <div className="flex space-x-2 md:space-x-4 justify-center items-center mb-10">
