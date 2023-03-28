@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Intro() {
  
   return (
-    <div className='bg-main-bg w-full flex flex-col items-center justify-center'>
+    <div className='bg-bg-blue w-full flex flex-col items-center justify-center'>
         {/* Section 1 */}
         <div id="intro" className='sm:max-w-[90rem] flex flex-col sm:flex-row relative'>
             <div className='flex flex-col items-center justify-center lg:items-start sm:w-[60%]'>
