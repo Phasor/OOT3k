@@ -17,6 +17,7 @@ module.exports = {
       },
       colors: {
         'nav-link': 'black',
+        'main-bg': '#C9E5EB'
       }
     },
   },

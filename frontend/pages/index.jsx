@@ -16,7 +16,7 @@ export default function Home() {
       <Head>
         <title>Oceans of Terra | Underwater Adventure Game and NFT Collection</title>
       </Head>
-      <main className="flex flex-col justify-center items-center flex-1 relative">
+      <main className="w-full flex flex-col justify-center items-center flex-1 relative">
         <Navbar/>
         <Hero/>
         <Banner/>
