@@ -6,7 +6,7 @@ export default function Collection() {
 
   return (
     <section id="collection" className='w-full  bg-bg-blue flex flex-col items-center text-center'>
-       <p className='px-2 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2 mt-10'>Playable collectible avatars living on the</p>
+       <p className='px-2 text-3xl text-gray-800 md:text-5xl font-raleway font-bold mt-2 sm:mt-20'>Playable collectible avatars living on the</p>
        <p className='px-2 text-3xl text-gray-800 md:text-5xl font-raleway font-bold md:my-2'>Ethereum blockchain</p>
        
        <p className='px-10 text-xl text-gray-800 text-justify md:text-2xl font-raleway font-normal mt-6 '>3600 cute NFTs contrived from over 140 unique, hand drawn traits with varying rarity.</p>
@@ -15,12 +15,12 @@ export default function Collection() {
         <Carousel/>
       </div>
       
-      <div className="flex space-x-2 md:space-x-4 justify-center items-center mb-10">
+      <div className="flex space-x-2 md:space-x-4 justify-center items-center my-10 sm:mb-[10rem]">
          <p className='text-gray-800 p-2 text-xl sm:text-2xl ml-8 font-raleway font-bold'>SWIPE FOR MORE TERRA'S</p>
          <div className="bg-[#65C5EA]">
          <svg className="triangles" width="60" height="60" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Triangles" clipPath="url(#clip0_0_1)">
-            <rect width="120" height="120" fill="#65C5EA"/>
+            <rect width="120" height="120" fill="#27b6e5"/>
             <g id="LightGroup">
             <path  id="Light1" opacity="0.7" d="M44.0642 55.5528C45.2312 56.3558 45.2166 58.0841 44.0361 58.8671L8.13744 82.6795C6.80162 83.5656 5.01836 82.5988 5.03197 80.9959L5.44161 32.7648C5.45523 31.1619 7.25465 30.2255 8.57523 31.1341L44.0642 55.5528Z" />
             <g id="DarkGroup">

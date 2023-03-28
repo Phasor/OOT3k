@@ -32,7 +32,7 @@ export default function FAQ() {
 
         
             {/* Question 1 */}
-            <div className="bg-gray-100 rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-10">
+            <div className="bg-gray-100 rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-10 sm:mt-20">
                 <div
                     className="w-full p-4 cursor-pointer flex justify-between items-center"
                     onClick={toggleExpansion1}
