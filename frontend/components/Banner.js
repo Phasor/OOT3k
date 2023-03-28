@@ -30,14 +30,14 @@ export default function Banner() {
         
         { mobile ? (
           <div className='mt-10' >
-            <p className='text-black font-poppins font-medium text-2xl px-1 text-center filter drop-shadow-md opacity-100 z-40'>A JOURNEY OF</p>
-            <p className='text-black font-poppins font-extrabold text-4xl px-1 text-center drop-shadow-lg opacity-100 z-40'>EPIC PROPORTION </p> 
-            <p className='text-black font-poppins font-medium text-2xl px-1 text-center filter drop-shadow-md opacity-100 z-40'>BEGINS.</p>
+            <p className='text-black font-poppins font-medium text-2xl px-1 text-center filter drop-shadow-md z-40'>A JOURNEY OF</p>
+            <p className='text-white font-poppins font-extrabold text-4xl px-1 text-center drop-shadow-lg z-40'>EPIC PROPORTION </p> 
+            <p className='text-black font-poppins font-medium text-2xl px-1 text-center filter drop-shadow-md z-40'>BEGINS.</p>
           </div>
         ) 
         : (
           <>
-            <p className='text-black font-poppins font-medium text-2xl md:text-4xl mb-2 md:mt-[20rem] p-4 text-center filter drop-shadow-lg opacity-100 z-40'>A JOURNEY OF <span className='text-4xl md:text-8xl font-extrabold text-black'>EPIC PROPORTION </span> BEGINS.</p>
+            <p className='text-black font-poppins font-medium text-2xl md:text-4xl mb-2 md:mt-[20rem] p-4 text-center filter drop-shadow-lg opacity-100 z-40'>A JOURNEY OF <span className='text-4xl md:text-8xl font-extrabold text-white'>EPIC PROPORTION </span> BEGINS.</p>
           </>
           )
         }
@@ -53,7 +53,7 @@ export default function Banner() {
             fallback='/fireworks.png'
         />
         <div
-          className='absolute top-[12rem] sm:top-[20rem] p-[3rem] sm:p-[8rem] bg-[#F9FE67] border rounded-full filter blur-xl sm:blur-2xl z-10'
+          className='absolute top-[12rem] sm:top-[20rem] p-[3rem] sm:p-[8rem] bg-[#F9FE67] border rounded-full filter blur-xl sm:blur-2xl z-20'
         />
     </div>
   )

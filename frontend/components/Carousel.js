@@ -22,20 +22,22 @@ export default function Carousel() {
         slidesPerView={1}
         breakpoints={{
             640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+              slidesPerView: 1,
+              spaceBetween: 10,
             },
             768: {
               slidesPerView: 3,
-              spaceBetween: 40,
+              spaceBetween: 10,
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 50,
+              spaceBetween: 10,
             },
           }}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
+        className="w-full h-[300px] sm:h-[400px]"
+        autoHeight
     >
         {images.map((image) => {
             return(
@@ -45,7 +47,7 @@ export default function Carousel() {
                         alt="Picture of Oceans of Terra NFT"
                         width={400}
                         height={400}
-                        className="object-cover"
+                        className="object-cover h-[100px] w-[100px] sm:h-[400px] sm:w-[400px]"
                     />
                 </SwiperSlide>
             )
