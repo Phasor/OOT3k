@@ -20,8 +20,8 @@ export default function Home() {
         <Navbar/>
         <Hero/>
         <Banner/>
-        <Intro/>
         <Lore/>
+        <Intro/>
         <Collection/>
         <FixedImage/>
         <FAQ/>

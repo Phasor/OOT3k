@@ -7,7 +7,7 @@ export default function Intro() {
         {/* Section 1 */}
         <div id="intro" className='sm:max-w-[90rem] flex flex-col sm:flex-row relative'>
             <div className='flex flex-col items-center justify-center lg:items-start sm:w-[60%]'>
-                <h2 className='text-gray-800 px-2 font-raleway font-extrabold text-3xl mt-4 sm:text-6xl lg:w-[80%] 2xl:w-[90%] text-center lg:text-left pb-8'>JUMP INTO THE OCEAN</h2>
+                <h2 className='text-gray-800 px-2 font-raleway font-extrabold text-3xl mt-4 sm:text-6xl lg:w-[80%] 2xl:w-[90%] text-center lg:text-left pb-8'>OCEANS OF TERRA</h2>
                 <p className="text-gray-800 px-2 font-raleway font-normal text-2xl md:text-3xl my-4 text-center lg:text-start md:w-[90%] lg:w-[80%] xxl:w-[40%] items-center justify-center lg:justify-start lg:items-start -mt-4">Oceans of Terra is an underwater adventure game full of magic and wonder. Defend the underwater World against the evil Mermaid Princess, Delila and you shall have life long glory!</p>
             </div>
 
