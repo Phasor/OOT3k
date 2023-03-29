@@ -332,6 +332,13 @@
             }
           }
 
-
+          /* Nav buttons */
+      .animated-button div {
+        background: rgb(25, 25, 25);
+        border-radius: 20px;
+        width: 120px;
+        height: 50px;
+      }
+          
   }
 

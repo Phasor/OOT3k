@@ -35,7 +35,7 @@ export default function Hero() {
         ) : 
         
         ( 
-          <div className="w-full h-[110vh] flex justify-center items-center md:mt-[70px]">
+          <div className="w-full h-[110vh] flex justify-center items-center">
               <Image
                 src="/muCompressed2.jpg"
                 alt="Picture of the Mu Academy, underwater sunken ship scene."
