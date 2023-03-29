@@ -20,10 +20,10 @@ export default function Home() {
         <Navbar/>
         <Hero/>
         <Banner/>
+        <FixedImage/>
         <Lore/>
         <Intro/>
         <Collection/>
-        <FixedImage/>
         <FAQ/>
         <Team/>
         <Footer/>
