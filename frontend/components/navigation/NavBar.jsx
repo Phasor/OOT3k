@@ -55,7 +55,7 @@ function NavBar() {
   }
 
   return (
-    <div className="w-full z-50">
+    <div id="nav" className="w-full z-50">
       <nav className='w-full sm:fixed top-0 left-0 right-0 z-10 bg-white opacity-95 sm:bg-transparent'>
         <div className="w-full sm:flex sm:justify-between px-4 mx-auto sm:items-center sm:px-8">
 
@@ -63,9 +63,9 @@ function NavBar() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-1 md:block">
               {/* LOGO */}
-              <Link href="/">
+              <ScrollLink href="#nav">
 					    < Image height={60} width={60} className="p-1" src="/logocompressed.png"/>
- 				      </Link>
+ 				      </ScrollLink>
               
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
