@@ -43,7 +43,7 @@ export default function Banner() {
         }
         
         <p className='text-gray-900 font-poppins font-medium text-center text-2xl md:text-4xl mt-2 mb-[6rem] md:mb-[20rem] p-4 filter drop-shadow-md opacity-100 z-40'>OUR HEROS SET OUT TO SAVE THE SEA FROM DESTRUCTION...</p>
-        <Image
+        {/* <Image
             src="/fireworks.png"
             alt="Picture of explosion"
             width={500}
@@ -51,9 +51,21 @@ export default function Banner() {
             className="absolute opacity-10 top-[3rem] md:top-[4rem] sm:h-[800px] sm:w-[800px] z-10"
             loading='lazy'
             fallback='/fireworks.png'
+        /> */}
+        <Image
+            src="/fireworks.png"
+            alt="Picture of explosion"
+            width={500}
+            height={500}
+            className="absolute opacity-10 top-[-280px] left-[-150px] h-[600px] w-[600px] sm:h-[800px] sm:w-[800px] z-10"
+            loading='lazy'
+            fallback='/fireworks.png'
         />
-        <div
+        {/* <div
           className='absolute top-[12rem] sm:top-[20rem] p-[3rem] sm:p-[8rem] bg-[#F9FE67] border rounded-full filter blur-xl sm:blur-2xl z-20'
+        /> */}
+        <div
+          className='absolute top-[-20px] left-[-20px] p-[3rem] sm:p-[8rem] bg-[#F9FE67] border rounded-full filter blur-xl sm:blur-2xl z-20'
         />
     </div>
   )
