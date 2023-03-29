@@ -31,9 +31,18 @@ export default function Hero() {
     <>
       { mobile ? 
         (
-            <div className="w-full h-[100vh] flex justify-center items-center relative bg-[url('/muacademymobile2.jpg')] bg-center bg-cover bg-no-repeat" priority></div>
+            <>
+              <div className="w-full h-[100vh] flex justify-center items-center relative bg-[url('/muacademymobiletest.jpg')] bg-center bg-cover bg-no-repeat" priority></div>
+              <Image 
+                src="/OOTLogo.png"
+                alt="Oceans of Terra Logo"
+                height={100}
+                width={100}
+                priority={true}
+                className="absolute top-[150px] right-[30px] object object-cover h-[100px] w-[100px]"
+              />
+            </>
         ) : 
-        
         ( 
           <>
             <div className="w-full h-[110vh] flex justify-center items-center">
