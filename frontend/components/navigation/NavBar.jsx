@@ -56,7 +56,7 @@ function NavBar() {
 
   return (
     <div className="w-full z-50">
-      <nav className={`w-full sm:fixed top-0 left-0 right-0 z-10 ${ showMobileMenu ? 'bg-white opacity-95' : 'bg-transparent'}`}>
+      <nav className='w-full sm:fixed top-0 left-0 right-0 z-10 bg-white opacity-95 sm:bg-transparent'>
         <div className="w-full sm:flex sm:justify-between px-4 mx-auto sm:items-center sm:px-8">
 
           {/* Icons */}
@@ -147,7 +147,7 @@ function NavBar() {
                 </li>
 
                 <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400">
-                  <Link className="flex justify-center items-center" href="https://twitter.com/OceansOfTerra" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <a className="flex justify-center items-center" href="https://twitter.com/OceansOfTerra" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
                         <svg class="text-gray-900 fill-current h-16 w-16" viewBox="0 0 60 60">
@@ -155,11 +155,11 @@ function NavBar() {
                         </svg>
                       </motion.div>
                     </div>
-                  </Link>
+                  </a>
                 </li>
 
                 <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400 py-5">
-                  <Link className="flex justify-center items-center" href="https://discord.gg/CBZNXrRVjH" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <a className="flex justify-center items-center" href="https://discord.gg/CBZNXrRVjH" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
                         <svg class="text-gray-900 fill-current h-8 w-8" viewBox="0 0 90 90">
@@ -167,7 +167,7 @@ function NavBar() {
                         </svg>
                       </motion.div>
                     </div>
-                  </Link>
+                  </a>
                 </li>
 
               </ul>
