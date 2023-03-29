@@ -35,19 +35,31 @@ export default function Hero() {
         ) : 
         
         ( 
-          <div className="w-full h-[110vh] flex justify-center items-center">
-              <Image
-                src="/muCompressed2.jpg"
-                alt="Picture of the Mu Academy, underwater sunken ship scene."
-                height={1500}
-                width={1500}
-                quality={90}
+          <>
+            <div className="w-full h-[110vh] flex justify-center items-center">
+                <Image
+                  src="/muCompressed2.jpg"
+                  alt="Picture of the Mu Academy, underwater sunken ship scene."
+                  height={1500}
+                  width={1500}
+                  quality={90}
+                  priority={true}
+                  placeholder="blur"
+                  blurDataURL="/muLoading.jpeg"
+                  className="object-cover h-full w-full"
+                />
+              </div>
+
+              <Image 
+                src="/OOTLogo.png"
+                alt="Oceans of Terra Logo"
+                height={350}
+                width={350}
                 priority={true}
-                placeholder="blur"
-                blurDataURL="/muLoading.jpeg"
-                className="object-cover h-full w-full"
+                className="absolute top-[220px] right-[270px] object object-cover h-[350px] w-[350px]"
               />
-            </div>
+
+          </>
         )
       }
     </>
