@@ -57,7 +57,7 @@ export default function Banner() {
             alt="Picture of explosion"
             width={500}
             height={500}
-            className="absolute opacity-10 top-[-280px] left-[-150px] h-[600px] w-[600px] sm:h-[800px] sm:w-[800px] z-10"
+            className="absolute opacity-10 top-[-280px] sm:top-[4rem] left-[-150px] sm:left-[50%] sm:transform sm:-translate-x-1/2 h-[600px] w-[600px] sm:h-[800px] sm:w-[800px] z-10"
             loading='lazy'
             fallback='/fireworks.png'
         />
@@ -65,7 +65,7 @@ export default function Banner() {
           className='absolute top-[12rem] sm:top-[20rem] p-[3rem] sm:p-[8rem] bg-[#F9FE67] border rounded-full filter blur-xl sm:blur-2xl z-20'
         /> */}
         <div
-          className='absolute top-[-20px] left-[-20px] p-[3rem] sm:p-[8rem] bg-[#F9FE67] border rounded-full filter blur-xl sm:blur-2xl z-20'
+          className='absolute top-[-20px] sm:top-[20rem] left-[-20px] sm:left-[50%] sm:transform sm:-translate-x-1/2 p-[3rem] sm:p-[8rem] bg-[#F9FE67] border rounded-full filter blur-xl sm:blur-2xl z-20'
         />
     </div>
   )
