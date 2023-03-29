@@ -32,6 +32,11 @@ function NavBar() {
         menu.classList.remove('hidden');
         menu.classList.add('block');
         menu.classList.add('md:p-0');
+        // menu.classList.add("bg-no-repeat");
+        // menu.classList.add("bg-[url('/narwhale.png')]");
+        // menu.classList.add("bg-cover");
+        // menu.classList.add("bg-top");
+        // menu.classList.add("bg-opacity-5");
       }
     } else {
       // remove slide-in and slide-out classes on larger screens
