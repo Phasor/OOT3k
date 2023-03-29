@@ -13,12 +13,14 @@ module.exports = {
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
         singleDay: ["Single Day", "cursive"],
-        poppins: ["Poppins", "sans-serif"]
+        poppins: ["Poppins", "sans-serif"],
+        lekton: ["Lekton", "sans-serif"],
       },
       colors: {
         'nav-link': 'white',
         'main-bg': '#C9E5EB',
         'bg-blue': '#27B6E5',
+        'bg-dg': '#F8F9FA',
       }
     },
   },
