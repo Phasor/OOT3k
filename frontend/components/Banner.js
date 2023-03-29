@@ -38,8 +38,8 @@ export default function Banner() {
           ) 
           : (
             <div className='max-w-[60rem] min-h-screen flex flex-col justify-center items-center'>
-              <p className='font-lekton text-5xl font-bold text-center'>Earth’s beauty is truly unbelievable,</p>
-              <p className='font-lekton text-3xl font-normal text-center mt-4'>and Aliens know this- they’ve all been watching for a long while, looking for the perfect place on Earth to search for its deepest wonders. Surely a civilization this splendid would hold these mysteries…</p>
+              <p className='text-gray-800 font-lekton text-5xl font-bold text-center'>Earth’s beauty is truly unbelievable,</p>
+              <p className='text-gray-800 font-lekton text-3xl font-normal text-center mt-4'>and Aliens know this- they’ve all been watching for a long while, looking for the perfect place on Earth to search for its deepest wonders. Surely a civilization this splendid would hold these mysteries…</p>
             </div>
             )
           }

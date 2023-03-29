@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-};
-
-module.exports = {
-	env: {
+	images: {
+	  domains: ['localhost'], // Add any external domains you want to load images from as well
 	},
-};
-
-module.exports = nextConfig;
+  };
+  
+  module.exports = {
+	env: {},
+	...nextConfig,
+  };
+  

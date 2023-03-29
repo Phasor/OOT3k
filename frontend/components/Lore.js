@@ -29,7 +29,7 @@ export default function Lore() {
   }, []);
 
   return (
-    <section id="lore" className="w-full min-h-screen relative flex justify-center items-center bg-bg-blue">
+    <section id="lore" className="w-full min-h-screen relative flex justify-center items-center bg-gray-800">
         
         <div className='max-w-6xl flex flex-col justify-center items-center my-6 md:my-11'>
           <div className="p-2 my-2 md:my-11 hide-left sm:mr-[4rem] md:mr-[20rem]">
