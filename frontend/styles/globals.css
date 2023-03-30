@@ -340,6 +340,14 @@
         width: 120px;
         height: 50px;
       }
+
+      .stickynav header {
+        transition: all 300ms ease-in-out;
+      }
+
+      .scroll-down header {
+        transform: translate3d(0, -100%, 0); /* hide nav on scroll down */
+      }
           
   }
 
