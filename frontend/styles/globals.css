@@ -341,12 +341,22 @@
         height: 50px;
       }
 
-      .stickynav header {
+      .stickynav header, .stickynav nav {
         transition: all 300ms ease-in-out;
       }
 
-      .scroll-down header {
+      .scroll-down header, .scroll-down nav {
         transform: translate3d(0, -100%, 0); /* hide nav on scroll down */
+      }
+
+      .scroll-up header, .scroll-up nav {
+        background-color: white;
+        opacity: 0.95;
+      }
+
+      .nav-transition {
+        transition: all 2s ease-in-out;
+    
       }
           
   }

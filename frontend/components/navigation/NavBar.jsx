@@ -6,6 +6,8 @@ import { motion } from "framer-motion"
 
 function NavBar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [initialLoad, setInitialLoad] = useState(true);
+
 
   useEffect(() => {
     const menu = document.getElementById('menu');
@@ -31,11 +33,6 @@ function NavBar() {
         menu.classList.remove('hidden');
         menu.classList.add('block');
         menu.classList.add('md:p-0');
-        // menu.classList.add("bg-no-repeat");
-        // menu.classList.add("bg-[url('/narwhale.png')]");
-        // menu.classList.add("bg-cover");
-        // menu.classList.add("bg-top");
-        // menu.classList.add("bg-opacity-5");
       }
     } else {
       // remove slide-in and slide-out classes on larger screens
@@ -49,14 +46,49 @@ function NavBar() {
   }, [showMobileMenu]);
   
 
-
   function handleMenuClick() {
-    setShowMobileMenu(prev => !prev);
+    // add white background to mobile menu
+    if (typeof window !== 'undefined') {
+      const body = document.querySelector('body');
+      body.classList.add('scroll-up'); // adds bg-white
+      setShowMobileMenu(prev => !prev);
+    }
   }
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const body = document.querySelector('body');
+      let lastScroll = 0;
+  
+      const nav = document.getElementById('nav');      
+  
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        console.log(`currentScroll: ${currentScroll}`)
+  
+        if (currentScroll <= 0) { // at the top of the screen
+          body.classList.remove('scroll-up');
+        }
+  
+        if (currentScroll > lastScroll && !body.classList.contains('scroll-down')) { // scrolling down
+          body.classList.remove('scroll-up');
+          body.classList.add('scroll-down');
+        }
+  
+        if (currentScroll < lastScroll && body.classList.contains('scroll-down')) { // scrolling up 
+          body.classList.remove('scroll-down');
+          body.classList.add('scroll-up');
+        }
+  
+        lastScroll = currentScroll;
+      });
+    }
+  }, [initialLoad]);
+
+
   return (
-    <div id="nav" className="w-full z-50">
-      <nav className='w-full sm:fixed top-0 left-0 right-0 z-10 bg-white opacity-95 sm:bg-transparent'>
+    <div id="nav" className="stickynav w-full z-50">
+      <nav className={`w-full fixed top-0 left-0 right-0 z-50 bg-transparent sm:bg-transparent nav-transition`}>
         <div className="w-full sm:flex sm:justify-between px-4 mx-auto sm:items-center sm:px-8">
 
           {/* Icons */}
