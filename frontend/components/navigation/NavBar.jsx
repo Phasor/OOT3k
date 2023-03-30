@@ -128,7 +128,7 @@ function NavBar() {
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center sm:space-x-10">
 
-                <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400  py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400  py-5">
                   <ScrollLink href="#lore" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="sm:animated-button">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className=" flex justify-center items-center cursor-pointer">
@@ -138,7 +138,7 @@ function NavBar() {
                   </ScrollLink>
                 </li>
 
-                <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400 py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <ScrollLink href="#collection" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="sm:animated-button">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
@@ -148,7 +148,7 @@ function NavBar() {
                   </ScrollLink>
                 </li>
 
-                <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400 py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <Link className="" href="/mint" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="sm:animated-button">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
@@ -158,7 +158,7 @@ function NavBar() {
                   </Link>
                 </li>
 
-                <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400 py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <ScrollLink href="#FAQ" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="sm:animated-button">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
@@ -168,7 +168,7 @@ function NavBar() {
                   </ScrollLink>
                 </li>
 
-                <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400 py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <ScrollLink href="#team" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="sm:animated-button">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
@@ -178,7 +178,7 @@ function NavBar() {
                   </ScrollLink>
                 </li>
 
-                <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400">
                   <a className="flex justify-center items-center" href="https://twitter.com/OceansOfTerra" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
@@ -190,7 +190,7 @@ function NavBar() {
                   </a>
                 </li>
 
-                <li className="border-b-2 md:border-b-0 hover:bg-[#4b1fcd] sm:hover:bg-transparent border-blue-400 py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <a className="flex justify-center items-center" href="https://discord.gg/CBZNXrRVjH" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">

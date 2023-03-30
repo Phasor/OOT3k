@@ -21,6 +21,7 @@ module.exports = {
         'main-bg': '#C9E5EB',
         'bg-blue': '#27B6E5',
         'bg-dg': '#F8F9FA',
+        'mobile-clicked': '#BFDBFE',
       }
     },
   },
