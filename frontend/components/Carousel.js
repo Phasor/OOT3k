@@ -4,19 +4,20 @@ import { useKeenSlider } from 'keen-slider/react' // import from 'keen-slider/re
 
 
 const images = [
-  { img: '/narwhal1.jpeg' },
-  { img: '/narwhal2.jpeg' },
-  { img: '/narwhal3.jpeg' },
-  { img: '/narwhal1.jpeg' },
-  { img: '/narwhal2.jpeg' },
-  { img: '/narwhal3.jpeg' },
-  { img: '/narwhal1.jpeg' },
-  { img: '/narwhal2.jpeg' },
-  { img: '/narwhal3.jpeg' },
-  { img: '/narwhal1.jpeg' },
-  { img: '/narwhal2.jpeg' },
-  { img: '/narwhal3.jpeg' },
+  { img: '/turtlecard1.jpeg'},
+  { img: '/mermaidcard2.jpeg'},
+  { img: '/narwhalecard1.jpeg'},
+  { img: '/turtlecard1.jpeg'},
+  { img: '/mermaidcard2.jpeg'},
+  { img: '/narwhalecard1.jpeg'},
+  { img: '/turtlecard1.jpeg'},
+  { img: '/mermaidcard2.jpeg'},
+  { img: '/narwhalecard1.jpeg'},
+  { img: '/turtlecard1.jpeg'},
+  { img: '/mermaidcard2.jpeg'},
+  { img: '/narwhalecard1.jpeg'}
 ];
+
 
 export default function Carousel({ reversed }) {
   const [animationDuration, setAnimationDuration] = useState(60000);
