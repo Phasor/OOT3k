@@ -17,7 +17,7 @@ export default function Team() {
       <section id="team" className='w-full bg-gray-100 flex justify-center items-center pb-10'>
           <div className="sm:max-w-[90rem] flex flex-col justify-center items-center">
             <h2 className='mt-10 mb-8 text-3xl sm:text-5xl p-2 font-lekton font-bold text-gray-800 text-center'>Oceans of Talent</h2>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-2 sm:gap-x-10 gap-y-6 sm:gap-y-16 '>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-1 sm:gap-x-10 gap-y-6 sm:gap-y-16 '>
               {Team.map((member, index) => {
                 return (
                   <Card key={index} profile={member} />

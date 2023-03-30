@@ -13,11 +13,11 @@ export default function Footer() {
                     height={150}
                     width={150}
                     loading="lazy"
-                    className="object-cover h-[150px] w-[150px] p-2"
+                    className="object-cover h-[100px] sm:h-[150px] w-[100px] sm:w-[150px] p-2"
                 />
                 {/* Socials */}
                 <div className='flex flex-col items-center justify-center ml-[5rem]'>
-                    <p className='font-lekton text-gray-800 text-3xl font-bold mx-auto'>Follow Us</p>
+                    <p className='font-lekton text-gray-800 text-xl sm:text-3xl font-bold mx-auto'>Follow Us</p>
                     <div className='flex justify-center items-center'>
                         <Link className=" hover:scale-105 mr-2" href="https://twitter.com/OceansOfTerra" target="_blank" >
                             <svg class="text-gray-800 fill-current h-12 w-12" viewBox="0 0 60 60">

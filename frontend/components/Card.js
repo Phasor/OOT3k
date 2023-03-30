@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Card({profile}) {
   return (
-    <div className='flex flex-col items-center p-2 max-w-[200px]'>
+    <div className='flex flex-col items-center p-4 max-w-[200px]'>
         <div className="">
             <Image
                 src={profile.image}
