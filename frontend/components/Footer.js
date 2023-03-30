@@ -6,18 +6,18 @@ export default function Footer() {
   return (
     <div className='w-full bg-gray-100'>
         <div className='mx-auto min-h-[15rem] max-w-[90rem] flex justify-center items-center overflow-x-hidden bg-gray-100 border-t border-gray-200'>
-            <div className='w-full flex flex-row justify-between items-center'>
+            <div className='w-full flex flex-col sm:flex-row justify-between items-center'>
                 <Image
-                    src="/OOTLogo.png"
+                    src="/OOTLogo2.png"
                     alt="Oceans of Terra Logo"
                     height={150}
                     width={150}
                     loading="lazy"
-                    className="object-cover h-[100px] sm:h-[150px] w-[100px] sm:w-[150px] p-2"
+                    className="object-cover h-[100px] w-[150px]  sm:h-[150px] sm:w-[250px] p-4"
                 />
                 {/* Socials */}
-                <div className='flex flex-col items-center justify-center ml-[5rem]'>
-                    <p className='font-lekton text-gray-800 text-xl sm:text-3xl font-bold mx-auto'>Follow Us</p>
+                <div className='flex flex-col items-center justify-center '>
+                    <p className='font-lekton text-gray-800 text-xl sm:text-2xl font-bold mx-auto'>Follow Us</p>
                     <div className='flex justify-center items-center'>
                         <Link className=" hover:scale-105 mr-2" href="https://twitter.com/OceansOfTerra" target="_blank" >
                             <svg class="text-gray-800 fill-current h-12 w-12" viewBox="0 0 60 60">
@@ -33,8 +33,8 @@ export default function Footer() {
                 </div>
 
                 <div className='flex flex-col justify-center p-2'>
-                    <p className='font-lekton font-semibold text-right text-gray-800'>Copyright Oceans of Terra 2023</p>
-                    <p className='font-lekton font-semibold text-right text-gray-800 underline cursor-pointer'>Terms and Conditions</p>
+                    <p className='font-lekton text-sm sm:text-md sm:font-semibold text-center sm:text-right text-gray-800'>Copyright Oceans of Terra 2023</p>
+                    <p className='font-lekton text-sm sm:text-md sm:font-semibold text-center sm:text-right text-gray-800 underline cursor-pointer'>Terms and Conditions</p>
                 </div>
 
             </div>

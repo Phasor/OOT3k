@@ -65,7 +65,7 @@ export default function Hero() {
               height={350}
               width={350}
               priority={true}
-              className="absolute top-[220px] right-[270px] object object-cover h-[350px] w-[350px]"
+              className="absolute top-[220px] right-[210px] object object-cover h-[350px] w-[450px]"
             />
 
           </>
