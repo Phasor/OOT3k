@@ -39,7 +39,7 @@ export default function Hero() {
                 height={100}
                 width={100}
                 priority={true}
-                className="absolute top-[150px] right-[20px] object object-cover h-[100px] w-[150px]"
+                className="absolute top-[100px] right-[20px] object object-cover h-[100px] w-[150px]"
               />
             </>
         ) : 
