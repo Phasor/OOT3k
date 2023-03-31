@@ -1,18 +1,61 @@
 import React from 'react'
-import NavBar from '../components/navigation/NavBar'
 import Footer from '../components/Footer'
+import Image from 'next/image'
+import { motion } from "framer-motion"
+import Link from 'next/link'
 
 export default function license() {
   return (
-    <div className='w-screen min-h-screen bg-gray-100 flex flex-row justify-center items-center'>
-        <div>
-            <NavBar/>
-            <div className='p-2 sm:p-[2rem] my-[10rem] sm:max-w-[70vw] bg-gray-100 flex flex-col justify-center items-center'>
-                <p className='text-center w-full font-lekton text-3xl font-bold my-4 text-gray-800'>License Agreement</p>
-                <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus labore consequatur veniam tempore, ad cum sunt saepe ipsam ullam odio veritatis, fugiat perspiciatis esse? Totam quidem atque pariatur, beatae molestiae magnam accusantium sapiente earum deleniti, laboriosam consequuntur rerum sit cumque. Distinctio officiis recusandae quo quos cum maiores pariatur sunt suscipit quis doloribus corporis nam, rerum officia impedit, tempora eligendi autem quam illo itaque minus? Quia, voluptas, architecto placeat dolore, qui mollitia asperiores sunt soluta quos officia error quis! Blanditiis sequi, aliquam ullam tempora esse amet recusandae neque at autem illum perferendis numquam soluta, aliquid sed? Nobis perspiciatis omnis commodi dicta, velit repellat quasi maiores sapiente saepe neque dolorem totam accusamus laborum cupiditate molestiae exercitationem voluptate enim! Recusandae veritatis porro deserunt! Doloribus quos esse harum atque eligendi reiciendis nulla? Architecto placeat aspernatur doloribus quis harum ipsa deserunt inventore veritatis fugit consequatur quam, necessitatibus modi mollitia, possimus officiis consectetur, eos velit. Inventore fugit, voluptate vitae modi assumenda accusantium numquam minus ab sint pariatur incidunt ratione facere veritatis autem eaque aspernatur doloremque hic optio quos omnis culpa illum officia impedit! Reiciendis perspiciatis deleniti temporibus mollitia excepturi eos aliquam, saepe odio minima! Amet, sequi in at placeat consequuntur voluptate a ut quidem! Reiciendis hic nobis eius autem laborum perspiciatis nihil totam deleniti dolore. Corrupti corporis, itaque fugit pariatur obcaecati provident doloremque. Rem excepturi fugit non quidem debitis consequatur vero architecto culpa. Fugit corrupti nisi, maiores sit amet impedit nulla mollitia, reiciendis ipsam modi dignissimos. Deserunt at nemo est deleniti illum veritatis placeat dolorum. Iure cupiditate nostrum ipsam. In adipisci iste quaerat reprehenderit quae repellendus neque, cupiditate, earum perferendis sequi doloribus, omnis quisquam obcaecati exercitationem quas aut temporibus animi explicabo expedita. Perferendis eum ratione ipsum repellat deserunt optio rerum, voluptatum dolores omnis blanditiis. Officia tempore placeat, minima labore similique, voluptatem mollitia delectus in quibusdam voluptatum temporibus! Repudiandae, cum error mollitia ut velit blanditiis quod? Eius iste eos nulla sapiente iure, doloribus perspiciatis praesentium voluptate rerum corporis fuga inventore voluptates dolorem saepe illum cum iusto. Odio hic possimus laboriosam tenetur dolor culpa modi architecto atque autem fugiat ratione fuga ducimus sint, impedit molestias nemo minima magnam in. Iste cumque necessitatibus ex? Aliquid modi, corporis doloremque soluta nisi sint facilis voluptatibus nesciunt id inventore accusantium rerum error itaque quis incidunt cum. Alias, id aliquid at consequatur quaerat nihil doloribus blanditiis. In id, voluptate, nemo accusamus voluptatum dolorum maiores iusto harum odit dignissimos optio cum quam voluptas, maxime nisi totam. Vitae ducimus necessitatibus quos ullam voluptate tenetur nesciunt magnam, suscipit earum, magni sapiente facere ex. Eveniet, mollitia maxime? Quidem molestias, facilis distinctio porro impedit corrupti commodi adipisci consectetur hic, voluptatum repudiandae esse delectus, labore fugiat consequuntur? Architecto quod veritatis necessitatibus odit incidunt.</p>
-            </div>
-            <Footer/>
+    <div className='flex flex-col w-screen min-h-screen bg-gray-100 '>
+
+        {/* Navbar */}
+        <div className='min-h-[70px] bg-white opacity-95 w-full flex justify-between items-center' >
+            <Image height={80} width={80} className="px-4 ml-5" src="/logocompressed.png"/>
+
+                <div id="menu" className="pb-0 mt-0 mr-12">
+                    <ul className="flex items-center justify-center space-x-10">
+
+                        <li className="py-5">
+                        <Link className="" href="/">
+                            <div className="animated-button ">
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
+                                <p className="text-white bg-transparent font-raleway text-lg font-bold px-3">Home</p>
+                            </motion.div>
+                            </div>
+                        </Link>
+                        </li>
+                        <li className="py-5">
+                        <Link className="" href="/mint">
+                            <div className="mint-button ">
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
+                                <p className="text-white bg-transparent font-raleway text-lg font-bold px-3">MINT</p>
+                            </motion.div>
+                            </div>
+                        </Link>
+                        </li>
+
+                    </ul>
+                </div>
         </div>
+
+        {/* License */}
+        <div className='flex flex-row justify-center items-center'>
+            <div>
+                <div className='p-4 sm:p-[2rem] my-[5rem] sm:my-[10rem] sm:max-w-[70vw] bg-gray-100 flex flex-col justify-center items-center'>
+                    <p className='text-center w-full font-lekton text-3xl font-bold my-4 text-gray-800'>License Agreement</p>
+                    <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque itaque quis iure dolorem consequuntur nisi quos, magni facilis repellat provident rerum, non asperiores quisquam facere voluptates similique repudiandae dicta soluta?</p>
+                    <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque itaque quis iure dolorem consequuntur nisi quos, magni facilis repellat provident rerum, non asperiores quisquam facere voluptates similique repudiandae dicta soluta?</p>
+                    <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque itaque quis iure dolorem consequuntur nisi quos, magni facilis repellat provident rerum, non asperiores quisquam facere voluptates similique repudiandae dicta soluta?</p>
+                    <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque itaque quis iure dolorem consequuntur nisi quos, magni facilis repellat provident rerum, non asperiores quisquam facere voluptates similique repudiandae dicta soluta?</p>
+                    <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque itaque quis iure dolorem consequuntur nisi quos, magni facilis repellat provident rerum, non asperiores quisquam facere voluptates similique repudiandae dicta soluta?</p>
+                    <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque itaque quis iure dolorem consequuntur nisi quos, magni facilis repellat provident rerum, non asperiores quisquam facere voluptates similique repudiandae dicta soluta?</p>
+                    <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque itaque quis iure dolorem consequuntur nisi quos, magni facilis repellat provident rerum, non asperiores quisquam facere voluptates similique repudiandae dicta soluta?</p>
+                    <p className='text-left w-full font-lekton text-xl text-gray-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque itaque quis iure dolorem consequuntur nisi quos, magni facilis repellat provident rerum, non asperiores quisquam facere voluptates similique repudiandae dicta soluta?</p>
+                </div>
+                <Footer/>
+            </div>
+        </div>
+
     </div>
   )
 }
