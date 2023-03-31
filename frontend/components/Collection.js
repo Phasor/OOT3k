@@ -13,7 +13,7 @@ export default function Collection() {
       <section id="collection" className='w-full min-h-screen  bg-gray-100 flex flex-col items-center justify-center text-center'>
         <div className="h-full">
             <div className="mx-auto p-1 max-w-[90vw] sm:max-w-[70rem]">
-              <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-0'>THERE IS NO EVIL WITHOUT GOOD</p>
+              <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-0'>There is No Evil Without Good</p>
               <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must now stop Empress Tytania and her team of Qworvox for the greater good of their glorious, mythical, and truly unfounded home. Empress Tytania must now lead her team into battle to reveal the Universe’s best-kept secrets. The great scavenge is on… But must it be stopped? Who’s side are YOU on?</p>
             </div>
             
@@ -24,7 +24,7 @@ export default function Collection() {
 
             <Link href="/mint">
               <motion.button whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer mx-auto">
-                <span className="bg-blue-800 text-white border-4 border-white rounded-2xl py-2 px-4 font-lekton text-3xl font-bold my-10 hover:border-4 hover:border-gray-800 hover:bg-white hover:text-gray-800">Mint a Terra</span>
+                <span className="bg-[#62810D] text-white border-2 border-green-700 shadow-lg rounded-full py-2 px-4 font-lekton text-3xl font-bold my-10 hover:border-4 hover:border-gray-800 hover:bg-white hover:text-gray-800">Mint a Terra</span>
               </motion.button>
             </Link>
 
