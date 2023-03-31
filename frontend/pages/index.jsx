@@ -9,6 +9,7 @@ import FixedImage from "../components/FixedImage";
 import Footer from "../components/Footer";
 import FAQ from "../components/FAQ"
 import Head from 'next/head'
+import Rights from "../components/Rights";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Lore/>
         <Collection/>
         <FAQ/>
+        <Rights/>
         <Team/>
         <Footer/>
       </main>
