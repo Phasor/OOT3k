@@ -150,9 +150,9 @@ function NavBar() {
 
                 <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <Link className="" href="/mint" onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                    <div className="sm:animated-button">
+                    <div className="sm:mint-button ">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
-                        <p className="text-gray-900 sm:text-nav-link bg-transparent font-raleway text-lg font-bold px-3">Mint</p>
+                        <p className="text-gray-900 sm:text-nav-link bg-transparent font-raleway text-lg font-bold px-3">MINT</p>
                       </motion.div>
                     </div>
                   </Link>
@@ -178,9 +178,10 @@ function NavBar() {
                   </ScrollLink>
                 </li>
 
-                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400">
+                {/* Twitter and Discord Buttons - do we want these here? */}
+                {/* <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400">
                   <a className="flex justify-center items-center" href="https://twitter.com/OceansOfTerra" target="_blank" onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                    <div className="">
+                    <div className="" >
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
                         <svg class="text-gray-900 fill-current h-16 w-16" viewBox="0 0 60 60">
                           <path d="M41.05 18.44a6.6 6.6 0 00-4.84-2.29c-3.66-.06-6.62 3.04-6.62 6.91 0 .55.05 1.09.17 1.6a18.68 18.68 0 01-13.66-7.55 7.33 7.33 0 00-.9 3.55 7.3 7.3 0 002.95 5.92 6.34 6.34 0 01-3-.92v.1c0 3.42 2.28 6.3 5.31 6.97a6.24 6.24 0 01-3 .1 6.74 6.74 0 006.2 4.93 12.8 12.8 0 01-9.81 2.9A17.89 17.89 0 0024 43.85c12.19 0 18.86-10.61 18.86-19.81l-.02-.9c1.3-.97 2.42-2.18 3.3-3.56-1.18.54-2.46.9-3.8 1.04a6.8 6.8 0 002.91-3.8c-1.28.77-2.7 1.33-4.2 1.62z"/>
@@ -200,7 +201,7 @@ function NavBar() {
                       </motion.div>
                     </div>
                   </a>
-                </li>
+                </li> */}
 
               </ul>
             </div>

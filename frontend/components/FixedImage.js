@@ -10,7 +10,7 @@ export default function FixedImage() {
         <p
           className="font-lekton text-xl sm:text-2xl text-white mt-2 text-center"
         >
-          Swarms of parasitic Qworvox, led by Empress Tytania, dispersed within the OoT, but it wasn't soon before long that the Narwhals, Mermaids, and Sea Turtles became alerted to the unfamiliar and immense dangers they now faced. Empress Tytania would stop at nothing to ensure what she truly desired was collected in full this time around.
+          Empress Tytania grew tired of sending in her infectious, parasitic race, the Qworvox, to scour Earth’s land. They sleuthed through dense forests, dry dunes, and redundant grasslands to come up pathetically empty-handed each time. The answer was simple: they were looking in all the wrong places.
         </p>
       </div>
     </div>
