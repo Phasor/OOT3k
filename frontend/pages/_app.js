@@ -11,6 +11,7 @@ import {
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { infuraProvider } from '@wagmi/core/providers/infura'
 import { publicProvider } from '@wagmi/core/providers/public'
+import Head from 'next/head';
 const { chains, provider } = configureChains(
 	[mainnet, goerli],
 	[

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Navbar from "../components/navigation/NavBar";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
@@ -12,6 +13,7 @@ import Head from 'next/head'
 import Rights from "../components/Rights";
 
 export default function Home() {
+
   return (
     <div className="overflow-x-hidden">
       <Head>
