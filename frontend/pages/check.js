@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
+import Link from 'next/link'
 
 export default function check() {
     const [onWhitelist, setOnWhitelist] = useState(false)
@@ -37,6 +38,17 @@ export default function check() {
 
   return (
     <div className='w-screen min-h-screen relative'>
+        <div className='w-full absolute top-0 left-0 bg-white opacity-80 p-2 flex items-center justify-start '>
+            <Link href="/">
+                <Image 
+                    src="/logocompressed.png"
+                    alt="Oceans of Terra Logo, an image of a Narwhal"
+                    height={100}
+                    width={100}
+                    className='px-6 my-2 ml-1 mt-3  object-cover '
+                />
+            </Link>
+        </div>
         <div>
             <Image
                 src="/BACKGROUND-whitelist-compressed.png"
