@@ -48,16 +48,16 @@ export default function Lore() {
           
           <div className='max-w-6xl flex flex-col justify-center items-center my-6 md:my-5'>
             <div className="p-2 my-2 md:my-5 hide-left sm:mr-[4rem] md:mr-[20rem]">
-              <Image src="/comic1compressed.png" height={400} width={400} loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
+              <Image src="/comic1new.png" height={400} width={400} loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
             </div>
             <div className="p-2 my-2 md:my-5 hide-right sm:ml-[4rem] md:ml-[20rem]">
-              <Image src="/comic2compressed.png" height={400} width={400} loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
+              <Image src="/comic2new.png" height={400} width={400} loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
             </div>
             <div className="p-2 my-2 md:my-5 hide-left sm:mr-[4rem] md:mr-[20rem]">
-              <Image src="/comic3compressed.png" height={400} width={400} loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
+              <Image src="/comic3new.png" height={400} width={400} loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
             </div>
             <div className="p-2 my-2 md:mt-5 md:mb-11 hide-right sm:ml-[4rem] md:ml-[20rem]">
-              <Image src="/comic4compressed.png" height={400} width={400}  loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
+              <Image src="/comic4new.png" height={400} width={400}  loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
             </div>
           </div>
       </section>
