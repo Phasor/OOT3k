@@ -33,9 +33,9 @@ export default async function handler(req, res) {
       await dbConnect();
       const userExists = await checkUser(cleanAddress)
       if (userExists) {
-        return res.status(200).json({ success: true, message: `Address ${address} is ON the whitelist!` });
+        return res.status(200).json({ success: true, message: `You are on the Narwhalist!` });
       } else {
-        return res.status(200).json({ success: true, message: `Address ${address} is NOT on the whitelist!` });
+        return res.status(200).json({ success: true, message: `Sorry you are not on the list :(` });
       }
     } catch (err) {
       return res.status(500).json({ success: false, message: err.message });
