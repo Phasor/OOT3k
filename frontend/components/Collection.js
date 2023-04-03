@@ -34,9 +34,9 @@ export default function Collection() {
               <Carousel reversed={true} />
             </div>
 
-            <Link href="/mint">
+            <Link href="/check">
               <motion.button whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer mx-auto">
-                <span className="bg-[#62810D] text-white border-2 border-green-700 shadow-lg rounded-full py-2 px-4 font-lekton text-3xl font-bold my-10 hover:border-4 hover:border-gray-800 hover:bg-white hover:text-gray-800">Mint a Terra</span>
+                <span className="bg-[#62810D] text-white border-4 border-green-700 shadow-lg rounded-full py-2 px-4 font-lekton text-3xl font-bold my-10 hover:border-4 hover:border-gray-800 hover:bg-white hover:text-gray-800">Check Whitelist</span>
               </motion.button>
             </Link>
 
