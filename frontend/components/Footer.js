@@ -34,7 +34,7 @@ export default function Footer() {
 
                 <div className='flex flex-col justify-center p-2'>
                     <p className='font-lekton text-sm sm:text-md sm:font-semibold text-center sm:text-right text-gray-800'>Copyright Oceans of Terra 2023</p>
-                    <p className='font-lekton text-sm sm:text-md sm:font-semibold text-center sm:text-right text-gray-800 underline cursor-pointer'>Terms and Conditions</p>
+                    <Link href="/terms"><p className='font-lekton text-sm sm:text-md sm:font-semibold text-center sm:text-right text-gray-800 underline cursor-pointer'>Terms and Conditions</p></Link>
                 </div>
 
             </div>
