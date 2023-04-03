@@ -149,10 +149,10 @@ function NavBar() {
                 </li>
 
                 <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
-                  <Link className="" href="/mint" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <Link className="" href="/check" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="sm:mint-button ">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
-                        <p className="text-gray-900 sm:text-nav-link bg-transparent font-raleway text-lg font-bold px-3">MINT</p>
+                        <p className="text-gray-900 sm:text-nav-link bg-transparent font-raleway text-lg font-bold px-3">Check Wallet</p>
                       </motion.div>
                     </div>
                   </Link>
