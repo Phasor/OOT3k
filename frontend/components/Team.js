@@ -3,11 +3,11 @@ import Card from './Card'
 export default function Team() {
 
   const Team = [
-    {name: 'HANZBLADE', role: 'Founder', image: '/hanz.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.', twitter:'https://twitter.com/cryptotoolhub'},
-    {name: 'PHAS0R', role: 'Full-Stack Dev', image: '/phasor.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/cryptotoolhub'},
-    {name: 'MIKE', role: 'Game Developer', image: '/decaff.png', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/cryptotoolhub'},
-    {name: 'FUHLEENAH', role: 'Creative Lead', image: '/faelina.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/cryptotoolhub'},
-    {name: 'ALEX', role: 'Game Design', image: '/alex.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/cryptotoolhub'}
+    {name: 'HANZBLADE', role: 'Founder', image: '/hanz.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.', twitter:'https://twitter.com/HanzBlade'},
+    {name: 'PHAS0R', role: 'Full-Stack Dev', image: '/phasor.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/phas0r'},
+    {name: 'MIKE', role: 'Game Developer', image: '/decaff.png', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/0xdecaff'},
+    {name: 'FUHLEENAH', role: 'Creative Lead', image: '/faelina.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/fuhleenah'},
+    {name: 'ALEX', role: 'Game Design', image: '/alex.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/zeroseed_gm'}
   ]
    
   return (
