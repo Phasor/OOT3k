@@ -11,10 +11,12 @@ function isMobile() {
 
 export default function Hero() {
   const [mobile, setMobile] = useState(false);
+  const [key, setKey] = useState(0); // Add a state variable for the key
 
   useEffect(() => {
     function handleResize() {
       setMobile(isMobile());
+      setKey(key => key + 1); // Update the key whenever the screen size changes
     }
 
     if (typeof window !== "undefined") {
@@ -45,6 +47,7 @@ export default function Hero() {
               <div className="w-full h-[110vh] flex justify-center items-center relative" priority>
                 <video autoPlay muted loop
                   className='object-cover h-full w-full'
+                  key={key} // Pass the key as a prop to the video element
                 >
                   <source src={'/MUacademy-mobile.webm'} type="video/webm" />
                 </video>
@@ -78,6 +81,7 @@ export default function Hero() {
                 /> */}
                 <video autoPlay muted loop
                   className='object-cover h-full w-full'
+                  key={key} // Pass the key as a prop to the video element
                 >
                   <source src={'/MUacademy-noswaying.webm'} type="video/webm" />
                 </video>
