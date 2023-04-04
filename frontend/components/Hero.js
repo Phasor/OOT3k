@@ -49,7 +49,7 @@ export default function Hero() {
                   className='object-cover h-full w-full'
                   key={key} // Pass the key as a prop to the video element
                 >
-                  <source src={'/MUacademy-mobile.webm'} type="video/webm" />
+                  <source src={'/MUacademy-mobile-noswaying.mp4'} type="video/webm" />
                 </video>
                 <Image 
                   src="/OOTLogo.png"
@@ -83,7 +83,7 @@ export default function Hero() {
                   className='object-cover h-full w-full'
                   key={key} // Pass the key as a prop to the video element
                 >
-                  <source src={'/MUacademy-noswaying.webm'} type="video/webm" />
+                  <source src={'/MUacademy-desktop-noswaying.mp4'} type="video/webm" />
                 </video>
             </div>
 
