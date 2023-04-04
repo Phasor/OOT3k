@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
+import Video from './Video';
 
 function isMobile() {
   if (typeof window !== "undefined") {
@@ -45,12 +46,16 @@ export default function Hero() {
               /> */}
 
               <div className="w-full h-[110vh] flex justify-center items-center relative" priority>
-                <video autoPlay muted playsinline preload="auto"
+                {/* <video autoPlay muted playsinline preload="auto"
                   className='object-cover h-full w-full'
                   key={key} // Pass the key as a prop to the video element
                 >
                   <source src={'/MUacademy-mobile-noswaying.mov'} type="video/quicktime" />
-                </video>
+                </video> */}
+                <Video
+                  className='object-cover h-full w-full'
+                  video={'/MUacademy-mobile-noswaying.mp4'}
+                />
                 <Image 
                   src="/OOTLogo.png"
                   alt="Oceans of Terra Logo"
