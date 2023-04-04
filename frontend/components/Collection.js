@@ -26,7 +26,8 @@ export default function Collection() {
         <div className="h-full">
             <div className="mx-auto p-1 max-w-[90vw] sm:max-w-[70rem]">
               <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-0'>There is No Evil Without Good</p>
-              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must now stop Empress Tytania and her team of Qworvox for the greater good of their glorious, mythical, and truly unfounded home. Empress Tytania must now lead her team into battle to reveal the Universe’s best-kept secrets. The great scavenge is on… But must it be stopped? Who’s side are YOU on?</p>
+              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must stop the Empress to restore peace to their home. Tytania must lead her army into battle to steal the treasures of the Oceans of Terra.</p>
+              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>An epic battle has begun. Who's side are you on?</p>
             </div>
             
             <div className="w-full max-w-[90vw] sm:max-w-6xl flex flex-col justify-center items-center mt-10 sm:mt-20 p-1 sm:p-0 ">

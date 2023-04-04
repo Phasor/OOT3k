@@ -13,7 +13,7 @@ export default function FixedImage() {
         <p
           className="font-lekton text-xl sm:text-2xl text-white mt-3 text-left"
         >
-          Empress Tytania grew tired of sending in her infectious, parasitic race, the Qworvox, to scour Earth’s land. They sleuthed through dense forests, dry dunes, and redundant grasslands to come up pathetically empty-handed each time. The answer was simple: they were looking in all the wrong places.
+          Empress Tytania grew tired of sending her army of parasites, called the Qworvox, for they repeatedly returned with nothing to satisfy her tastes. Despite the cutting of the mother trees, the transformation of grasslands to scorching deserts, and the destruction of many civilizations, they still came up empty handed. Perhaps they were looking in all the wrong places.
         </p>
       </div>
     </div>
