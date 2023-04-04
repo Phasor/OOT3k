@@ -55,15 +55,15 @@ export default function check() {
                 alt="Picture of an underwater scene"
                 height={1500}
                 width={1500}
-                className='object-cover h-full w-full'
+                className='object-cover min-h-screen w-full'
                 priority={true} 
             />
         </div>
-        <div className='absolute left-1/2 transform -translate-x-1/2 top-[40vh] flex flex-col justify-center items-center p-8 bg-gray-800 border border-gray-800 rounded-lg shadow'>
+        <div className='min-w-[80vw] sm:min-w-[0vw] absolute left-1/2 transform -translate-x-1/2 top-[30vh] sm:top-[40vh] flex flex-col justify-center items-center p-8 bg-gray-800 border border-gray-800 rounded-lg shadow'>
                 <h1 className='text-white text-2xl sm:text-3xl font-leckton font-semibold text-center mb-6'>Check Wallet</h1>
                 <ConnectButton/>
-                {loading && <p className='my-4 text-white text-2xl sm:text-3xl font-leckton'>Checking...</p>}
-                {onWhitelist && <p className='my-4 text-white text-2xl sm:text-3xl font-leckton'>{onWhitelist}</p>}
+                {loading && <p className='my-4 text-white text-xl sm:text-3xl font-leckton'>Checking...</p>}
+                {onWhitelist && <p className='my-4 text-white text-xl sm:text-3xl font-leckton text-center'>{onWhitelist}</p>}
         </div>
 
     </div>
