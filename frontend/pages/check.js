@@ -51,11 +51,12 @@ export default function check() {
         </div>
         <div>
             <Image
-                src="/BACKGROUND-whitelist-compressed.png"
+                src="/background-whitelist-compressed-smaller.png"
                 alt="Picture of an underwater scene"
                 height={1500}
                 width={1500}
                 className='object-cover h-full w-full'
+                priority={true} 
             />
         </div>
         <div className='absolute left-1/2 transform -translate-x-1/2 top-[40vh] flex flex-col justify-center items-center p-8 bg-gray-800 border border-gray-800 rounded-lg shadow'>
