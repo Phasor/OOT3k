@@ -24,10 +24,10 @@ export default function Collection() {
 
       <section id="collection" className='w-full min-h-screen  bg-gray-100 flex flex-col items-center justify-center text-center'>
         <div className="h-full">
-            <div className="mx-auto p-1 max-w-[90vw] sm:max-w-[70rem]">
+            <div className="mx-auto p-1 max-w-[90vw] sm:max-w-[75rem]">
               <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-0'>There is No Evil Without Good</p>
-              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must stop the Empress to restore peace to their home. Tytania must lead her army into battle to steal the treasures of the Oceans of Terra.</p>
-              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>An epic battle has begun. Who's side are you on?</p>
+              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must stop the Empress to restore peace to their home. An epic battle has begun. Join our Heroes to defend the Oceans of Terra.</p>
+              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Turtle, Mermaid or Nawwhal, which one are you?</p>
             </div>
             
             <div className="w-full max-w-[90vw] sm:max-w-6xl flex flex-col justify-center items-center mt-10 sm:mt-20 p-1 sm:p-0 ">
