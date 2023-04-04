@@ -45,7 +45,7 @@ export default function Hero() {
               /> */}
 
               <div className="w-full h-[110vh] flex justify-center items-center relative" priority>
-                <video autoPlay muted loop
+                <video autoPlay muted playsinline preload="auto"
                   className='object-cover h-full w-full'
                   key={key} // Pass the key as a prop to the video element
                 >
