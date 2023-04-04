@@ -32,7 +32,7 @@ export default function Hero() {
       { mobile ? 
         (
             <>
-              <div className="w-full h-[100vh] flex justify-center items-center relative bg-[url('/muacademymobiletest.jpg')] bg-center bg-cover bg-no-repeat" priority></div>
+              {/* <div className="w-full h-[100vh] flex justify-center items-center relative bg-[url('/muacademymobiletest.jpg')] bg-center bg-cover bg-no-repeat" priority></div>
               <Image 
                 src="/OOTLogo.png"
                 alt="Oceans of Terra Logo"
@@ -40,13 +40,32 @@ export default function Hero() {
                 width={100}
                 priority={true}
                 className="absolute top-[100px] right-[20px] object object-cover h-[100px] w-[150px]"
-              />
+              /> */}
+
+              <div className="w-full h-[110vh] flex justify-center items-center relative" priority>
+                <video autoPlay muted loop
+                  className='object-cover h-full w-full'
+                >
+                  <source src={'/MUacademy-mobile.webm'} type="video/webm" />
+                </video>
+                <Image 
+                  src="/OOTLogo.png"
+                  alt="Oceans of Terra Logo"
+                  height={100}
+                  width={100}
+                  priority={true}
+                  className="absolute top-[100px] right-[10px] object object-cover h-[100px] w-[150px]"
+                />
+
+              </div>
+
+
             </>
         ) : 
         ( 
           <> 
             <div className="w-full h-[110vh] flex justify-center items-center">
-                <Image
+                {/* <Image
                   src="/muCompressed2.jpg"
                   alt="Picture of the Mu Academy, underwater sunken ship scene."
                   height={1500}
@@ -56,7 +75,12 @@ export default function Hero() {
                   placeholder="blur"
                   blurDataURL="/muLoading.jpeg"
                   className="object-cover h-full w-full"
-                />
+                /> */}
+                <video autoPlay muted loop
+                  className='object-cover h-full w-full'
+                >
+                  <source src={'/MUacademy-noswaying.webm'} type="video/webm" />
+                </video>
             </div>
 
             <Image 
