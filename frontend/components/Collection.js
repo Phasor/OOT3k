@@ -25,7 +25,7 @@ export default function Collection() {
       <section id="collection" className='w-full min-h-screen  bg-gray-100 flex flex-col items-center justify-center text-center'>
         <div className="h-full">
             <div className="mx-auto p-1 max-w-[90vw] sm:max-w-[75rem]">
-              <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-0'>There is No Evil Without Good</p>
+              <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-[10rem] '>There is No Evil Without Good</p>
               <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must stop the Empress to restore peace to their home. An epic battle has begun. Join our Heroes to defend the Oceans of Terra.</p>
               <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Turtle, Mermaid or Nawwhal, which one are you?</p>
             </div>
@@ -36,7 +36,7 @@ export default function Collection() {
             </div>
 
             <Link href="/check">
-              <motion.button whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer mx-auto">
+              <motion.button whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer mx-auto sm:my-10">
                 <span className="bg-[#62810D] text-white border-4 border-green-700 shadow-lg rounded-full py-2 px-4 font-lekton text-3xl font-bold my-10 hover:border-4 hover:border-gray-800 hover:bg-white hover:text-gray-800">Check Whitelist</span>
               </motion.button>
             </Link>

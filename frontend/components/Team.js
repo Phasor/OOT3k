@@ -4,7 +4,7 @@ export default function Team() {
 
   const Team = [
     {name: 'HANZBLADE', role: 'Founder', image: '/hanz.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.', twitter:'https://twitter.com/HanzBlade'},
-    {name: 'PHAS0R', role: 'Full-Stack Dev', image: '/phasor.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/phas0r'},
+    {name: 'PHAS0R', role: 'Full-Stack Dev', image: '/phasor.jpg', description: 'Has worked for Barclays, RBS and other large investment funds. Avid gamer (Runescape, Counterstrike, Quake2). GATech CS and Oxford University.',twitter:'https://twitter.com/phas0r'},
     {name: 'MIKE', role: 'Game Developer', image: '/decaff.png', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/0xdecaff'},
     {name: 'FUHLEENAH', role: 'Creative Lead', image: '/faelina.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/fuhleenah'},
     {name: 'ALEX', role: 'Game Design', image: '/alex.jpg', description: 'Cool dude big gun. Cool dude, big gun. Cool dude big gun. Cool dude, big gun.Cool dude big gun. Cool dude, big gun.',twitter:'https://twitter.com/zeroseed_gm'}

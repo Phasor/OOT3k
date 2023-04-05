@@ -25,7 +25,7 @@ export default function Card({profile}) {
                     </Link>
                 </div>
             </div>
-            <p className='font-raleway font-semibold text-xl text-gray-100'>{profile.role}</p>
+            <p className='font-raleway font-bold text-md text-gray-800 my-2'>{profile.role}</p>
             <p className='font-raleway text-gray-800 text-l wrap '>{profile.description}</p>
         </div>
     </div>

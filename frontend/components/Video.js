@@ -25,7 +25,7 @@ export default function Video(props) {
                 src={props.video} 
                 type="video/mp4"
                 onPlaying={() => {
-                    console.log("finnsihed loading") 
+                    // console.log("finished loading") 
                     setLoading(false)
                 }}
             /> 
