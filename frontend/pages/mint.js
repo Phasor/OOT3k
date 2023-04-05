@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import ConnectButtonCustom from '../components/ConnectButtonCustom'
-import { goerli } from 'wagmi/chains'
+import { goerli, mainnet } from 'wagmi/chains'
 import lottie from 'lottie-web';
 import {
   useAccount,
   useContractRead,
   useContractWrite,
   usePrepareContractWrite,
-  useWaitForTransaction,
+  useWaitForTransaction, 
+  useNetwork, 
 } from 'wagmi';
 import { abi } from '../ABI/contract-abi'  
 import Link from 'next/link'
@@ -26,7 +27,7 @@ export default function Mint() {
   const [mintAmount, setMintAmount] = useState(1)
   const [error, setError] = useState(null)
   const { isConnected } = useAccount();
-  console.log(`isConnected: ${isConnected}`)
+  const { chain } = useNetwork()
   const [totalMinted, setTotalMinted] = useState(0);
   const animationContainerRef = useRef(null);
   const animationLoadingContainerRef = useRef(null);
@@ -34,15 +35,31 @@ export default function Mint() {
   const [image, setImage] = useState(null);
   const [audio, setAudio] = useState(null);
   const [endAudio, setEndAudio] = useState(null);
+  const [correctNetwork, setCorrectNetwork] = useState(true);
 
   useEffect(() => setMounted(true), []);
+  
+  /* ***** SET NETWORK HERE***** */
+  const NETWORK = 'mainnet' // 'mainnet' or 'goerli'
+  
+  // Network configs
+  const { config: contractWriteConfig } = NETWORK === 'mainnet' ? 
+    // Goerli config
+    usePrepareContractWrite({
+      ...contractConfig,
+      functionName: 'mint',
+      args: [mintAmount],
+      chainId: mainnet.id,
+    })
+    :
+    // Mainnet config
+    usePrepareContractWrite({
+      ...contractConfig,
+      functionName: 'mint',
+      args: [mintAmount],
+      chainId: goerli.id,
+    });
 
-  const { config: contractWriteConfig } = usePrepareContractWrite({
-    ...contractConfig,
-    functionName: 'mint',
-    args: [mintAmount],
-    chainId: goerli.id,
-  });
 
   const {
     data: mintData,
@@ -104,18 +121,6 @@ export default function Mint() {
       setAnimation(anim);
     }
   }, [txSuccess]);
-
-  //   useEffect(() => {
-  //   if (isMintStarted) {
-  //     const anim = lottie.loadAnimation({
-  //       container: animationLoadingContainerRef.current,
-  //       renderer: 'svg',
-  //       loop: true,
-  //       autoplay: true,
-  //       animationData: require('../public/loading.json'),
-  //     });
-  //   }
-  //  }, [isMintStarted]);
 
   useEffect(() => {
     if (isMintStarted) {
@@ -217,6 +222,31 @@ export default function Mint() {
   }
 
 
+
+  useEffect(() => {
+    if (chain) {
+      if (NETWORK === 'goerli') {
+        const uppcaseNetwork = NETWORK.charAt(0).toUpperCase() + NETWORK.slice(1);
+        if (chain.name && chain.name !== uppcaseNetwork) {
+          setError(`Please connect to the ${uppcaseNetwork} network`);
+          setCorrectNetwork(false);
+        } else {
+          setCorrectNetwork(true);
+          setError('');
+        }
+      } else {
+        if (chain.name && chain.name !== 'Ethereum') {
+          setError('Please connect to Ethereum mainnet');
+          setCorrectNetwork(false);
+        } else {
+          setCorrectNetwork(true);
+          setError('');
+        }
+      }
+    }
+  }, [chain]);
+
+
   return (
     <div className='w-screen h-screen'>
       <Head>
@@ -239,25 +269,6 @@ export default function Mint() {
                     </ul>
                 </div>
         </div>        
-        
-
-
-
-
-{/*    
-        <div className='mx-6 mt-2 w-full h-20 border-b border-gray-600 flex justify-between items-center'>
-          
-            <div className='flex flex-col mb-2 ml-8 justify-center items-center cursor-pointer hover:scale-105'>
-              <Link href="/"><p className='font-leckton text-3xl'>Home</p></Link>
-
-            </div>
-          
- 
-          <div className='relative mt-2 mr-8 h-12 cursor-pointer hover:scale-105'>
-            <ConnectButtonCustom/>
-          </div>
-        </div> */}
-
       </div>
 
 
@@ -272,8 +283,6 @@ export default function Mint() {
                 className="border-2 border-gray-500 rounded-sm"
                 alt='narwhale picture'
             />
-            
-
 
           { isConnected ? ( 
             <div className='flex flex-col'>
@@ -296,13 +305,14 @@ export default function Mint() {
                     {mounted && !isMinted && (
                       <button
                         id="start-animation"
-                        disabled={!mint || isMintLoading || isMintStarted}
-                        className="min-w-[350px] button font-lekton text-2xl text-center text-white py-1 px-3"
+                        disabled={!mint || isMintLoading || isMintStarted }
+                        className="min-w-[350px] button font-lekton text-2xl text-center text-white py-1 px-3 cursor-pointer"
                         data-mint-loading={isMintLoading}
                         data-mint-started={isMintStarted}
                         onClick={() => {
                           console.log("Minting")
-                          mint?.()}
+                          mint?.()
+                        }
                         }
                       >
                         {isMintLoading && 'Approve in Wallet'}
@@ -314,7 +324,10 @@ export default function Mint() {
               </div>
             </div>
           ) : (
-            <p className="font-lekton text-2xl text-center mt-8" >Connect Your Wallet!</p>
+            <>
+             <p className="font-lekton text-2xl text-center mt-8" >Please Connect Your Wallet</p>
+              <p className="font-lekton text-2xl text-center mt-1" >to the {NETWORK=='goerli' ? 'Goerli Network' : 'Ethereum Mainnet'}</p>
+            </>
             )
           }
         </div>
@@ -334,7 +347,7 @@ export default function Mint() {
                           {image && (
                             <NFTCard url={image} className="z-10"/>
                           )}
-                        <h1 className=' font-lekton text-5xl text-center bg-transparent mt-5'>Success! Oceans of Terra Time!</h1>
+                        <h1 className=' font-lekton text-4xl font-bold text-center bg-transparent mt-5'>Success!</h1>
                         { mintData.hash && (
                           <a href={`https://goerli.etherscan.io/tx/${mintData.hash}`} className='font-lekton text-xl' target="_blank">
                             <p className='font-lekton text-md text-blue-600 underline text-center bg-transparent cursor-pointer'>View on Etherscan</p>

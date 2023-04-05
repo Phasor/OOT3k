@@ -1,6 +1,5 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Image from 'next/image';
-import { motion } from "framer-motion"
 
 export default function ConnectButtonCustom() {
   return (
