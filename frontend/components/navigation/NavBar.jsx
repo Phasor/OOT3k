@@ -64,7 +64,7 @@ function NavBar() {
   
       window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        console.log(`currentScroll: ${currentScroll}`)
+        // console.log(`currentScroll: ${currentScroll}`)
   
         if (currentScroll <= 0) { // at the top of the screen
           body.classList.remove('scroll-up');

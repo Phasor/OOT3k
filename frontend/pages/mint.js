@@ -233,6 +233,7 @@ export default function Mint() {
                 height={80}
                 width={80}
                 className="object-cover"
+                alt='waves'
               />
             </div>
           
@@ -261,6 +262,7 @@ export default function Mint() {
                 height={350}
                 width={350}
                 className="border-2 border-gray-500 rounded-sm"
+                alt='narwhale picture'
             />
             
 

@@ -4,18 +4,18 @@ import { useKeenSlider } from 'keen-slider/react' // import from 'keen-slider/re
 
 
 const images = [
-  { img: '/turtlecard1.jpeg'},
-  { img: '/mermaidcard2.jpeg'},
-  { img: '/narwhalecard1.jpeg'},
-  { img: '/turtlecard1.jpeg'},
-  { img: '/mermaidcard2.jpeg'},
-  { img: '/narwhalecard1.jpeg'},
-  { img: '/turtlecard1.jpeg'},
-  { img: '/mermaidcard2.jpeg'},
-  { img: '/narwhalecard1.jpeg'},
-  { img: '/turtlecard1.jpeg'},
-  { img: '/mermaidcard2.jpeg'},
-  { img: '/narwhalecard1.jpeg'}
+  { img: '/turtlecard1.jpeg', id: 1},
+  { img: '/mermaidcard2.jpeg', id: 2},
+  { img: '/narwhalecard1.jpeg', id: 3},
+  { img: '/turtlecard1.jpeg', id: 4},
+  { img: '/mermaidcard2.jpeg', id: 5},
+  { img: '/narwhalecard1.jpeg', id: 6},
+  { img: '/turtlecard1.jpeg', id: 7},
+  { img: '/mermaidcard2.jpeg', id: 8},
+  { img: '/narwhalecard1.jpeg', id: 9},
+  { img: '/turtlecard1.jpeg', id: 10},
+  { img: '/mermaidcard2.jpeg', id: 11},
+  { img: '/narwhalecard1.jpeg', id: 12}
 ];
 
 
@@ -67,7 +67,7 @@ export default function Carousel({ reversed }) {
   return (
     <div ref={sliderRef} className="keen-slider my-2 sm:my-4">
       {images.map((image) => (
-        <div className="keen-slider__slide">
+        <div className="keen-slider__slide" key={image.id}>
           <img src={image.img} alt="narwhal image" height={150} width={150} />
         </div>
       ))}

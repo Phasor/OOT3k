@@ -10,7 +10,7 @@ export default function license() {
 
         {/* Navbar */}
         <div className='min-h-[70px] bg-white opacity-95 w-full flex justify-between items-center' >
-            <Link href="/"><Image height={80} width={80} className="px-4 ml-5" src="/logocompressed.png"/></Link>
+            <Link href="/"><Image height={80} width={80} className="px-4 ml-5" src="/logocompressed.png" alt='Oceans of Terra Logo'/></Link>
 
                 <div id="menu" className="pb-0 mt-0 mr-12">
                     <ul className="flex items-center justify-center space-x-10">

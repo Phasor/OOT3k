@@ -45,7 +45,7 @@ export default function Hero() {
                 className="absolute top-[100px] right-[20px] object object-cover h-[100px] w-[150px]"
               /> */}
 
-              <div className="w-full h-[110vh] flex justify-center items-center relative" priority>
+              <div className="w-full h-[110vh] flex justify-center items-center relative">
 
                 <Video
                   className='object-cover h-full w-full'
@@ -56,7 +56,7 @@ export default function Hero() {
                   alt="Oceans of Terra Logo"
                   height={100}
                   width={100}
-                  priority={true}
+                  priority
                   className="absolute top-[100px] right-[10px] object object-cover h-[100px] w-[150px]"
                 />
 
@@ -79,7 +79,7 @@ export default function Hero() {
               alt="Oceans of Terra Logo"
               height={350}
               width={350}
-              priority={true}
+              priority
               className="absolute 
                 top-[10vh] sm:top-[14vh] xl:top-[20vh] 
                 right-[10vw] md:right-[5vw] 2xl:right-[10vw] 
