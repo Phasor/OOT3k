@@ -1,5 +1,6 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Image from 'next/image';
+import { motion } from "framer-motion"
 
 export default function ConnectButtonCustom() {
   return (
@@ -33,56 +34,58 @@ export default function ConnectButtonCustom() {
               {(() => {
                 if (!mounted || !account || !chain) {
                   return (
-                    <button onClick={openConnectModal} type="button" className='font-singleDay text-2xl'>
-                      CONNECT
-                    </button>
+                      <button onClick={openConnectModal} type="button" className='bg-[#62810D] border-[rgb(21,128,61)] rounded-[20px] min-w-[150px] h-[50px] shadow-lg font-raleway text-lg font-bold text-white'>
+                        CONNECT
+                      </button>
                   );
                 }
 
                 if (chain.unsupported) {
                   return (
-                    <button onClick={openChainModal} type="button" className='font-singleDay text-2xl'>
-                      Wrong network
-                    </button>
+                      <button onClick={openChainModal} type="button" className='bg-[#62810D] border-[rgb(21,128,61)] rounded-[20px] min-w-[150px] h-[50px] shadow-lg font-raleway text-lg font-bold text-white'>
+                        Wrong network
+                      </button>
                   );
                 }
 
                 return (
                   <div style={{ display: 'flex', gap: 12 }}>
-                    <button
-                      onClick={openChainModal}
-                      style={{ display: 'flex', alignItems: 'center' }}
-                      type="button"
-                      className='font-singleDay text-lg mr-4'
-                    >
-                      {chain.hasIcon && (
-                        <div
-                          style={{
-                            background: chain.iconBackground,
-                            width: 16,
-                            height: 16,
-                            borderRadius: 999,
-                            overflow: 'hidden',
-                            marginRight: 4,
-                          }}
-                        >
-                          {chain.iconUrl && (
-                            <Image
-                              alt={chain.name ?? 'Chain icon'}
-                              src={chain.iconUrl}
-                              width={16}
-                              height={16}
-                            />
-                          )}
-                        </div>
-                      )}
-                      {chain.name}
-                    </button>
 
-                    <button onClick={openAccountModal} type="button" className='font-singleDay text-xl'>
+                      <button
+                        onClick={openChainModal}
+                        style={{ display: 'flex', alignItems: 'center' }}
+                        type="button"
+                        className='whitespace-pre text-center flex justify-center items-center bg-gray-800 rounded-[20px] min-w-[150px] h-[50px] shadow-lg font-raleway text-md font text-white'
+                      >
+                        {chain.hasIcon && (
+                          <div
+                            style={{
+                              background: chain.iconBackground,
+                              width: 16,
+                              height: 16,
+                              borderRadius: 999,
+                              overflow: 'hidden',
+                              marginRight: 4,
+                            }}
+                          >
+                            {chain.iconUrl && (
+                              <Image
+                                alt={chain.name ?? 'Chain icon'}
+                                src={chain.iconUrl}
+                                width={16}
+                                height={16}
+                              />
+                            )}
+                          </div>
+                        )}
+                         {chain.name}
+                      </button>
+
+
+                    <button onClick={openAccountModal} type="button" className='bg-gray-800 rounded-[20px] min-w-[150px] h-[50px] shadow-lg font-raleway text-md text-white px-4 whitespace-pre'>
                       {account.displayName}
                       {account.displayBalance
-                        ? ` (${account.displayBalance})`
+                        ? `   (${account.displayBalance})`
                         : ''}
                     </button>
                   </div>

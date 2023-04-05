@@ -14,6 +14,7 @@ import { abi } from '../ABI/contract-abi'
 import Link from 'next/link'
 import NFTCard from '../components/NFTCard'
 import Head from 'next/head'
+import { motion } from "framer-motion"
 
 const contractConfig = {
   address: '0xc5617A28f8494B131902DE5063e68E4Ed9B77f1E',
@@ -198,8 +199,8 @@ export default function Mint() {
   const isMinted = txSuccess;
 
   const handleIncrement = () => {
-    if(mintAmount >= 10) {
-      setError("Like your style, but it's a max mint of 10 at a time :(")
+    if(mintAmount >= 2) {
+      setError("Like your style, but it's a max mint of 2 per wallet :(")
       return
     } else {
       setMintAmount(prev => prev + 1)
@@ -222,34 +223,41 @@ export default function Mint() {
         <title>Oceans of Terra | Mint </title>
       </Head>
       <div className='w-full flex justify-center items-center'>
-        
         {/* Navbar */}
+        <div className='min-h-[70px] bg-white opacity-95 w-full flex justify-between items-center' >
+            <Link href="/"><Image height={80} width={80} className="px-4 ml-5" src="/logocompressed.png" alt='logo'/></Link>
+
+                <div id="menu" className="pb-0 mt-0 mr-12">
+                    <ul className="flex items-center justify-center space-x-10">
+                        <li className="py-5">
+                        <Link className="" href="/mint">
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className=" flex justify-center items-center cursor-pointer">           
+                              <ConnectButtonCustom/>
+                            </motion.div>  
+                        </Link>
+                        </li>
+                    </ul>
+                </div>
+        </div>        
+        
+
+
+
+
+{/*    
         <div className='mx-6 mt-2 w-full h-20 border-b border-gray-600 flex justify-between items-center'>
           
             <div className='flex flex-col mb-2 ml-8 justify-center items-center cursor-pointer hover:scale-105'>
-              <Link href="/"><p className='font-singleDay text-4xl'>Home</p></Link>
-              <Image
-                src="/waves.png"
-                height={80}
-                width={80}
-                className="object-cover"
-                alt='waves'
-              />
+              <Link href="/"><p className='font-leckton text-3xl'>Home</p></Link>
+
             </div>
           
-          {/* Connect Button */}
+ 
           <div className='relative mt-2 mr-8 h-12 cursor-pointer hover:scale-105'>
-            {/* <Image
-              src="/corner-scribble.png"
-              height={200}
-              width={200}
-              className="absolute bottom-1"
-            /> */}
-            {/* <p className='font-singleDay text-3xl ml-4'>CONNECT</p> */}
             <ConnectButtonCustom/>
-            
           </div>
-        </div>
+        </div> */}
+
       </div>
 
 
@@ -269,15 +277,15 @@ export default function Mint() {
 
           { isConnected ? ( 
             <div className='flex flex-col'>
-                <p className='font-singleDay text-2xl mt-10'>How many Terra's do you want to mint?</p>
-                <p className='font-singleDay text-2xl mt-6 text-center'>{totalMinted} of 3333 are already gone.  </p>
+                <p className='font-lekton text-2xl mt-10'>How many Terra's do you want to mint?</p>
+                <p className='font-lekton text-2xl mt-6 text-center'>{totalMinted} of 3333 are already gone.  </p>
               <div className=' w-full flex justify-between mt-10'>
                 {/* + and 0 box */}
                 <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
                   <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
                     <p onClick={handleDecrement} className="text-gray-100 text-2xl mb-2">-</p>
                   </div>
-                  <p className='text-2xl font-singleDay'>{mintAmount}</p>
+                  <p className='text-2xl font-lekton'>{mintAmount}</p>
                   <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer hover:scale-105">
                     <p onClick={handleIncrement} className="text-gray-100 text-2xl mb-1">+</p>
                   </div>
@@ -289,7 +297,7 @@ export default function Mint() {
                       <button
                         id="start-animation"
                         disabled={!mint || isMintLoading || isMintStarted}
-                        className="button font-singleDay text-2xl text-center text-white py-1 px-3"
+                        className="min-w-[350px] button font-lekton text-2xl text-center text-white py-1 px-3"
                         data-mint-loading={isMintLoading}
                         data-mint-started={isMintStarted}
                         onClick={() => {
@@ -297,7 +305,7 @@ export default function Mint() {
                           mint?.()}
                         }
                       >
-                        {isMintLoading && 'Pls Approve'}
+                        {isMintLoading && 'Approve in Wallet'}
                         {isMintStarted && 'Minting...'}
                         {!isMintLoading && !isMintStarted && 'Mint'}
                       </button>
@@ -306,7 +314,7 @@ export default function Mint() {
               </div>
             </div>
           ) : (
-            <p className="font-singleDay text-2xl text-center mt-8" >Connect Your Wallet!</p>
+            <p className="font-lekton text-2xl text-center mt-8" >Connect Your Wallet!</p>
             )
           }
         </div>
@@ -326,10 +334,10 @@ export default function Mint() {
                           {image && (
                             <NFTCard url={image} className="z-10"/>
                           )}
-                        <h1 className=' font-singleDay text-5xl text-center bg-transparent mt-5'>YEAH!</h1>
+                        <h1 className=' font-lekton text-5xl text-center bg-transparent mt-5'>Success! Oceans of Terra Time!</h1>
                         { mintData.hash && (
-                          <a href={`https://goerli.etherscan.io/tx/${mintData.hash}`} className='font-singleDay text-xl' target="_blank">
-                            <p className='font-singleDay text-2xl text-blue-600 text-center bg-transparent cursor-pointer'>Etherscan</p>
+                          <a href={`https://goerli.etherscan.io/tx/${mintData.hash}`} className='font-lekton text-xl' target="_blank">
+                            <p className='font-lekton text-md text-blue-600 underline text-center bg-transparent cursor-pointer'>View on Etherscan</p>
                           </a>
                         )}
 
@@ -345,26 +353,19 @@ export default function Mint() {
 
 
 
-        {error && <p className='font-singleDay text-xl mt-2'>{error}</p>}
+        {error && <p className='flex justify-center items-center font-lekton text-xl mt-2'>{error}</p>}
 
         {mintError && (
-        <p className="font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
+        <p className="flex justify-center items-center font-lekton text-xl text-red-500 mt-2">
           Error: {mintError.message}
         </p>
         )}
 
         {txError && (
-          <p className="flex justify-center font-singleDay text-2xl" style={{ marginTop: 24, color: '#FF6257' }}>
+          <p className="items-center flex justify-center font-lekton text-xl text-red-500 mt-2">
             Error: {txError.message}
           </p>
         )}
-
-      {/* Loading Spinner
-      { mounted && isMintStarted && !txSuccess && (
-        <div className='flex flex-col w-screen mt-[35rem] justify-center items-center'>
-          <Spinner/>
-        </div>
-      )} */}
      
       { mounted && isMintStarted && !txSuccess && (
         <div className='flex flex-col w-screen mt-[100px] justify-center items-center'>
