@@ -68,23 +68,10 @@ export default function Hero() {
         ( 
           <> 
             <div className="w-full h-[110vh] flex justify-center items-center">
-                {/* <Image
-                  src="/muCompressed2.jpg"
-                  alt="Picture of the Mu Academy, underwater sunken ship scene."
-                  height={1500}
-                  width={1500}
-                  quality={90}
-                  priority={true}
-                  placeholder="blur"
-                  blurDataURL="/muLoading.jpeg"
-                  className="object-cover h-full w-full"
-                /> */}
-                <video autoPlay muted loop
+                <Video
                   className='object-cover h-full w-full'
-                  key={key} // Pass the key as a prop to the video element
-                >
-                  <source src={'/MUacademy-desktop-noswaying.mp4'} type="video/mp4" />
-                </video>
+                  video={'/MUacademy-desktop-noswaying.mp4'} 
+                />
             </div>
 
             <Image 
