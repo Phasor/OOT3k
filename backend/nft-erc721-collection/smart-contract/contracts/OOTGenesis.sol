@@ -13,6 +13,7 @@ contract OOTGenesis is ERC721AQueryable, Ownable, ReentrancyGuard {
 
   bytes32 public merkleRoot;
   mapping(address => bool) public whitelistClaimed;
+  mapping(address => uint256) public publicAmountMinted;
 
   string public uriPrefix = '';
   string public uriSuffix = '.json';
@@ -64,6 +65,8 @@ contract OOTGenesis is ERC721AQueryable, Ownable, ReentrancyGuard {
 
   function mint(uint256 _mintAmount) public payable mintCompliance(_mintAmount) mintPriceCompliance(_mintAmount) {
     require(!paused, 'The contract is paused!');
+    require( ( publicAmountMinted[_msgSender()] + _mintAmount ) <= 2, "Can not mint more than 2 tokens.");
+    publicAmountMinted[_msgSender()] += _mintAmount;
 
     _safeMint(_msgSender(), _mintAmount);
   }
