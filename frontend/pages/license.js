@@ -15,7 +15,7 @@ export default function license() {
                 <div id="menu" className="pb-0 mt-0 mr-12">
                     <ul className="flex items-center justify-center space-x-10">
 
-                        <li className="py-5">
+                        <li className="py-5 hidden sm:block">
                         <Link className="" href="/">
                             <div className="animated-button ">
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
@@ -25,10 +25,10 @@ export default function license() {
                         </Link>
                         </li>
                         <li className="py-5">
-                        <Link className="" href="/mint">
+                        <Link className="" href="/check">
                             <div className="mint-button ">
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
-                                <p className="text-white bg-transparent font-raleway text-lg font-bold px-3">MINT</p>
+                                <p className="text-white bg-transparent font-raleway text-lg font-bold px-3">Check Wallet</p>
                             </motion.div>
                             </div>
                         </Link>
