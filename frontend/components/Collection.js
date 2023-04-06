@@ -26,8 +26,8 @@ export default function Collection() {
         <div className="h-full">
             <div className="mx-auto p-1 max-w-[90vw] sm:max-w-[75rem]">
               <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-[10rem] '>There is No Evil Without Good</p>
-              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must stop the Empress to restore peace to their home. An epic battle has begun. Join our Heroes to defend the Oceans of Terra.</p>
-              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Turtle, Mermaid or Nawwhal, which one are you?</p>
+              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must now stop the Empress in her tracks. An epic battle has surely begun. Join our Heroes as they defend the Oceans of Terra.</p>
+              <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Turtle, Mermaid or Narwhal, which hero will you choose?</p>
             </div>
             
             <div className="w-full max-w-[90vw] sm:max-w-6xl flex flex-col justify-center items-center mt-10 sm:mt-20 p-1 sm:p-0 ">
