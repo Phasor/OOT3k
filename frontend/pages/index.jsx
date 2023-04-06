@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import FAQ from "../components/FAQ"
 import Head from 'next/head'
 import Rights from "../components/Rights";
+import Community from "../components/Community";
 
 export default function Home() {
 
@@ -29,6 +30,7 @@ export default function Home() {
         <Collection/>
         <FAQ/>
         <Rights/>
+        <Community/>
         <Team/>
         <Footer/>
       </main>

@@ -46,7 +46,7 @@ export default function Lore() {
 
       <section id="lore" className="w-full min-h-screen relative flex justify-center items-center bg-gray-900">
           
-          <div className='max-w-6xl flex flex-col justify-center items-center my-6 md:my-5'>
+          <div className='max-w-6xl flex flex-col justify-center items-center my-16 md:my-5'>
             <div className="p-2 my-2 md:my-5 hide-left sm:mr-[4rem] md:mr-[20rem]">
               <Image src="/comic1new.png" height={400} width={400} loading="lazy" alt="Comic 2" className="object-cover border-[5px] border-black h-[350px] w-[350px] md:h-[400px] md:w-[400px]" />
             </div>
