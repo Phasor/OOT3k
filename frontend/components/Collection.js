@@ -25,7 +25,7 @@ export default function Collection() {
       <section id="collection" className='w-full min-h-screen  bg-gray-100 flex flex-col items-center justify-center text-center'>
         <div className="h-full">
             <div className="mx-auto p-1 max-w-[90vw] sm:max-w-[75rem]">
-              <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-[10rem] '>There is No Evil Without Good</p>
+              <p className='p-2 text-3xl sm:text-5xl text-blue-800 font-lekton font-bold text-center mt-10 sm:mt-[10rem] '>Your Hero Awaits</p>
               <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Our heroes Nariyo, Merma, and Turtaloo must now stop the Empress in her tracks. An epic battle has surely begun. Join our Heroes as they defend the Oceans of Terra.</p>
               <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Turtle, Mermaid or Narwhal, which hero will you choose?</p>
             </div>
