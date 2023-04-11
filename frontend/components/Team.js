@@ -6,9 +6,10 @@ export default function Team() {
     {name: 'HANZBLADE', role: 'Founder', image: '/hanz.jpg', description: 'Been actively playing video games for over 20 years. 5 years experience in tech (mobile apps and e-commerce). Spent the last 2 years investing, aping, experimenting, and gaming in the web3 space. Active NFT trader. Degen at heart.', twitter:'https://twitter.com/HanzBlade'},
     {name: 'PHAS0R', role: 'Full-Stack Dev', image: '/phasor.jpg', description: 'Has worked for Barclays, RBS and other large investment funds. Avid gamer (Runescape, Counterstrike, Quake2). GATech CS and Oxford University.',twitter:'https://twitter.com/phas0r'},
     {name: 'MIKE', role: 'Game Developer', image: '/decaff.png', description: '10+ years web & mobile apps development. Built numerous casual & micro games. Working on a 2D rogue-like survivor and 3D Battle royale game at the moment. Versed in Unity, Unreal & Godot Game Engines.',twitter:'https://twitter.com/0xdecaff'},
-    {name: 'FUHLEENAH', role: 'Creative Lead', image: '/faelina.jpg', description: 'East Vancouver OG. Nisga’a, Italian & Scottish. Grew up on Marvel, DC & all things Manga/Anime. An avid lover of Poetry & Storytelling. Childcare Recruiter by day, NFT Lore Writer/Creative/Degenerate by night.',twitter:'https://twitter.com/fuhleenah'},
+    {name: 'FUHLEENAH', role: 'Creative Lead', image: '/faelina.jpg', description: "East Vancouver OG. Nisga'a, Italian & Scottish. Grew up on Marvel, DC and all things Manga/Anime. An avid lover of poetry and storytelling. Childcare recruiter by day, NFT lore writer by night.",twitter:'https://twitter.com/fuhleenah'},
     {name: 'ALEX', role: 'Game Design', image: '/alex.jpg', description: 'Born in Tokyo, moved to Vancouver and played golf competitively for 15 years. Always had a passion for gaming and anime. After university in the U.S. took a program at VCAD in game development. Currently working on FIFA at EA.',twitter:'https://twitter.com/zeroseed_gm'}
   ]
+
    
   return (
     <>
@@ -27,7 +28,7 @@ export default function Team() {
       <section id="team" className='w-full bg-gray-100 flex justify-center items-center pb-10'>
           <div className="sm:max-w-[90rem] flex flex-col justify-center items-center">
             <h2 className='mt-10 mb-8 text-3xl sm:text-5xl p-2 font-lekton font-bold text-gray-800 text-center'>Oceans of Talent</h2>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-1 sm:gap-x-10 gap-y-6 sm:gap-y-16 '>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-1 sm:gap-x-10 gap-y-6 sm:gap-y-16'>
               {Team.map((member, index) => {
                 return (
                   <Card key={index} profile={member} />
