@@ -5,7 +5,6 @@ import { goerli, mainnet } from 'wagmi/chains'
 import lottie from 'lottie-web';
 import {
   useAccount,
-  useContractRead,
   useContractReads,
   useContractWrite,
   usePrepareContractWrite,
@@ -100,7 +99,9 @@ export default function Mint() {
       setImage(imageUrl);
     }
 
-    fetchImage();
+    if(tokenUri){
+      fetchImage();
+    }
   }, [tokenUri]);
 
 
