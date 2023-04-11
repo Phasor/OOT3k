@@ -14,6 +14,7 @@ import Rights from "../components/Rights";
 import Community from "../components/Community";
 
 export default function Home() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
     <div className="overflow-x-hidden">
@@ -22,17 +23,21 @@ export default function Home() {
       </Head>
       <main className="w-full flex flex-col justify-center items-center flex-1 relative">
         <Navbar/>
-        <Hero/>
-        <Banner/>
-        <FixedImage/>
-        <Intro/>
-        <Lore/>
-        <Collection/>
-        <FAQ/>
-        <Rights/>
-        <Community/>
-        <Team/>
-        <Footer/>
+        <Hero onVideoLoaded={() => setVideoLoaded(true)} />
+        { videoLoaded && (
+          <>
+            <Banner/>
+            <FixedImage/>
+            <Intro/>
+            <Lore/>
+            <Collection/>
+            <FAQ/>
+            <Rights/>
+            <Community/>
+            <Team/>
+            <Footer/>
+          </>
+        )}
       </main>
     </div>
   );
