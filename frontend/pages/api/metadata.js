@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
     const METADATA_STAGE = process.env.METADATA_STAGE;
 
-    // get the ID from the query parameter
+    // get the ID from the query parameter ****
     const { id } = req.query;
 
     if (METADATA_STAGE === 'prereveal') {
