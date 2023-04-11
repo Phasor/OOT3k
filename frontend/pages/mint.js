@@ -6,6 +6,7 @@ import lottie from 'lottie-web';
 import {
   useAccount,
   useContractRead,
+  useContractReads,
   useContractWrite,
   usePrepareContractWrite,
   useWaitForTransaction, 
@@ -69,23 +70,25 @@ export default function Mint() {
     error: mintError,
   } = useContractWrite({...contractWriteConfig});
 
-  // get total supply
-  const { data: totalSupplyData } = useContractRead({
-    ...contractConfig,
-    functionName: 'totalSupply',
-    args: [0],
-    chainId: goerli.id,
-    watch: false,
+  const { data } = useContractReads({
+    contracts: [
+      {
+        ...contractConfig,
+        functionName: 'totalSupply',
+        args: [0],
+        watch: false,
+      },
+      {
+        ...contractConfig,
+        functionName: 'uri',
+        args: [0],
+        watch: false
+      }
+    ]
   });
 
-
-  // get token uri
-  const { data: tokenUri } = useContractRead({
-    ...contractConfig,
-    functionName: 'uri',
-    args: [0],
-    watch: false,
-  });
+  // rename the variables returned from useContractReads
+  const [totalSupplyData, tokenUri] = data ?? [];
 
   useEffect(() => {
     async function fetchImage() {
@@ -284,6 +287,7 @@ export default function Mint() {
                 width={350}
                 className="border-2 border-gray-500 rounded-sm"
                 alt='narwhale picture'
+                priority
             />
 
           { isConnected ? ( 
