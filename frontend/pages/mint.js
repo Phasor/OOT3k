@@ -39,7 +39,7 @@ export default function Mint() {
 
   useEffect(() => setMounted(true), []);
   
-  /* ***** SET NETWORK HERE***** */
+  /******* SET NETWORK HERE*******/
   const NETWORK = 'goerli' // 'mainnet' or 'goerli'
   
   // Network configs
