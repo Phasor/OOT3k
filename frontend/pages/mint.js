@@ -40,7 +40,7 @@ export default function Mint() {
   useEffect(() => setMounted(true), []);
   
   /* ***** SET NETWORK HERE***** */
-  const NETWORK = 'mainnet' // 'mainnet' or 'goerli'
+  const NETWORK = 'goerli' // 'mainnet' or 'goerli'
   
   // Network configs
   const { config: contractWriteConfig } = NETWORK === 'mainnet' ? 
@@ -76,6 +76,7 @@ export default function Mint() {
     args: [0],
     watch: false,
   });
+
 
   // get token uri
   const { data: tokenUri } = useContractRead({
