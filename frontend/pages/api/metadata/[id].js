@@ -6,13 +6,13 @@ export default async function handler(req, res) {
 
     if (METADATA_STAGE === 'prereveal') {
         //reveal hidden metadata in preReveal.json by id
-        const preReveal = require('../../metadata/preReveal.json');
+        const preReveal = require('../../../metadata/preReveal.json');
         const metadata = preReveal.nfts[id-1];
         console.log(`preReveal metadata for id ${id} is ${metadata}`);
         res.status(200).json(metadata);
     } else if (METADATA_STAGE === 'postreveal') {
         //reveal hidden metadata in postReveal.json by id
-        const revealed = require('../../metadata/postReveal.json');
+        const revealed = require('../../../metadata/postReveal.json');
         const metadata = revealed.nfts[id-1];
         console.log(`reveal metadata for id ${id} is ${metadata}`);
         res.status(200).json(metadata);
