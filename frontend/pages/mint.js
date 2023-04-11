@@ -44,7 +44,7 @@ export default function Mint() {
   
   // Network configs
   const { config: contractWriteConfig } = NETWORK === 'mainnet' ? 
-    // Goerli config
+    // Mainnet config
     usePrepareContractWrite({
       ...contractConfig,
       functionName: 'mint',
@@ -52,7 +52,7 @@ export default function Mint() {
       chainId: mainnet.id,
     })
     :
-    // Mainnet config
+    // Goerli config
     usePrepareContractWrite({
       ...contractConfig,
       functionName: 'mint',
@@ -74,6 +74,7 @@ export default function Mint() {
     ...contractConfig,
     functionName: 'totalSupply',
     args: [0],
+    chainId: goerli.id,
     watch: false,
   });
 
