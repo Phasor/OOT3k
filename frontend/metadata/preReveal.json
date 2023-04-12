@@ -1,70 +1,64 @@
 {
-    "nfts": [
-      {
-        "id": 0,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 1,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 2,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 3,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 4,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 5,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 6,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 7,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 8,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 9,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      },
-      {
-        "id": 10,
-        "name": "Pre Reveal Name",
-        "description": "Pre Reveal Description",
-        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      }
-    ]
-  }
+  "nfts": [
+    {
+      "id": 0,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 1,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 2,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 3,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 4,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 5,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 6,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 7,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 8,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    },
+    {
+      "id": 9,
+      "name": "Pre Reveal Name",
+      "description": "Pre Reveal Description",
+      "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+    }
+  ]
+}

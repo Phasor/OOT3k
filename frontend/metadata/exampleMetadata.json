@@ -1,0 +1,16 @@
+{
+    "nfts": [
+      {
+        "id": 0,
+        "name": "Pre Reveal Name",
+        "description": "Pre Reveal Description",
+        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+      },
+      {
+        "id": 1,
+        "name": "Pre Reveal Name",
+        "description": "Pre Reveal Description",
+        "image": "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
+      }
+    ]
+}
