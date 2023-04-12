@@ -6,6 +6,10 @@ export default function FAQ() {
   const [isExpanded3, setIsExpanded3] = useState(false);
   const [isExpanded4, setIsExpanded4] = useState(false);
   const [isExpanded5, setIsExpanded5] = useState(false);
+  const [isExpanded6, setIsExpanded6] = useState(false);
+  const [isExpanded7, setIsExpanded7] = useState(false);
+  const [isExpanded8, setIsExpanded8] = useState(false);
+  const [isExpanded9, setIsExpanded9] = useState(false);
 
   const toggleExpansion1 = () => {
     setIsExpanded1(!isExpanded1);
@@ -21,6 +25,18 @@ export default function FAQ() {
   };
   const toggleExpansion5 = () => {
     setIsExpanded5(!isExpanded5);
+  };
+  const toggleExpansion6 = () => {
+    setIsExpanded6(!isExpanded6);
+  };
+  const toggleExpansion7 = () => {
+    setIsExpanded7(!isExpanded7);
+  };
+  const toggleExpansion8 = () => {
+    setIsExpanded8(!isExpanded8);
+  };
+  const toggleExpansion9 = () => {
+    setIsExpanded9(!isExpanded9);
   };
 
   return (
@@ -53,7 +69,7 @@ export default function FAQ() {
                         onClick={toggleExpansion1}
                     >
                         <h3 className="text-xl font-lekton font-semibold text-gray-800">
-                        Is there a Discord?
+                        Wen mint?
                         </h3>
                         <svg
                         className={`w-6 h-6 transition-transform duration-200 ${
@@ -77,7 +93,7 @@ export default function FAQ() {
                         } overflow-hidden`}
                     >
                         <p className="text-gray-800 text-xl mt-5 font-lekton">
-                        We don't have discord access for now but please head to our Twitter to find out more info.
+                        April 15th 2023. Narwhalist mint starts at 6am PDT. Public mint starts at 10am PDT.
                         </p>
                     </div>
                 </div>
@@ -90,7 +106,7 @@ export default function FAQ() {
                     onClick={toggleExpansion2}
                     >
                     <h3 className="text-xl font-lekton font-semibold text-gray-800">
-                        Wen mint?
+                        How much per NFT?
                     </h3>
                     <svg
                         className={`w-6 h-6 transition-transform duration-200 ${
@@ -114,7 +130,7 @@ export default function FAQ() {
                     } overflow-hidden`}
                     >
                     <p className="text-gray-800 text-xl mt-5 font-lekton">
-                    Sometime in April 2023. Keep an eye on our Twitter for updates.
+                    Narwhalist (whitelist) price is free. Public price is 0.057 ETH.
                     </p>
                     </div>
                 </div>
@@ -126,7 +142,7 @@ export default function FAQ() {
                     onClick={toggleExpansion3}
                     >
                     <h3 className="text-xl font-lekton font-semibold text-gray-800">
-                        What are the maximum #mints per wallet?
+                        What are the maximum number of mints per wallet?
                     </h3>
                     <svg
                         className={`w-6 h-6 transition-transform duration-200 ${
@@ -150,19 +166,19 @@ export default function FAQ() {
                     } overflow-hidden`}
                     >
                     <p className="text-gray-800 text-xl mt-5 font-lekton">
-                    1 per wallet for the Narwhalist (whitelist) and 2 for the Public mint.
+                    1 per wallet for the Narwhalist (whitelist) and 2 per wallet for the Public mint.
                     </p>
                     </div>
                 </div>
 
-                    {/* Question 4 */}
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
+                {/* Question 4 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
                     <div
                     className="w-full p-4 cursor-pointer flex justify-between items-center"
                     onClick={toggleExpansion4}
                     >
                     <h3 className="text-xl font-lekton font-semibold text-gray-800">
-                        Will my Terra's be revealed straight after minting?
+                        Is there a Discord server?
                     </h3>
                     <svg
                         className={`w-6 h-6 transition-transform duration-200 ${
@@ -186,46 +202,191 @@ export default function FAQ() {
                     } overflow-hidden`}
                     >
                     <p className="text-gray-800 text-xl mt-5 font-lekton">
-                    No. Your Terras will reveal some time after mint.
+                    Yes, but it will not be open to the public until mint day.
                     </p>
                     </div>
                 </div>
 
-                    {/* Question 5 */}
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
+                {/* Question 5 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
                     <div
                     className="w-full p-4 cursor-pointer flex justify-between items-center"
                     onClick={toggleExpansion5}
                     >
-                    <h3 className="text-xl font-lekton font-semibold text-gray-800">
-                        How do I get on the whitelist?
-                    </h3>
-                    <svg
-                        className={`w-6 h-6 transition-transform duration-200 ${
-                        isExpanded5 ? "transform rotate-180" : ""
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                    >
-                        <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                        />
-                    </svg>
+                        <h3 className="text-xl font-lekton font-semibold text-gray-800">
+                        Will my hero be revealed immediately after I mint?
+                        </h3>
+                        <svg
+                            className={`w-6 h-6 transition-transform duration-200 ${
+                            isExpanded5 ? "transform rotate-180" : ""
+                            }`}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                        >
+                            <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
                     </div>
                     <div
                     className={`px-4 pb-4 transition-all duration-500 ${
                         isExpanded5 ? "max-h-96" : "max-h-0"
                     } overflow-hidden`}
                     >
-                    <p className="text-gray-800 text-xl mt-5 font-lekton">
-                    We will be running several giveaways on our Twitter. Follow us and keep an eye out for the next one.
-                    </p>
+                        <p className="text-gray-800 text-xl mt-5 font-lekton">
+                        No, but the art will be worth the short wait.
+                        </p>
                     </div>
                 </div>
+
+                {/* Question 6 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
+                    <div
+                    className="w-full p-4 cursor-pointer flex justify-between items-center"
+                    onClick={toggleExpansion6}
+                    >
+                        <h3 className="text-xl font-lekton font-semibold text-gray-800">
+                        Is the game ready to play?
+                        </h3>
+                        <svg
+                            className={`w-6 h-6 transition-transform duration-200 ${
+                            isExpanded6 ? "transform rotate-180" : ""
+                            }`}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                        >
+                            <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                    className={`px-4 pb-4 transition-all duration-500 ${
+                        isExpanded6 ? "max-h-96" : "max-h-0"
+                    } overflow-hidden`}
+                    >
+                        <p className="text-gray-800 text-xl mt-5 font-lekton">
+                        We have an Alpha V1 that has been released and tested within a small group. A refined Alpha V2 will be released approximately one month after mint date to all NFT holders.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Question 7 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
+                    <div
+                    className="w-full p-4 cursor-pointer flex justify-between items-center"
+                    onClick={toggleExpansion7}
+                    >
+                        <h3 className="text-xl font-lekton font-semibold text-gray-800">
+                        Will the game be mobile friendly?
+                        </h3>
+                        <svg
+                            className={`w-6 h-6 transition-transform duration-200 ${
+                            isExpanded7 ? "transform rotate-180" : ""
+                            }`}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                        >
+                            <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                    className={`px-4 pb-4 transition-all duration-500 ${
+                        isExpanded7 ? "max-h-96" : "max-h-0"
+                    } overflow-hidden`}
+                    >
+                        <p className="text-gray-800 text-xl mt-5 font-lekton">
+                        Yes. V2 will be on desktop. Further versions will be on mobile.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Question 8 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
+                    <div
+                    className="w-full p-4 cursor-pointer flex justify-between items-center"
+                    onClick={toggleExpansion8}
+                    >
+                        <h3 className="text-xl font-lekton font-semibold text-gray-800">
+                        Is there a token?
+                        </h3>
+                        <svg
+                            className={`w-6 h-6 transition-transform duration-200 ${
+                            isExpanded8 ? "transform rotate-180" : ""
+                            }`}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                        >
+                            <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                    className={`px-4 pb-4 transition-all duration-500 ${
+                        isExpanded8 ? "max-h-96" : "max-h-0"
+                    } overflow-hidden`}
+                    >
+                        <p className="text-gray-800 text-xl mt-5 font-lekton">
+                        No. However, we may integrate a token at a later stage of development.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Question 9 */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
+                    <div
+                    className="w-full p-4 cursor-pointer flex justify-between items-center"
+                    onClick={toggleExpansion9}
+                    >
+                        <h3 className="text-xl font-lekton font-semibold text-gray-800">
+                        What chain will the NFTs be on?
+                        </h3>
+                        <svg
+                            className={`w-6 h-6 transition-transform duration-200 ${
+                            isExpanded9 ? "transform rotate-180" : ""
+                            }`}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                        >
+                            <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                    className={`px-4 pb-4 transition-all duration-500 ${
+                        isExpanded9 ? "max-h-96" : "max-h-0"
+                    } overflow-hidden`}
+                    >
+                        <p className="text-gray-800 text-xl mt-5 font-lekton">
+                        This collection will be on the Ethereum mainnet. Future in game NFTs and transactions will make use of scaling solutions like L2's.
+                        </p>
+                    </div>
+                </div>
+
                 </div>
         </section>
     </>
