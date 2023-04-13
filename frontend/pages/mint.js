@@ -143,7 +143,7 @@ export default function Mint() {
   }
 
   return (
-    <div className='w-full min-h-screen overflow-x-hidden p-2'>
+    <div className='w-full min-h-screen overflow-x-hidden'>
       <Head>
         <title>Oceans of Terra | Mint </title>
       </Head>
@@ -153,7 +153,7 @@ export default function Mint() {
         <div className='min-h-[70px] bg-white opacity-95 w-full flex justify-between items-center' >
             <Link href="/"><Image height={80} width={80} className="px-4 ml-5" src="/logocompressed.png" alt='logo'/></Link>
 
-            <div id="menu" className="pb-0 mt-0 sm:mr-12">
+            <div id="menu" className="pb-0 mt-0 mr-3 sm:mr-12">
                 <ul className="flex items-center justify-center">
                     <li className="py-5">
                     <Link className="" href="/mint">
@@ -183,10 +183,11 @@ export default function Mint() {
 
           { isConnected ? ( 
             <div className='flex flex-col w-full items-center'>
-                <p className='font-lekton text-2xl text-center mt-10'>How many Heroes do you want to mint?</p>
-                {totalSupplyData && <p className='font-lekton text-2xl mt-6 text-center'>{totalMinted} of 3600 are already gone.  </p>}
+                <p className='font-lekton text-2xl text-center mt-10 p-2'>How many Heroes do you want to mint?</p>
+                {totalSupplyData && <p className='font-lekton text-2xl mt-6 text-center p-2'>{totalMinted} of 3600 are already gone.  </p>}
               
-              <div className='w-full sm:max-w-[500px] flex justify-between mt-10'>
+              
+              <div className='w-full sm:max-w-[500px] flex justify-between mt-10 p-4'>
             
                 <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
                   <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
