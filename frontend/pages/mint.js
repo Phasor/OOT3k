@@ -260,7 +260,7 @@ export default function Mint() {
 
         {mintError && (
         <p className="flex justify-center items-center font-lekton text-xl text-red-500 mt-2">
-          Error: {mintError.message}
+          Error. Make sure you aren't trying to mint more than 1 per wallet for the Whitelist and 2 for the Public mint.
         </p>
         )}
 
