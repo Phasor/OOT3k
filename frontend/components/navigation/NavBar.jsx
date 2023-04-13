@@ -129,7 +129,7 @@ function NavBar() {
               <ul className="h-screen md:h-auto md:flex items-center justify-center sm:space-x-10">
 
                 <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400  py-5">
-                  <ScrollLink href="#lore" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                  <ScrollLink href="#intro" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                     <div className="sm:animated-button">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className=" flex justify-center items-center cursor-pointer">
                         <span className="text-gray-900 sm:text-nav-link bg-transparent font-raleway text-lg font-bold">Lore</span>
