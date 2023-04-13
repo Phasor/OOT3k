@@ -47,7 +47,7 @@ export default function Mint() {
   }, [connectionStatus]);
 
   useEffect(() => {
-    console.log(`totalSupplyData: ${JSON.stringify(totalSupplyData)}`);
+    // console.log(`totalSupplyData: ${JSON.stringify(totalSupplyData)}`);
     setTotalMinted(totalSupplyData?.toNumber());
   }, [totalSupplyData]);
   
@@ -206,7 +206,7 @@ export default function Mint() {
                         // data-mint-loading={isMintLoading}
                         data-mint-started={isMintStarted}
                         onClick={() => {
-                          console.log(`Minting ${mintAmount} Terra's`)
+                          // console.log(`Minting ${mintAmount} Terra's`)
                           mint?.({
                             to: address,
                             quantity: mintAmount,

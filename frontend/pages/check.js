@@ -20,7 +20,7 @@ export default function check() {
               },
             });
             const data = await res.json();
-            console.log(`data: ${JSON.stringify(data)}`);
+            // console.log(`data: ${JSON.stringify(data)}`);
             setOnWhitelist(data.message);
             setLoading(false);
           } catch (err) {
