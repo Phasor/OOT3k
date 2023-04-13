@@ -8,7 +8,7 @@ import Head from 'next/head'
 import { motion } from "framer-motion"
 import { ConnectWallet, useConnectionStatus, useAddress } from "@thirdweb-dev/react";
 const { ethers } = require('ethers');
-const CONTRACT_ADDRESS = "0x8C82e5D8fA428795b4e9EDDBeb4d1B7e84B053f9"
+const CONTRACT_ADDRESS = "0xf07fe4C560cD1BbCd95d20955d3e0bB3D92A56D8"
 
 // How to use ThirdWeb react hook to call contract functions
 // https://portal.thirdweb.com/react/react.useclaimnft
@@ -218,7 +218,7 @@ export default function Mint() {
                 <p className='font-lekton text-2xl mt-10'>How many Terra's do you want to mint?</p>
                 {totalSupplyData && <p className='font-lekton text-2xl mt-6 text-center'>{totalMinted} of 3600 are already gone.  </p>}
               <div className=' w-full flex justify-between mt-10'>
-                {/* + and 0 box */}
+            
                 <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
                   <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
                     <p onClick={handleDecrement} className="text-gray-100 text-2xl mb-2">-</p>
@@ -229,7 +229,7 @@ export default function Mint() {
                   </div>
                 </div>
 
-                {/* Mint Button */}
+                {/* mint button */}
                 <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
                     {mounted && (
                       <button
@@ -246,7 +246,7 @@ export default function Mint() {
                           })}
                         }
                       >
-                        {/* {isMintLoading && 'Approve in Wallet'} */}
+                     
                         {isMintStarted && 'Minting...'}
                         {!isMintStarted && 'Mint'}
                       </button>
@@ -271,10 +271,10 @@ export default function Mint() {
               <div class="bg bg2"></div>
                 <div class="bg bg3"></div>
                   <div class="success-content bg-transparent">
-                    <div className=''>
+                    <div className='w-full h-full'>
                       
                       {/* Content here */}
-                      <div className='absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2' >
+                      <div className='sm:w[800px] sm:h[800px] absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 ' >
                           {image && (
                             <NFTCard url={image} className="z-10"/>
                           )}
@@ -288,8 +288,6 @@ export default function Mint() {
                   </div>
           </div>     
          )}
-
-
 
         {error && <p className='flex justify-center items-center font-lekton text-xl mt-2'>{error}</p>}
 
