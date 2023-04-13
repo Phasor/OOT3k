@@ -102,23 +102,6 @@ export default function Mint() {
       audio.loop = true;
       audio.play();
       audio.playbackRate = 1.0;
-
-      // setTimeout(() => {
-      //   audio.playbackRate = 1.2;
-      // }, 4000);
-
-      // setTimeout(() => {
-      //   audio.playbackRate = 1.3;
-      // }, 6000);
-
-      // setTimeout(() => {
-      //   audio.playbackRate = 1.4;
-      // }, 8000);
-
-      // setTimeout(() => {
-      //   audio.playbackRate = 1.5;
-      // }, 10000);
-
     }
   }, [audio]);
 
@@ -129,6 +112,13 @@ export default function Mint() {
       audio.loop = false;
       endAudio.loop = true;
       endAudio.play();
+
+      //end music after 25 seconds
+      setTimeout(() => {
+        endAudio.pause();
+        endAudio.currentTime = 0;
+        endAudio.loop = false;
+      }, 25000);
     }
   }, [endAudio, txSuccess]);
 
