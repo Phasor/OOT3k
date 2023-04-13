@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { useAccount } from 'wagmi';
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import Link from 'next/link'
 
 export default function check() {
     const [onWhitelist, setOnWhitelist] = useState(false)
-    const { address, isConnected } = useAccount();
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
+    const address = useAddress();
 
     useEffect(() => {
         const checkWL = async () => {
@@ -61,8 +60,9 @@ export default function check() {
         </div>
         <div className='min-w-[80vw] sm:min-w-[0vw] absolute left-1/2 transform -translate-x-1/2 top-[30vh] sm:top-[40vh] flex flex-col justify-center items-center p-8 bg-gray-800 border border-gray-800 rounded-lg shadow'>
                 <h1 className='text-white text-2xl sm:text-3xl font-leckton font-semibold text-center mb-6'>Check Wallet</h1>
-                <ConnectButton/>
+                <ConnectWallet/>
                 {loading && <p className='my-4 text-white text-xl sm:text-3xl font-leckton'>Checking...</p>}
+                {error && <p className='my-4 text-red text-lg sm:text-xl font-leckton'>{error}</p>}
                 {onWhitelist && <p className='my-4 text-white text-xl sm:text-3xl font-leckton text-center'>{onWhitelist}</p>}
         </div>
 

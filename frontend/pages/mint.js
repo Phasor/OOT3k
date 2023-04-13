@@ -31,17 +31,10 @@ export default function Mint() {
   const connectionStatus = useConnectionStatus();
   const image = '/whirlpool-compressed.gif'
 
-  // example next.js app using ThirdWeb hooks
-  // https://github.com/LazerTechnologies/nft-marketplace-tutorial/blob/main/src/pages/index.tsx
-
   // new ThirdWeb hooks
   const { contract } = useContract(CONTRACT_ADDRESS, "nft-drop");
   const { mutate: mint, isLoading: claimNftLoading, error: claimNftError } = useClaimNFT(contract);
-  // get total supply
   const { data: totalSupplyData } = useClaimedNFTSupply(contract);
-
-  // get tokenURI of pre-reveal token. They are all the same on mint since they are not revealed, so can hard code token id to 0
-  // const { data: tokenUri , isLoading: tokenUriLoading } = useContractRead(contract, "tokenURI", [0]) // token id 0
 
   useEffect(() => setMounted(true), []);
 
