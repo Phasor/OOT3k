@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
 	// activeChain can be "mumbai" or "ethereum"
 
 	return (
-		<ThirdwebProvider activeChain="ethereum">
+		<ThirdwebProvider activeChain="mumbai">
 			{/* Fade in and out between page changes */}
 			<AnimatePresence mode="wait">
 				<motion.div

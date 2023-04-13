@@ -7,6 +7,7 @@ import NFTCard from '../components/NFTCard'
 import Head from 'next/head'
 import { motion } from "framer-motion"
 import { ConnectWallet, useConnectionStatus, useAddress } from "@thirdweb-dev/react";
+const { ethers } = require('ethers');
 const CONTRACT_ADDRESS = "0x8C82e5D8fA428795b4e9EDDBeb4d1B7e84B053f9"
 
 // How to use ThirdWeb react hook to call contract functions
@@ -29,6 +30,7 @@ export default function Mint() {
   const [txSuccess, setTxSuccess] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
   const connectionStatus = useConnectionStatus();
+  const preRevealIpfsArtCID = "QmX7rQfjYF9iNg4CQ23BgKA95k3SRytwReCa4Qa7npCjeM"
 
   // example next.js app using ThirdWeb hooks
   // https://github.com/LazerTechnologies/nft-marketplace-tutorial/blob/main/src/pages/index.tsx
@@ -38,8 +40,9 @@ export default function Mint() {
   const { mutate: mint, isLoading: claimNftLoading, error: claimNftError } = useClaimNFT(contract);
   // get total supply
   const { data:totalSupplyData } = useClaimedNFTSupply(contract);
+
   // get tokenURI of pre-reveal token. They are all the same on mint since they are not revealed, so can hard code token id to 0
-  const { data: tokenUri , isLoading: tokenUriLoading } = useContractRead(contract, "tokenURI", [0]) // token id 0
+  // const { data: tokenUri , isLoading: tokenUriLoading } = useContractRead(contract, "tokenURI", [0]) // token id 0
 
   useEffect(() => setMounted(true), []);
 
@@ -50,6 +53,11 @@ export default function Mint() {
       setIsConnected(false);
     }
   }, [connectionStatus]);
+
+  useEffect(() => {
+    console.log(`totalSupplyData: ${JSON.stringify(totalSupplyData)}`);
+    setTotalMinted(totalSupplyData.toNumber());
+  }, [totalMinted]);
   
 
   // controls the state of the minting progress
@@ -64,18 +72,9 @@ export default function Mint() {
   }, [claimNftLoading, claimNftError, isMintStarted]);
 
   useEffect(() => {
-    async function fetchImage() {
-      const response = await fetch(tokenUri);
-      const json = await response.json();
-      const ipfsUrl = json.image; // "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
-      const imageUrl = 'https://ipfs.io/ipfs/' + ipfsUrl.substring('ipfs://'.length);
+      const imageUrl = 'https://ipfs.io/ipfs/' + preRevealIpfsArtCID;
       setImage(imageUrl);
-    }
-
-    if(tokenUri){
-      fetchImage();
-    }
-  }, [tokenUri]);
+    }, []);
 
 
   useEffect(() => {
@@ -162,12 +161,7 @@ export default function Mint() {
     }
   }, [endAudio, txSuccess]);
 
-  useEffect(() => {
-    if (totalSupplyData) {
-      console.log(`totalSupplyData: ${JSON.stringify(totalSupplyData)}`);
-      setTotalMinted(totalSupplyData.toNumber());
-    }
-  }, [totalSupplyData]);
+
 
   const handleIncrement = () => {
     if(mintAmount >= 2) {
@@ -253,8 +247,9 @@ export default function Mint() {
                         onClick={() => {
                           console.log("Minting")
                           mint?.({
-                            to: {address},
-                            quantity: {mintAmount}
+                            to: address,
+                            // quantity: ethers.utils.parseUnits(mintAmount.toString(), 18)
+                            quantity: mintAmount
                         })
                         }
                         }
