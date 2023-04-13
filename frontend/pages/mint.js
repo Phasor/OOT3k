@@ -18,11 +18,10 @@ export default function Mint() {
   const [mintAmount, setMintAmount] = useState(1)
   const [error, setError] = useState(null)
   const address = useAddress();
-  const [totalMinted, setTotalMinted] = useState(0);
+  const [totalMinted, setTotalMinted] = useState(null);
   const animationContainerRef = useRef(null);
   const animationLoadingContainerRef = useRef(null);
   const [animation, setAnimation] = useState(null);
-  const [image, setImage] = useState(null);
   const [audio, setAudio] = useState(null);
   const [endAudio, setEndAudio] = useState(null);
   const [isMintStarted, setIsMintStarted] = useState(false);
@@ -30,7 +29,7 @@ export default function Mint() {
   const [txSuccess, setTxSuccess] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
   const connectionStatus = useConnectionStatus();
-  const preRevealIpfsArtCID = "QmX7rQfjYF9iNg4CQ23BgKA95k3SRytwReCa4Qa7npCjeM"
+  const image = '/whirlpool-compressed.gif'
 
   // example next.js app using ThirdWeb hooks
   // https://github.com/LazerTechnologies/nft-marketplace-tutorial/blob/main/src/pages/index.tsx
@@ -39,7 +38,7 @@ export default function Mint() {
   const { contract } = useContract(CONTRACT_ADDRESS, "nft-drop");
   const { mutate: mint, isLoading: claimNftLoading, error: claimNftError } = useClaimNFT(contract);
   // get total supply
-  const { data:totalSupplyData } = useClaimedNFTSupply(contract);
+  const { data: totalSupplyData } = useClaimedNFTSupply(contract);
 
   // get tokenURI of pre-reveal token. They are all the same on mint since they are not revealed, so can hard code token id to 0
   // const { data: tokenUri , isLoading: tokenUriLoading } = useContractRead(contract, "tokenURI", [0]) // token id 0
@@ -56,8 +55,8 @@ export default function Mint() {
 
   useEffect(() => {
     console.log(`totalSupplyData: ${JSON.stringify(totalSupplyData)}`);
-    setTotalMinted(totalSupplyData.toNumber());
-  }, [totalMinted]);
+    setTotalMinted(totalSupplyData?.toNumber());
+  }, [totalSupplyData]);
   
 
   // controls the state of the minting progress
@@ -70,11 +69,6 @@ export default function Mint() {
       setTxSuccess(true);
     }
   }, [claimNftLoading, claimNftError, isMintStarted]);
-
-  useEffect(() => {
-      const imageUrl = 'https://ipfs.io/ipfs/' + preRevealIpfsArtCID;
-      setImage(imageUrl);
-    }, []);
 
 
   useEffect(() => {
@@ -222,7 +216,7 @@ export default function Mint() {
           { isConnected ? ( 
             <div className='flex flex-col'>
                 <p className='font-lekton text-2xl mt-10'>How many Terra's do you want to mint?</p>
-                <p className='font-lekton text-2xl mt-6 text-center'>{totalMinted} of 3600 are already gone.  </p>
+                {totalSupplyData && <p className='font-lekton text-2xl mt-6 text-center'>{totalMinted} of 3600 are already gone.  </p>}
               <div className=' w-full flex justify-between mt-10'>
                 {/* + and 0 box */}
                 <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
@@ -245,13 +239,11 @@ export default function Mint() {
                         // data-mint-loading={isMintLoading}
                         data-mint-started={isMintStarted}
                         onClick={() => {
-                          console.log("Minting")
+                          console.log(`Minting ${mintAmount} Terra's`)
                           mint?.({
                             to: address,
-                            // quantity: ethers.utils.parseUnits(mintAmount.toString(), 18)
-                            quantity: mintAmount
-                        })
-                        }
+                            quantity: mintAmount,
+                          })}
                         }
                       >
                         {/* {isMintLoading && 'Approve in Wallet'} */}
