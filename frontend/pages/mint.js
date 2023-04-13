@@ -94,23 +94,6 @@ export default function Mint() {
         autoplay: true,
         renderer: 'svg'
       });
-
-      animation.setSpeed(0.7); // Set the initial speed
-      setTimeout(() => {
-        animation.setSpeed(1.0); // Increase the speed 
-      }, 2000);
-      setTimeout(() => {
-        animation.setSpeed(1.25); // Increase the speed
-      }, 4000);
-      setTimeout(() => {
-        animation.setSpeed(1.5); // Increase the speed
-      }, 6000);
-      setTimeout(() => {
-        animation.setSpeed(2.0); // Increase the speed
-      }, 8000);
-      setTimeout(() => {
-        animation.setSpeed(2.5); // Increase the speed
-      }, 10000);
     }
   }, [isMintStarted]);
 
@@ -120,21 +103,22 @@ export default function Mint() {
       audio.play();
       audio.playbackRate = 1.0;
 
-      setTimeout(() => {
-        audio.playbackRate = 1.2;
-      }, 4000);
+      // setTimeout(() => {
+      //   audio.playbackRate = 1.2;
+      // }, 4000);
 
-      setTimeout(() => {
-        audio.playbackRate = 1.3;
-      }, 6000);
+      // setTimeout(() => {
+      //   audio.playbackRate = 1.3;
+      // }, 6000);
 
-      setTimeout(() => {
-        audio.playbackRate = 1.4;
-      }, 8000);
+      // setTimeout(() => {
+      //   audio.playbackRate = 1.4;
+      // }, 8000);
 
-      setTimeout(() => {
-        audio.playbackRate = 1.5;
-      }, 10000);
+      // setTimeout(() => {
+      //   audio.playbackRate = 1.5;
+      // }, 10000);
+
     }
   }, [audio]);
 
@@ -208,7 +192,7 @@ export default function Mint() {
 
           { isConnected ? ( 
             <div className='flex flex-col'>
-                <p className='font-lekton text-2xl mt-10'>How many Terra's do you want to mint?</p>
+                <p className='font-lekton text-2xl text-center mt-10'>How many Heroes do you want to mint?</p>
                 {totalSupplyData && <p className='font-lekton text-2xl mt-6 text-center'>{totalMinted} of 3600 are already gone.  </p>}
               <div className=' w-full flex justify-between mt-10'>
             
