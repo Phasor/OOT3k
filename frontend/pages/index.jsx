@@ -20,6 +20,8 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Head>
         <title>Oceans of Terra | Underwater Adventure Game and NFT Collection</title>
+        <meta name="description" content="A fun and cute underwater adventure game powered by Web3. Play for free now." />
+        <meta name="keywords" content="Crypto gaming, web3, nft, nfts" />
       </Head>
       <main className="w-full flex flex-col justify-center items-center flex-1 relative">
         <Navbar/>

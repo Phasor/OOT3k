@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function check() {
     const [onWhitelist, setOnWhitelist] = useState(false)
@@ -37,6 +38,11 @@ export default function check() {
 
   return (
     <div className='w-screen min-h-screen relative'>
+        <Head>
+          <title>Oceans of Terra | Check Your Wallet</title>
+          <meta name="description" content="Check your wallet for the Oceans of Terra Mint." />
+          <meta name="keywords" content="Crypto gaming, web3, nft, nfts" />
+        </Head>
         <div className='w-full absolute top-0 left-0 bg-white opacity-80 p-2 flex items-center justify-start '>
             <Link href="/">
                 <Image 
