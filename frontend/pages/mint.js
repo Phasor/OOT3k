@@ -1,33 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import ConnectButtonCustom from '../components/ConnectButtonCustom'
-import { goerli, mainnet } from 'wagmi/chains'
 import lottie from 'lottie-web';
-import {
-  useAccount,
-  useContractReads,
-  useContractWrite,
-  usePrepareContractWrite,
-  useWaitForTransaction, 
-  useNetwork, 
-} from 'wagmi';
-import { abi } from '../ABI/contract-abi'  
+import { useContract, useContractRead, useClaimNFT, useClaimedNFTSupply  } from "@thirdweb-dev/react";
 import Link from 'next/link'
 import NFTCard from '../components/NFTCard'
 import Head from 'next/head'
 import { motion } from "framer-motion"
+import { ConnectWallet, useConnectionStatus, useAddress } from "@thirdweb-dev/react";
+const CONTRACT_ADDRESS = "0x8C82e5D8fA428795b4e9EDDBeb4d1B7e84B053f9"
 
-const contractConfig = {
-  address: '0xc5617A28f8494B131902DE5063e68E4Ed9B77f1E',
-  abi,
-};
+// How to use ThirdWeb react hook to call contract functions
+// https://portal.thirdweb.com/react/react.useclaimnft
 
 export default function Mint() {
   const [mounted, setMounted] = useState(false);
   const [mintAmount, setMintAmount] = useState(1)
   const [error, setError] = useState(null)
-  const { isConnected } = useAccount();
-  const { chain } = useNetwork()
+  const address = useAddress();
   const [totalMinted, setTotalMinted] = useState(0);
   const animationContainerRef = useRef(null);
   const animationLoadingContainerRef = useRef(null);
@@ -35,66 +24,50 @@ export default function Mint() {
   const [image, setImage] = useState(null);
   const [audio, setAudio] = useState(null);
   const [endAudio, setEndAudio] = useState(null);
-  const [correctNetwork, setCorrectNetwork] = useState(true);
+  const [isMintStarted, setIsMintStarted] = useState(false);
+  const [mintError, setMintError] = useState(false);
+  const [txSuccess, setTxSuccess] = useState(false);
+  const [isConnected, setIsConnected] = useState(false);
+  const connectionStatus = useConnectionStatus();
+
+  // example next.js app using ThirdWeb hooks
+  // https://github.com/LazerTechnologies/nft-marketplace-tutorial/blob/main/src/pages/index.tsx
+
+  // new ThirdWeb hooks
+  const { contract } = useContract(CONTRACT_ADDRESS, "nft-drop");
+  const { mutate: mint, isLoading: claimNftLoading, error: claimNftError } = useClaimNFT(contract);
+  // get total supply
+  const { data:totalSupplyData } = useClaimedNFTSupply(contract);
+  // get tokenURI of pre-reveal token. They are all the same on mint since they are not revealed, so can hard code token id to 0
+  const { data: tokenUri , isLoading: tokenUriLoading } = useContractRead(contract, "tokenURI", [0]) // token id 0
 
   useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    if (connectionStatus === "connected") {
+      setIsConnected(true);
+    } else {
+      setIsConnected(false);
+    }
+  }, [connectionStatus]);
   
-  /******* SET NETWORK HERE*******/
-  const NETWORK = 'goerli' // 'mainnet' or 'goerli'
-  
-  // Network configs
-  const { config: contractWriteConfig } = NETWORK === 'mainnet' ? 
-    // Mainnet config
-    usePrepareContractWrite({
-      ...contractConfig,
-      functionName: 'mint',
-      args: [mintAmount],
-      chainId: mainnet.id,
-    })
-    :
-    // Goerli config
-    usePrepareContractWrite({
-      ...contractConfig,
-      functionName: 'mint',
-      args: [mintAmount],
-      chainId: goerli.id,
-    });
 
-
-  const {
-    data: mintData,
-    write: mint,
-    isLoading: isMintLoading,
-    isSuccess: isMintStarted,
-    error: mintError,
-  } = useContractWrite({...contractWriteConfig});
-
-  const { data } = useContractReads({
-    contracts: [
-      {
-        ...contractConfig,
-        functionName: 'totalSupply',
-        args: [0],
-        watch: false,
-      },
-      {
-        ...contractConfig,
-        functionName: 'uri',
-        args: [0],
-        watch: false
-      }
-    ]
-  });
-
-  // rename the variables returned from useContractReads
-  const [totalSupplyData, tokenUri] = data ?? [];
+  // controls the state of the minting progress
+  useEffect(() => {
+    if (claimNftLoading) {
+      setIsMintStarted(true);
+    } else if (claimNftError) {
+      setMintError(true)
+    } else if (!claimNftLoading && isMintStarted === true) {
+      setTxSuccess(true);
+    }
+  }, [claimNftLoading, claimNftError, isMintStarted]);
 
   useEffect(() => {
     async function fetchImage() {
-      const metaDataURL = tokenUri?.replace('ipfs://', 'https://ipfs.io/ipfs/')
-      const response = await fetch(metaDataURL);
-      const metadata = await response.json();
-      const ipfsUrl = metadata.image;
+      const response = await fetch(tokenUri);
+      const json = await response.json();
+      const ipfsUrl = json.image; // "ipfs://QmNNeCf4Xf42eyvHqY8cxhCBntUZpipEPYAYsx75gvt6y1"
       const imageUrl = 'https://ipfs.io/ipfs/' + ipfsUrl.substring('ipfs://'.length);
       setImage(imageUrl);
     }
@@ -104,16 +77,6 @@ export default function Mint() {
     }
   }, [tokenUri]);
 
-
-  // ipfs://QmbFJhXoWQEGhv6nufAc93R5T57G9Rj3fsf8ARfLZQumAn/metadata.json
- 
-  const {
-    data: txData,
-    isSuccess: txSuccess,
-    error: txError,
-  } = useWaitForTransaction({
-    hash: mintData?.hash,
-  });
 
   useEffect(() => {
     if (txSuccess) {
@@ -199,15 +162,12 @@ export default function Mint() {
     }
   }, [endAudio, txSuccess]);
 
-
-
   useEffect(() => {
     if (totalSupplyData) {
+      console.log(`totalSupplyData: ${JSON.stringify(totalSupplyData)}`);
       setTotalMinted(totalSupplyData.toNumber());
     }
   }, [totalSupplyData]);
-
-  const isMinted = txSuccess;
 
   const handleIncrement = () => {
     if(mintAmount >= 2) {
@@ -227,32 +187,6 @@ export default function Mint() {
     }
   }
 
-
-
-  useEffect(() => {
-    if (chain) {
-      if (NETWORK === 'goerli') {
-        const uppcaseNetwork = NETWORK.charAt(0).toUpperCase() + NETWORK.slice(1);
-        if (chain.name && chain.name !== uppcaseNetwork) {
-          setError(`Please connect to the ${uppcaseNetwork} network`);
-          setCorrectNetwork(false);
-        } else {
-          setCorrectNetwork(true);
-          setError('');
-        }
-      } else {
-        if (chain.name && chain.name !== 'Ethereum') {
-          setError('Please connect to Ethereum mainnet');
-          setCorrectNetwork(false);
-        } else {
-          setCorrectNetwork(true);
-          setError('');
-        }
-      }
-    }
-  }, [chain]);
-
-
   return (
     <div className='w-screen h-screen'>
       <Head>
@@ -268,7 +202,7 @@ export default function Mint() {
                         <li className="py-5">
                         <Link className="" href="/mint">
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className=" flex justify-center items-center cursor-pointer">           
-                              <ConnectButtonCustom/>
+                              <ConnectWallet/>
                             </motion.div>  
                         </Link>
                         </li>
@@ -294,7 +228,7 @@ export default function Mint() {
           { isConnected ? ( 
             <div className='flex flex-col'>
                 <p className='font-lekton text-2xl mt-10'>How many Terra's do you want to mint?</p>
-                <p className='font-lekton text-2xl mt-6 text-center'>{totalMinted} of 3333 are already gone.  </p>
+                <p className='font-lekton text-2xl mt-6 text-center'>{totalMinted} of 3600 are already gone.  </p>
               <div className=' w-full flex justify-between mt-10'>
                 {/* + and 0 box */}
                 <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
@@ -309,22 +243,25 @@ export default function Mint() {
 
                 {/* Mint Button */}
                 <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
-                    {mounted && !isMinted && (
+                    {mounted && (
                       <button
                         id="start-animation"
-                        disabled={!mint || isMintLoading || isMintStarted }
+                        disabled={!mint || isMintStarted }
                         className="min-w-[350px] button font-lekton text-2xl text-center text-white py-1 px-3 cursor-pointer"
-                        data-mint-loading={isMintLoading}
+                        // data-mint-loading={isMintLoading}
                         data-mint-started={isMintStarted}
                         onClick={() => {
                           console.log("Minting")
-                          mint?.()
+                          mint?.({
+                            to: {address},
+                            quantity: {mintAmount}
+                        })
                         }
                         }
                       >
-                        {isMintLoading && 'Approve in Wallet'}
+                        {/* {isMintLoading && 'Approve in Wallet'} */}
                         {isMintStarted && 'Minting...'}
-                        {!isMintLoading && !isMintStarted && 'Mint'}
+                        {!isMintStarted && 'Mint'}
                       </button>
                     )}
                 </div> 
@@ -333,7 +270,7 @@ export default function Mint() {
           ) : (
             <>
              <p className="font-lekton text-2xl text-center mt-8" >Please Connect Your Wallet</p>
-              <p className="font-lekton text-2xl text-center mt-1" >to the {NETWORK=='goerli' ? 'Goerli Network' : 'Ethereum Mainnet'}</p>
+              <p className="font-lekton text-2xl text-center mt-1" >to Ethereum Mainnet</p>
             </>
             )
           }
@@ -355,12 +292,6 @@ export default function Mint() {
                             <NFTCard url={image} className="z-10"/>
                           )}
                         <h1 className=' font-lekton text-4xl font-bold text-center bg-transparent mt-5'>Success!</h1>
-                        { mintData.hash && (
-                          <a href={`https://goerli.etherscan.io/tx/${mintData.hash}`} className='font-lekton text-xl' target="_blank">
-                            <p className='font-lekton text-md text-blue-600 underline text-center bg-transparent cursor-pointer'>View on Etherscan</p>
-                          </a>
-                        )}
-
                       </div>
 
                       <div className='animation' ref={animationContainerRef}></div>
@@ -381,11 +312,6 @@ export default function Mint() {
         </p>
         )}
 
-        {txError && (
-          <p className="items-center flex justify-center font-lekton text-xl text-red-500 mt-2">
-            Error: {txError.message}
-          </p>
-        )}
      
       { mounted && isMintStarted && !txSuccess && (
         <div className='flex flex-col w-screen mt-[100px] justify-center items-center'>
