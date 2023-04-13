@@ -278,7 +278,7 @@ export default function Mint() {
                           {image && (
                             <NFTCard url={image} className="z-10"/>
                           )}
-                        <h1 className=' font-lekton text-4xl font-bold text-center bg-transparent mt-5'>Success!</h1>
+                        <h1 className='font-lekton text-4xl font-bold text-center bg-transparent mt-5'>Success!</h1>
                       </div>
 
                       <div className='animation' ref={animationContainerRef}></div>
