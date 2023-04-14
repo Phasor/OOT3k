@@ -2,7 +2,6 @@
 .env
 node_modules
 .next
-postReveal.json
 whitelist
 uploadWhitelist.js
 whitelistTest.csv
