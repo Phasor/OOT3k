@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const { id } = req.query;
 
     if (METADATA_STAGE === 'prereveal') {
-        //reveal hidden metadata in preReveal.json by id
+        //show hidden metadata in preReveal.json by id
         const preReveal = require('../../../metadata/preReveal.json');
         const metadata = preReveal.nfts[id];
         console.log(`preReveal metadata for id ${id} is ${metadata}`);
