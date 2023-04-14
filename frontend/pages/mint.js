@@ -263,7 +263,7 @@ export default function Mint() {
 
         {mintError && (
         <p className="w-full flex justify-center items-center font-lekton text-xl text-red-500 mt-2">
-          Error. Make sure you aren't trying to mint more than 1 per wallet for the Whitelist and 2 for the Public mint.
+          Error. Make sure you are on the Whitelist if its before 10am PDT and aren't trying to mint more than 1 per wallet for the Whitelist and 2 for the Public mint.
         </p>
         )}
 
