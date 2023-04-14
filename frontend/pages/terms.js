@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import Image from 'next/image'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+// comment to push to vercel env variables
 
 export default function terms() {
   return (
