@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import Image from 'next/image'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+// superfluous comment to enable env variable update for vercel
 
 export default function license() {
   return (
