@@ -49,8 +49,8 @@ function MyApp({ Component, pageProps }) {
 
 			// 	// Array of RPC URLs to use
 			// 	rpc: [
-			// 		`https://mainnet.infura.io/v3/${INFURA_RPC}`, 					// MY RPC key
 			// 		"https://ethereum.rpc.thirdweb.com",	 						// ThirdWeb RPC
+			// 		`https://mainnet.infura.io/v3/${INFURA_RPC}`, 					// MY RPC key
 			// 	],
 		
 			// 	// === Information for adding the network to your wallet (how it will appear for first time users) === \\
