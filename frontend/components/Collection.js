@@ -30,13 +30,13 @@ export default function Collection() {
               <p className='p-2 text-xl sm:text-2xl text-gray-800 font-lekton font-normal mt-3 text-center'>Turtle, Mermaid or Narwhal, which hero will you choose?</p>
             </div>
             
-            <div className="w-full max-w-[90vw] sm:max-w-6xl flex flex-col justify-center items-center mt-10 sm:mt-20 p-1 sm:p-0 ">
+            <div className="w-full max-w-[90vw] sm:max-w-6xl flex flex-col justify-center items-center mt-5 sm:mt-10 p-1 sm:p-0 ">
               <Carousel/>
-              <Carousel reversed={true} />
+              {/* <Carousel reversed={true} /> */}
             </div>
 
             <Link href="/check">
-              <motion.button whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer mx-auto sm:my-10">
+              <motion.button whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer mx-auto sm:mt-0 sm:mb-10">
                 <span className="bg-[#62810D] text-white border-4 border-green-700 shadow-lg rounded-full py-2 px-4 font-lekton text-3xl font-bold my-10 hover:border-4 hover:border-gray-800 hover:bg-white hover:text-gray-800">Check Whitelist</span>
               </motion.button>
             </Link>
