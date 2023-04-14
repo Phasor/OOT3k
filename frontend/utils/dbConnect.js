@@ -36,6 +36,10 @@ async function dbConnect() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       bufferCommands: false,
+      // Added the following options:
+      serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
+      socketTimeoutMS: 10000, // Close sockets after 10 seconds of inactivity
+      maxPoolSize: 1000,
     };
 
     mongoose.set("strictQuery", false);
