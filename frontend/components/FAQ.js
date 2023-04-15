@@ -100,7 +100,7 @@ export default function FAQ() {
             
 
                 {/* Question 2 */}
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
+                {/* <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
                     <div
                     className="w-full p-4 cursor-pointer flex justify-between items-center"
                     onClick={toggleExpansion2}
@@ -133,10 +133,10 @@ export default function FAQ() {
                     Narwhalist (whitelist) price is free. Public price is 0.057 ETH.
                     </p>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Question 3 */}
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
+                {/* <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
                     <div
                     className="w-full p-4 cursor-pointer flex justify-between items-center"
                     onClick={toggleExpansion3}
@@ -169,7 +169,7 @@ export default function FAQ() {
                     1 per wallet for the Narwhalist (whitelist) and 2 per wallet for the Public mint.
                     </p>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Question 4 */}
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[90%] md:w-[40%] mt-5">
@@ -358,7 +358,7 @@ export default function FAQ() {
                     onClick={toggleExpansion9}
                     >
                         <h3 className="text-xl font-lekton font-semibold text-gray-800">
-                        What chain will the NFTs be on?
+                        What chain are the NFTs on?
                         </h3>
                         <svg
                             className={`w-6 h-6 transition-transform duration-200 ${
@@ -382,7 +382,7 @@ export default function FAQ() {
                     } overflow-hidden`}
                     >
                         <p className="text-gray-800 text-xl mt-5 font-lekton">
-                        This collection will be on the Ethereum mainnet. Future in game NFTs and transactions will make use of scaling solutions like L2's.
+                        This collection is on the Ethereum mainnet. Future in game NFTs and transactions will make use of scaling solutions like L2's.
                         </p>
                     </div>
                 </div>

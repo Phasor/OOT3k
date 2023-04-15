@@ -129,7 +129,7 @@ function NavBar() {
             >
               <ul className="h-screen md:h-auto md:flex items-center justify-center sm:space-x-10">
 
-                {/* <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400  py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400  py-5">
                   <div onClick={() => setShowMobileMenu(false)}> 
                     <ScrollLink href="#intro" >
                       <div className="sm:animated-button">
@@ -139,9 +139,9 @@ function NavBar() {
                       </div>
                     </ScrollLink>
                   </div>
-                </li> */}
+                </li>
 
-                {/* <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <div onClick={() => setShowMobileMenu(false)}> 
                     <ScrollLink href="#collection">
                       <div className="sm:animated-button">
@@ -151,9 +151,9 @@ function NavBar() {
                       </div>
                     </ScrollLink>
                   </div>
-                </li> */}
+                </li>
 
-                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
+                {/* <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <Link className="" href="/check" onClick={() => setShowMobileMenu(false)}>
                     <div className="sm:check-wallet-button">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
@@ -161,9 +161,9 @@ function NavBar() {
                       </motion.div>
                     </div>
                   </Link>
-                </li>
+                </li> */}
 
-                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
+                {/* <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <Link className="" href="/mint" onClick={() => setShowMobileMenu(false)}>
                     <div className="sm:mint-button ">
                       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
@@ -171,7 +171,7 @@ function NavBar() {
                       </motion.div>
                     </div>
                   </Link>
-                </li>
+                </li> */}
 
                 <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <div onClick={() => setShowMobileMenu(false)}> 
@@ -185,7 +185,7 @@ function NavBar() {
                   </div>
                 </li>
 
-                {/* <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
+                <li className="border-b-2 md:border-b-0 hover:bg-mobile-clicked sm:hover:bg-transparent border-blue-400 py-5">
                   <div onClick={() => setShowMobileMenu(false)}>   
                     <ScrollLink href="#team">
                       <div className="sm:animated-button">
@@ -195,7 +195,7 @@ function NavBar() {
                       </div>
                     </ScrollLink>
                   </div>
-                </li> */}
+                </li>
 
               </ul>
             </div>
