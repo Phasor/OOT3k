@@ -173,23 +173,23 @@ export default function Mint() {
         <div className='flex flex-col min-w-full mt-[7rem] justify-center items-center'>
           
             <Image
-                src="/narwhale-sketch.png"
+                src="/water-minting-compressed.gif"
                 height={350}
                 width={350}
-                className="border-2 border-gray-500 rounded-sm"
-                alt='narwhale picture'
+                className=""
+                alt='swirling water'
                 priority
             />
 
           { isConnected ? ( 
             <div className='flex flex-col w-full items-center'>
-                <p className='font-lekton text-2xl text-center mt-10 p-2'>How many Heroes do you want to mint?</p>
+                <p className='font-lekton text-2xl text-center mt-10 p-2'>Welcome to the Oceans of Terra</p>
                 {totalSupplyData && <p className='font-lekton text-2xl mt-6 text-center p-2'>{totalMinted} of 3600 are already gone.  </p>}
               
               
-              <div className='w-full sm:max-w-[500px] flex justify-between mt-10 p-4'>
+              <div className='w-full sm:max-w-[200px] flex justify-between mt-5 p-4'>
             
-                <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
+                {/* <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
                   <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
                     <p onClick={handleDecrement} className="text-gray-100 text-2xl mb-2">-</p>
                   </div>
@@ -197,10 +197,10 @@ export default function Mint() {
                   <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer hover:scale-105">
                     <p onClick={handleIncrement} className="text-gray-100 text-2xl mb-1">+</p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* mint button */}
-                <div className='w-[50%] bg-gray-800 ml-2 hover:scale-105 cursor-pointer flex justify-center items-center'>
+                <div className='w-full bg-gray-800 hover:scale-105 cursor-pointer flex justify-center items-center'>
                     {mounted && (
                       <button
                         id="start-animation"
@@ -227,7 +227,7 @@ export default function Mint() {
           ) : (
             <>
              <p className="font-lekton text-2xl text-center mt-8" >Please Connect Your Wallet</p>
-              <p className="font-lekton text-2xl text-center mt-1" >to Ethereum Mainnet</p>
+              <p className="font-lekton text-2xl text-center mt-1" >on Ethereum Mainnet</p>
             </>
             )
           }
@@ -248,7 +248,7 @@ export default function Mint() {
                           {image && (
                             <NFTCard url={image} className="z-10"/>
                           )}
-                        <h1 className='font-lekton text-4xl font-bold text-center bg-transparent mt-5'>Success!</h1>
+                        <h1 className='font-lekton text-4xl font-bold text-center bg-transparent mt-10'>Success! Welcome Explorer.</h1>
                       </div>
 
                       <div className='animation' ref={animationContainerRef}></div>
