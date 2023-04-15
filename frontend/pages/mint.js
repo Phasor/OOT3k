@@ -8,7 +8,7 @@ import Head from 'next/head'
 import { motion } from "framer-motion"
 import { ConnectWallet, useConnectionStatus, useAddress } from "@thirdweb-dev/react";
 const { ethers } = require('ethers');
-const CONTRACT_ADDRESS = "0x038BC707Aff46413eE490955Cf565A797bb1383c"
+const CONTRACT_ADDRESS = "0x1FAf2F8277675A70cc8E63D399b3561C108c93c4"
 
 // How to use ThirdWeb react hook to call contract functions
 // https://portal.thirdweb.com/react/react.useclaimnft
