@@ -38,7 +38,7 @@ export default function Collection() {
                 height={200}
                 alt="logo"
                 loading="lazy"
-                className="mb-20 mt-10"
+                className="mb-20 mt-10 h-[150px] w-[150px] sm:w-[200px] sm:h-[200px]"
               />
             </div>
             
