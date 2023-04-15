@@ -5,3 +5,4 @@ node_modules
 whitelist
 uploadWhitelist.js
 whitelistTest.csv
+postReveal.json
