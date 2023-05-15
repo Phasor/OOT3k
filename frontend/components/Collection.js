@@ -3,6 +3,7 @@ import Carousel from './Carousel'
 import { motion } from "framer-motion"
 import Link from "next/link";
 import Image from "next/image";
+// change for redploying vercel env variables
 
 export default function Collection() {
 
