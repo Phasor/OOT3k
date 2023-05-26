@@ -20,33 +20,43 @@ const checkUser = async (address) => {
   }
 };
 
-
 export default async function handler(req, res) {
   //  params: { address, answer }
   if (req.method === "POST") {
-    
     // sanitize and trim the data
-      const address = xss(req.body.address.trim());
-      const answer = xss(req.body.answer.trim());
+    const address = xss(req.body.address.trim());
+    const answer = xss(req.body.answer.trim());
 
     try {
       // check they are not already whitelisted
       await dbConnect();
-      const userExists = await checkUser(address)
+      const userExists = await checkUser(address);
       if (userExists) {
-        return res.status(200).json({ success: false, message: `Address ${address} is already on the whitelist!` });
+        return res
+          .status(200)
+          .json({
+            success: false,
+            message: `Address ${address} is already on the whitelist!`,
+          });
       }
 
       // check if the answer is correct
       if (answer.toLowerCase() !== correctAnswer) {
         console.log("Wrong answer");
-        return res.status(200).json({ success: false, message: "Wrong answer" });
+        return res
+          .status(200)
+          .json({ success: false, message: "Wrong answer" });
       }
 
       // Correct answer given, create a new User and store in db
-      const user = new User({address});
+      const user = new User({ address });
       const savedUser = await user.save();
-      return res.status(200).json({ success: true, message: `Success! You have been added to the whitelist!` });
+      return res
+        .status(200)
+        .json({
+          success: true,
+          message: `Success! You have been added to the whitelist!`,
+        });
     } catch (err) {
       return res.status(500).json({ success: false, message: err.message });
     }

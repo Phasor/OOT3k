@@ -1,112 +1,220 @@
-import React from 'react'
-import Footer from '../components/Footer'
-import Image from 'next/image'
-import { motion } from "framer-motion"
-import Link from 'next/link'
+import React from "react";
+import Footer from "../components/Footer";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 // comment to push to vercel env variables
 
 export default function terms() {
   return (
-    <div className='flex flex-col w-screen min-h-screen bg-gray-100 '>
+    <div className="flex flex-col w-screen min-h-screen bg-gray-100 ">
+      {/* Navbar */}
+      <div className="min-h-[70px] bg-white opacity-95 w-full flex justify-between items-center">
+        <Link href="/">
+          <Image
+            height={80}
+            width={80}
+            className="px-4 ml-5"
+            src="/logocompressed.png"
+            alt="logo"
+          />
+        </Link>
 
-        {/* Navbar */}
-        <div className='min-h-[70px] bg-white opacity-95 w-full flex justify-between items-center' >
-            <Link href="/"><Image height={80} width={80} className="px-4 ml-5" src="/logocompressed.png" alt='logo'/></Link>
-
-                <div id="menu" className="pb-0 mt-0 mr-12">
-                    <ul className="flex items-center justify-center space-x-10">
-
-                        <li className="py-5 hidden sm:block">
-                        <Link className="" href="/">
-                            <div className="animated-button ">
-                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
-                                <p className="text-white bg-transparent font-raleway text-lg font-bold px-3">Home</p>
-                            </motion.div>
-                            </div>
-                        </Link>
-                        </li>
-                        <li className="py-5">
-                        <Link className="" href="/check">
-                            <div className="mint-button ">
-                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex justify-center items-center cursor-pointer">
-                                <p className="text-white bg-transparent font-raleway text-lg font-bold px-3">Check Wallet</p>
-                            </motion.div>
-                            </div>
-                        </Link>
-                        </li>
-
-                    </ul>
+        <div id="menu" className="pb-0 mt-0 mr-12">
+          <ul className="flex items-center justify-center space-x-10">
+            <li className="py-5 hidden sm:block">
+              <Link className="" href="/">
+                <div className="animated-button ">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex justify-center items-center cursor-pointer"
+                  >
+                    <p className="text-white bg-transparent font-raleway text-lg font-bold px-3">
+                      Home
+                    </p>
+                  </motion.div>
                 </div>
+              </Link>
+            </li>
+            <li className="py-5">
+              <Link className="" href="/check">
+                <div className="mint-button ">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex justify-center items-center cursor-pointer"
+                  >
+                    <p className="text-white bg-transparent font-raleway text-lg font-bold px-3">
+                      Check Wallet
+                    </p>
+                  </motion.div>
+                </div>
+              </Link>
+            </li>
+          </ul>
         </div>
+      </div>
 
-        {/* License */}
-        <div className='flex flex-row justify-center items-center'>
-            <div>
-                <div className='p-4 sm:p-[2rem] my-[5rem] sm:my-[6rem] sm:max-w-[70vw] bg-gray-100 text-gray-800 flex flex-col justify-center '>
-                    <div className='flex justify-center w-full'>
-                        <h1 className="font-lekton text-2xl sm:text-3xl mb-5 text-center w-full">
-                        Oceans of Terra - Terms and Conditions
-                        </h1>
-                    </div>
-
-                    <p className="font-lekton text-termsbody text-left mt-2">
-                    Oceans of Terra is a collection of non-fungible tokens (NFTs) running on the Ethereum network. The primary purpose of this website is to provide information concerning Oceans of Terra and provide access to users to purchase our NFTs. Users are entirely responsible for the safety and management of their own private Ethereum wallets and validating all transactions and contracts generated by this website. Ethereum wallets are not operated by, maintained by, or affiliated with us, and we do not have custody or control over the contents of your wallet and have no ability to retrieve or transfer its contents.
-                    </p>
-                    <p className="font-lekton text-termsbody text-left mt-2">
-                    BECAUSE OUR SMART CONTRACT OPERATES ON THE ETHEREUM NETWORK THERE IS NO ABILITY TO UNDO, REVERSE, OR RESTORE ANY TRANSACTIONS INVOLVING OUR NFTS.                    
-                    </p>
-
-                    <p className="font-lekton text-termsbody text-left mt-2">
-                    We may make changes to these Terms of Use at our discretion. Please check these Terms of Use periodically for changes. Any changes will apply on the date that they are made, and your continued access to or use after these Terms of Use have been updated will constitute your binding acceptance of the updates. If you do not agree to any revised Terms of Use, you may not access or use this website.                    
-                    </p>
-
-                    <h2 className="font-lekton text-termsheading text-left mt-4">Terms of Sale</h2>
-                    <p className="font-lekton text-termsbody text-left">
-                    Each Narwhal, Mermaid, Turtle, Loot Chests, in-game item, and Land parcel is an NFT on the Ethereum network. When you purchase an NFT through our smart contract, we will grant you a non-exclusive license (as set forth in Section 2 below) to use the artwork associated with that specific NFT (the “Art”). Ownership of the NFT does not confer any ownership in the Art.
-                    </p>
-                    <p className="font-lekton text-termsbody text-left">
-                    If you elect to purchase a NFT through our smart contract, any financial transactions that you engage in will be conducted solely through the Ethereum network. We will have no insight into or control over these payments or transactions, nor do we have the ability to reverse any transactions. You agree that we will have no liability to you or to any third party for any claims or damages that may arise as a result of any transactions that you engage in or any other transactions that you conduct via the Ethereum network. Ethereum requires the payment of a transaction fee (a “Gas Fee”) for every transaction that occurs on the Ethereum network. This means that you will need to pay a Gas Fee for each transaction.                 
-                    </p>
-
-                    <h2 className="font-lekton text-termsheading text-left mt-4">License Terms</h2>
-                    <p className="font-lekton text-termsbody text-left">
-                    a.  Non-exclusive License                  
-                    </p>
-                    <p className="font-lekton text-termsbody text-left">
-                        Subject to the restrictions in Section 2(B) below and your continued compliance with these Terms of Use, Oceans of Terra grants you a worldwide, royalty-free, non-exclusive, non-transferable, non-sublicensable license to use, copy or, display the purchased Art, including for the purpose of creating derivative works based on the Art (“Adapted Art”); provided, however, any such Adapted Art must contain the original traits or features of the Art (including color schemes) and may not use traits or features from other Oceans of Terra artwork (including their color schemes). Upon failure by you (or any authorized person) to comply with these Terms of Use, we shall be entitled to terminate this license.‍                    
-                    </p>
-                    <p className="font-lekton text-termsbody text-left mt-2">
-                    b.  Restricted Use                 
-                    </p>
-                    <p className="font-lekton text-termsbody text-left">
-                    The following are prohibited with the express written permission of Oceans of Terra:
-                    </p>
-                    <p className="font-lekton text-termsbody text-left mt-2">
-                        No False Claims of Ownership.
-                        Nothing in these Terms of Use constitutes or may be construed as permission to assert or imply that you are, or that your use of the Art is sponsored, endorsed, or granted official status by us. You may not falsely represent that you are the creator or owner of any Art.
-                    </p>
-                    <p className="font-lekton text-termsbody text-left mt-2">
-                        No Use in Trademark or Logo.
-                        Unless explicitly authorized by us, you may not use the Art (in whole or in part) or any Adapted Art as the distinctive or distinguishing feature of a trademark, design mark, trade name, business name, service mark, or logo. Additionally, you shall not be entitled to register (in any jurisdiction) such content (in whole or in part) as a trademark or rely on any such registrations, prior use, and/or accrued goodwill to prevent any third party use of the content or any similar content (including by us, our customers, or the copyright owner of such content).
-                    </p>
-                    <p className="font-lekton text-termsbody text-left mt-2">
-                        No On-Demand Use.
-                        Unless explicitly authorized by us, you may not use the Art or Adapted Art in connection with “on-demand” products (e.g., products in which a licensed image is selected by a third party for customization of such product on a made-to-order basis), including, without limitation, postcards, mugs, t-shirts, calendars, posters, commercial screensavers or wallpapers on mobile phones, or similar items (this includes the sale of products through custom designed websites, as well as sites such as zazzle.com and cafepress.com).
-                    </p>
-                    <p className="font-lekton text-termsheading text-left mt-4">
-                        Your Obligations
-                    </p>
-                    <p className="font-lekton text-termsbody text-left mt-2">
-                    You are solely responsible for your own conduct while accessing or using this website, and for any consequences thereof. You agree to use the site only for purposes that are legal, proper and in accordance with these Terms of Use and any applicable laws or regulations. By way of example, and not as a limitation, you may not, and may not allow any third party to: (i) send, upload, distribute or disseminate any unlawful, defamatory, harassing, abusive, fraudulent, hateful, violent, obscene, or otherwise objectionable content; (ii) distribute viruses, worms, defects, trojan horses, corrupted files, hoaxes, or any other items of a destructive or deceptive nature; (iii) impersonate another person; (iv) upload, post, transmit or otherwise make available through the website any content that infringes the intellectual property or proprietary rights of any party or otherwise violates the legal rights of others; (v) engage in, promote, or encourage illegal activity (including, without limitation, money laundering); (vi) interfere with other users’ use of the website; (vii) use the website for any unauthorized commercial purpose; (viii) modify, adapt, translate, or reverse engineer any portion of the website; (ix) remove any copyright, trademark or other proprietary rights notices contained in or on the website or any part of it; (x) use any technology to collect information about the website’s for any unauthorized purpose; (xi) access or use the website for the purpose of creating a product or service that is competitive with any of our products or services. If you engage in any of the activities prohibited by this Section 3, we may, at our sole and absolute discretion, without notice to you, and without limiting any of our other rights or remedies at law or in equity, immediately suspend or terminate your user account.
-                    </p>
-                    
-      
-                
-                </div>
-                <Footer/>
+      {/* License */}
+      <div className="flex flex-row justify-center items-center">
+        <div>
+          <div className="p-4 sm:p-[2rem] my-[5rem] sm:my-[6rem] sm:max-w-[70vw] bg-gray-100 text-gray-800 flex flex-col justify-center ">
+            <div className="flex justify-center w-full">
+              <h1 className="font-lekton text-2xl sm:text-3xl mb-5 text-center w-full">
+                Oceans of Terra - Terms and Conditions
+              </h1>
             </div>
-        </div>
 
+            <p className="font-lekton text-termsbody text-left mt-2">
+              Oceans of Terra is a collection of non-fungible tokens (NFTs)
+              running on the Ethereum network. The primary purpose of this
+              website is to provide information concerning Oceans of Terra and
+              provide access to users to purchase our NFTs. Users are entirely
+              responsible for the safety and management of their own private
+              Ethereum wallets and validating all transactions and contracts
+              generated by this website. Ethereum wallets are not operated by,
+              maintained by, or affiliated with us, and we do not have custody
+              or control over the contents of your wallet and have no ability to
+              retrieve or transfer its contents.
+            </p>
+            <p className="font-lekton text-termsbody text-left mt-2">
+              BECAUSE OUR SMART CONTRACT OPERATES ON THE ETHEREUM NETWORK THERE
+              IS NO ABILITY TO UNDO, REVERSE, OR RESTORE ANY TRANSACTIONS
+              INVOLVING OUR NFTS.
+            </p>
+
+            <p className="font-lekton text-termsbody text-left mt-2">
+              We may make changes to these Terms of Use at our discretion.
+              Please check these Terms of Use periodically for changes. Any
+              changes will apply on the date that they are made, and your
+              continued access to or use after these Terms of Use have been
+              updated will constitute your binding acceptance of the updates. If
+              you do not agree to any revised Terms of Use, you may not access
+              or use this website.
+            </p>
+
+            <h2 className="font-lekton text-termsheading text-left mt-4">
+              Terms of Sale
+            </h2>
+            <p className="font-lekton text-termsbody text-left">
+              Each Narwhal, Mermaid, Turtle, Loot Chests, in-game item, and Land
+              parcel is an NFT on the Ethereum network. When you purchase an NFT
+              through our smart contract, we will grant you a non-exclusive
+              license (as set forth in Section 2 below) to use the artwork
+              associated with that specific NFT (the “Art”). Ownership of the
+              NFT does not confer any ownership in the Art.
+            </p>
+            <p className="font-lekton text-termsbody text-left">
+              If you elect to purchase a NFT through our smart contract, any
+              financial transactions that you engage in will be conducted solely
+              through the Ethereum network. We will have no insight into or
+              control over these payments or transactions, nor do we have the
+              ability to reverse any transactions. You agree that we will have
+              no liability to you or to any third party for any claims or
+              damages that may arise as a result of any transactions that you
+              engage in or any other transactions that you conduct via the
+              Ethereum network. Ethereum requires the payment of a transaction
+              fee (a “Gas Fee”) for every transaction that occurs on the
+              Ethereum network. This means that you will need to pay a Gas Fee
+              for each transaction.
+            </p>
+
+            <h2 className="font-lekton text-termsheading text-left mt-4">
+              License Terms
+            </h2>
+            <p className="font-lekton text-termsbody text-left">
+              a. Non-exclusive License
+            </p>
+            <p className="font-lekton text-termsbody text-left">
+              Subject to the restrictions in Section 2(B) below and your
+              continued compliance with these Terms of Use, Oceans of Terra
+              grants you a worldwide, royalty-free, non-exclusive,
+              non-transferable, non-sublicensable license to use, copy or,
+              display the purchased Art, including for the purpose of creating
+              derivative works based on the Art (“Adapted Art”); provided,
+              however, any such Adapted Art must contain the original traits or
+              features of the Art (including color schemes) and may not use
+              traits or features from other Oceans of Terra artwork (including
+              their color schemes). Upon failure by you (or any authorized
+              person) to comply with these Terms of Use, we shall be entitled to
+              terminate this license.‍
+            </p>
+            <p className="font-lekton text-termsbody text-left mt-2">
+              b. Restricted Use
+            </p>
+            <p className="font-lekton text-termsbody text-left">
+              The following are prohibited with the express written permission
+              of Oceans of Terra:
+            </p>
+            <p className="font-lekton text-termsbody text-left mt-2">
+              No False Claims of Ownership. Nothing in these Terms of Use
+              constitutes or may be construed as permission to assert or imply
+              that you are, or that your use of the Art is sponsored, endorsed,
+              or granted official status by us. You may not falsely represent
+              that you are the creator or owner of any Art.
+            </p>
+            <p className="font-lekton text-termsbody text-left mt-2">
+              No Use in Trademark or Logo. Unless explicitly authorized by us,
+              you may not use the Art (in whole or in part) or any Adapted Art
+              as the distinctive or distinguishing feature of a trademark,
+              design mark, trade name, business name, service mark, or logo.
+              Additionally, you shall not be entitled to register (in any
+              jurisdiction) such content (in whole or in part) as a trademark or
+              rely on any such registrations, prior use, and/or accrued goodwill
+              to prevent any third party use of the content or any similar
+              content (including by us, our customers, or the copyright owner of
+              such content).
+            </p>
+            <p className="font-lekton text-termsbody text-left mt-2">
+              No On-Demand Use. Unless explicitly authorized by us, you may not
+              use the Art or Adapted Art in connection with “on-demand” products
+              (e.g., products in which a licensed image is selected by a third
+              party for customization of such product on a made-to-order basis),
+              including, without limitation, postcards, mugs, t-shirts,
+              calendars, posters, commercial screensavers or wallpapers on
+              mobile phones, or similar items (this includes the sale of
+              products through custom designed websites, as well as sites such
+              as zazzle.com and cafepress.com).
+            </p>
+            <p className="font-lekton text-termsheading text-left mt-4">
+              Your Obligations
+            </p>
+            <p className="font-lekton text-termsbody text-left mt-2">
+              You are solely responsible for your own conduct while accessing or
+              using this website, and for any consequences thereof. You agree to
+              use the site only for purposes that are legal, proper and in
+              accordance with these Terms of Use and any applicable laws or
+              regulations. By way of example, and not as a limitation, you may
+              not, and may not allow any third party to: (i) send, upload,
+              distribute or disseminate any unlawful, defamatory, harassing,
+              abusive, fraudulent, hateful, violent, obscene, or otherwise
+              objectionable content; (ii) distribute viruses, worms, defects,
+              trojan horses, corrupted files, hoaxes, or any other items of a
+              destructive or deceptive nature; (iii) impersonate another person;
+              (iv) upload, post, transmit or otherwise make available through
+              the website any content that infringes the intellectual property
+              or proprietary rights of any party or otherwise violates the legal
+              rights of others; (v) engage in, promote, or encourage illegal
+              activity (including, without limitation, money laundering); (vi)
+              interfere with other users’ use of the website; (vii) use the
+              website for any unauthorized commercial purpose; (viii) modify,
+              adapt, translate, or reverse engineer any portion of the website;
+              (ix) remove any copyright, trademark or other proprietary rights
+              notices contained in or on the website or any part of it; (x) use
+              any technology to collect information about the website’s for any
+              unauthorized purpose; (xi) access or use the website for the
+              purpose of creating a product or service that is competitive with
+              any of our products or services. If you engage in any of the
+              activities prohibited by this Section 3, we may, at our sole and
+              absolute discretion, without notice to you, and without limiting
+              any of our other rights or remedies at law or in equity,
+              immediately suspend or terminate your user account.
+            </p>
+          </div>
+          <Footer />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
