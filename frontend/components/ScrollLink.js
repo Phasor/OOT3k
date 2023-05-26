@@ -3,7 +3,6 @@
 // import React, { PropsWithChildren } from "react";
 // // mirror the props of next/link component
 
-
 // const ScrollLink = ({ children, ...props }) => {
 //   const handleScroll = (e) => {
 //     e.preventDefault();
@@ -45,4 +44,3 @@ const ScrollLink = ({ href, children }) => {
 };
 
 export default ScrollLink;
-

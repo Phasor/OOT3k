@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import { useEffect, useState } from 'react';
-import Video from './Video';
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import Video from "./Video";
 
 function isMobile() {
   if (typeof window !== "undefined") {
@@ -9,8 +9,7 @@ function isMobile() {
   return false;
 }
 
-
-export default function Hero({onVideoLoaded}) {
+export default function Hero({ onVideoLoaded }) {
   const [mobile, setMobile] = useState(false);
   const [key, setKey] = useState(0); // Add a state variable for the key
   const [ready, setReady] = useState(false);
@@ -20,22 +19,20 @@ export default function Hero({onVideoLoaded}) {
     setReady(true);
   }, []);
 
-
   useEffect(() => {
     function handleResize() {
       setMobile(isMobile());
-      setKey(key => key + 1); // Update the key whenever the screen size changes
+      setKey((key) => key + 1); // Update the key whenever the screen size changes
     }
 
     if (typeof window !== "undefined") {
-      window.addEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
       setMobile(isMobile());
       return () => {
-        window.removeEventListener('resize', handleResize);
+        window.removeEventListener("resize", handleResize);
       };
     }
   }, []);
-
 
   return (
     <>
@@ -49,16 +46,10 @@ export default function Hero({onVideoLoaded}) {
             playsInline
             onPlaying={onVideoLoaded} // Pass the callback here
           >
-            { mobile ? (
-              <source
-                src="/MUacademy-mobile-noswaying.mp4"
-                type="video/mp4"
-              />
+            {mobile ? (
+              <source src="/MUacademy-mobile-noswaying.mp4" type="video/mp4" />
             ) : (
-            <source
-              src="/MUacademy-desktop-noswaying.mp4"
-              type="video/mp4"
-            />
+              <source src="/MUacademy-desktop-noswaying.mp4" type="video/mp4" />
             )}
           </Video>
           <Image
@@ -77,8 +68,4 @@ export default function Hero({onVideoLoaded}) {
       )}
     </>
   );
-  
-
 }
-
-

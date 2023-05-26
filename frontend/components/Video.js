@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
-import VideoSpinner from './VideoSpinner';
+import React, { useRef, useEffect, useState } from "react";
+import VideoSpinner from "./VideoSpinner";
 
 // // We use this method rather than the <video> tag because the <video> tag does not work on safari mobile
 // // https://stackoverflow.com/questions/54732340/react-video-loading-in-memory-before-rendering-to-screen

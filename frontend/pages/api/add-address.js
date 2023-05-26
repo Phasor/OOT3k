@@ -32,12 +32,10 @@ export default async function handler(req, res) {
       await dbConnect();
       const userExists = await checkUser(address);
       if (userExists) {
-        return res
-          .status(200)
-          .json({
-            success: false,
-            message: `Address ${address} is already on the whitelist!`,
-          });
+        return res.status(200).json({
+          success: false,
+          message: `Address ${address} is already on the whitelist!`,
+        });
       }
 
       // check if the answer is correct
@@ -51,12 +49,10 @@ export default async function handler(req, res) {
       // Correct answer given, create a new User and store in db
       const user = new User({ address });
       const savedUser = await user.save();
-      return res
-        .status(200)
-        .json({
-          success: true,
-          message: `Success! You have been added to the whitelist!`,
-        });
+      return res.status(200).json({
+        success: true,
+        message: `Success! You have been added to the whitelist!`,
+      });
     } catch (err) {
       return res.status(500).json({ success: false, message: err.message });
     }

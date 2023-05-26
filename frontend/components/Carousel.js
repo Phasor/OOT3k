@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState, useMemo } from "react";
+import Image from "next/image";
 // import 'keen-slider/keen-slider.min.css'
 // import { useKeenSlider } from 'keen-slider/react' // import from 'keen-slider/react.es' for to get an ES module
-
 
 // const images = [
 //   { img: '/turtlecard1.jpeg', id: 1},
@@ -18,7 +17,6 @@ import Image from 'next/image';
 //   { img: '/mermaidcard2.jpeg', id: 11},
 //   { img: '/narwhalecard1.jpeg', id: 12}
 // ];
-
 
 export default function Carousel({ reversed }) {
   // const [animationDuration, setAnimationDuration] = useState(60000);
@@ -74,13 +72,13 @@ export default function Carousel({ reversed }) {
     //   ))}
     // </div>
 
-    <div className='my-2 sm:my-4'>
+    <div className="my-2 sm:my-4">
       <Image
-        src='/whirlpool-website.gif'
-        alt='whirlpool animated gif'
+        src="/whirlpool-website.gif"
+        alt="whirlpool animated gif"
         height={350}
         width={350}
-        loading='lazy'
+        loading="lazy"
       />
     </div>
   );
