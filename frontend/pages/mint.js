@@ -3,7 +3,6 @@ import Image from "next/image";
 import lottie from "lottie-web";
 import {
   useContract,
-  useContractRead,
   useClaimNFT,
   useClaimedNFTSupply,
 } from "@thirdweb-dev/react";
@@ -16,7 +15,6 @@ import {
   useConnectionStatus,
   useAddress,
 } from "@thirdweb-dev/react";
-const { ethers } = require("ethers");
 const CONTRACT_ADDRESS = "0x38034Be7BB26819A431a09f010abcbAB2dFbe0B9";
 
 // How to use ThirdWeb react hook to call contract functions
@@ -30,7 +28,6 @@ export default function Mint() {
   const [totalMinted, setTotalMinted] = useState(null);
   const animationContainerRef = useRef(null);
   const animationLoadingContainerRef = useRef(null);
-  const [animation, setAnimation] = useState(null);
   const [audio, setAudio] = useState(null);
   const [endAudio, setEndAudio] = useState(null);
   const [isMintStarted, setIsMintStarted] = useState(false);
@@ -40,7 +37,7 @@ export default function Mint() {
   const connectionStatus = useConnectionStatus();
   const image = "/whirlpool-compressed.gif";
 
-  // new ThirdWeb hooks
+  // new ThirdWeb hooks to communicate with contract
   const { contract } = useContract(CONTRACT_ADDRESS, "nft-drop");
   const {
     mutate: mint,
@@ -51,6 +48,7 @@ export default function Mint() {
 
   useEffect(() => setMounted(true), []);
 
+  // tests if user is connected to wallet
   useEffect(() => {
     if (connectionStatus === "connected") {
       setIsConnected(true);
@@ -59,6 +57,7 @@ export default function Mint() {
     }
   }, [connectionStatus]);
 
+  // sets the total minted state
   useEffect(() => {
     // console.log(`totalSupplyData: ${JSON.stringify(totalSupplyData)}`);
     setTotalMinted(totalSupplyData?.toNumber());
@@ -75,6 +74,7 @@ export default function Mint() {
     }
   }, [claimNftLoading, claimNftError, isMintStarted]);
 
+  // loads success animation once NFT is minted
   useEffect(() => {
     if (txSuccess) {
       const anim = lottie.loadAnimation({
@@ -84,10 +84,10 @@ export default function Mint() {
         autoplay: true,
         animationData: require("../public/fireworks.json"),
       });
-      setAnimation(anim);
     }
   }, [txSuccess]);
 
+  // plays music whilst minting is in progress
   useEffect(() => {
     if (isMintStarted) {
       // play audio
@@ -115,6 +115,7 @@ export default function Mint() {
     }
   }, [audio]);
 
+  // pauses the loading music and plays the success music once the token is minted
   useEffect(() => {
     if (txSuccess) {
       audio.pause();
@@ -131,24 +132,6 @@ export default function Mint() {
       }, 25000);
     }
   }, [endAudio, txSuccess, audio]);
-
-  const handleIncrement = () => {
-    if (mintAmount >= 2) {
-      setError("Like your style, but it's a max mint of 2 per wallet :(");
-      return;
-    } else {
-      setMintAmount((prev) => prev + 1);
-    }
-  };
-
-  const handleDecrement = () => {
-    if (mintAmount == 1) {
-      setError("Can't mint less than 1!");
-      return;
-    } else {
-      setMintAmount((prev) => prev - 1);
-    }
-  };
 
   return (
     <div className="w-full min-h-screen overflow-x-hidden">
@@ -211,16 +194,6 @@ export default function Mint() {
               )}
 
               <div className="w-full sm:max-w-[200px] flex justify-between mt-5 p-4">
-                {/* <div className='w-[50%] border-2 border-gray-800 p-2 mr-2 flex justify-center items-center space-x-8'>
-                  <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center  items-center cursor-pointer hover:scale-105">
-                    <p onClick={handleDecrement} className="text-gray-100 text-2xl mb-2">-</p>
-                  </div>
-                  <p className='text-2xl font-lekton'>{mintAmount}</p>
-                  <div className="h-6 w-6 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer hover:scale-105">
-                    <p onClick={handleIncrement} className="text-gray-100 text-2xl mb-1">+</p>
-                  </div>
-                </div> */}
-
                 {/* mint button */}
                 <div className="w-full bg-gray-800 hover:scale-105 cursor-pointer flex justify-center items-center">
                   {mounted && (
@@ -251,7 +224,7 @@ export default function Mint() {
                 Please Connect Your Wallet
               </p>
               <p className="font-lekton text-2xl text-center mt-1">
-                on Ethereum Mainnet
+                on Polygon Mumbai
               </p>
             </>
           )}
