@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="w-full flex flex-col sm:flex-row justify-between items-center">
           <Image
             src="/OOTLogo2.png"
-            alt="Oceans of Terra Logo"
+            alt="Oceans of Terra Logo footer"
             height={150}
             width={150}
             loading="lazy"

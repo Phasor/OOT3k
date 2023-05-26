@@ -5,3 +5,6 @@ node_modules
 whitelist
 uploadWhitelist.js
 whitelistTest.csv
+/test-results/
+/playwright-report/
+/playwright/.cache/
