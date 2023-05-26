@@ -278,6 +278,7 @@ export default function Mint() {
   )
 }
 
+// ** Uncomment the below if you want to hide the mint functionality e.g. post mint **
 // import React from 'react'
 
 // export default function mint() {
