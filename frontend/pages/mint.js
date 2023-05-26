@@ -130,7 +130,7 @@ export default function Mint() {
         endAudio.loop = false;
       }, 25000);
     }
-  }, [endAudio, txSuccess]);
+  }, [endAudio, txSuccess, audio]);
 
   const handleIncrement = () => {
     if (mintAmount >= 2) {
@@ -260,10 +260,10 @@ export default function Mint() {
 
       {txSuccess && (
         <div className="min-h-screen w-screen relative">
-          <div class="bg"></div>
-          <div class="bg bg2"></div>
-          <div class="bg bg3"></div>
-          <div class="success-content bg-transparent">
+          <div className="bg"></div>
+          <div className="bg bg2"></div>
+          <div className="bg bg3"></div>
+          <div className="success-content bg-transparent">
             <div className="w-full h-full">
               {/* Content here */}
               <div className="sm:w[800px] sm:h[800px] absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 ">
@@ -288,7 +288,7 @@ export default function Mint() {
       {mintError && (
         <p className="w-full flex justify-center items-center font-lekton text-xl text-red-500 mt-2">
           Error. Make sure you are on the Whitelist if its before 10am PDT and
-          aren't trying to mint more than 1 per wallet for the Whitelist and 2
+          aren&apos;t trying to mint more than 1 per wallet for the Whitelist and 2
           for the Public mint.
         </p>
       )}

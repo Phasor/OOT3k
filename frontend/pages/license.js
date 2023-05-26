@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 // superfluous comment to enable env variable update for vercel
 
-export default function license() {
+export default function License() {
   return (
     <div className="flex flex-col w-screen min-h-screen bg-gray-100 ">
       {/* Navbar */}
@@ -67,38 +67,38 @@ export default function license() {
             </div>
 
             <p className="font-lekton text-termsbody text-left">
-              THIS AGREEMENT (the "Agreement") is made and entered into
-              effective as of the date of purchase (the "Effective Date"), by
+              THIS AGREEMENT (the &quot;Agreement&quot;) is made and entered into
+              effective as of the date of purchase (the &quot;Effective Date&quot;), by
               and between Nautical Narwhal Game Studios Inc. (hereinafter known
-              as the "Licensor") and the NFT Buyer (hereinafter known as the
-              "Licensee") of the copyrightable permissible work ("Permissible
-              Work").
+              as the &quot;Licensor&quot;) and the NFT Buyer (hereinafter known as the
+                &quot;Licensee&quot;) of the copyrightable permissible work (&quot;Permissible
+              Work&quot;).
             </p>
 
             <h2 className="font-lekton text-termsheading text-left mt-4">
               Definitions
             </h2>
             <p className="font-lekton text-termsbody text-left">
-              "Agreement" means the entire content of this document.
+            &quot;Agreement&quot; means the entire content of this document.
             </p>
             <p className="font-lekton text-termsbody text-left">
-              "Nautical Narwhal Game Studios Inc" shall mean and refer to
-              Licensor's creation of a unique digital collectible, also known as
+            &quot;Nautical Narwhal Game Studios Inc&quot; shall mean and refer to
+              Licensor&apos;s creation of a unique digital collectible, also known as
               a NFT, deployed on the Ethereum blockchain.
             </p>
             <p className="font-lekton text-termsbody text-left">
-              "NFT" shall mean any blockchain-tracked, non-fungible token, also
-              referred to as a 'token.'
+            &quot;NFT&quot; shall mean any blockchain-tracked, non-fungible token, also
+              referred to as a &apos;token&apos;.
             </p>
             <p className="font-lekton text-termsbody text-left">
-              "Smart Contract" shall mean lines of code or a transaction
+            &quot;Smart Contract&quot; shall mean lines of code or a transaction
               protocol that is intended to automatically execute, control or
               document basic relevant events and actions according to the terms
               of an agreement. The code and the agreements contained therein
               exist across a distributed, decentralized blockchain network.
             </p>
             <p className="font-lekton text-termsbody text-left">
-              "Permissible Work" shall mean the visual, literary, dramatic,
+            &quot;Permissible Work&quot; shall mean the visual, literary, dramatic,
               artistic, and subject-matter works and content tied to the
               Nautical Narwhal Game Studios Inc NFTs.
             </p>
@@ -138,14 +138,14 @@ export default function license() {
               be assigned or transferred by Licensee, except to a new purchaser
               of all or substantially all of the Permissible Work licensed to
               the Licensee. Any other attempt on the part of Licensee to assign,
-              sub-license, or transfer Licensee's rights under this Agreement,
+              sub-license, or transfer Licensee&apos;s rights under this Agreement,
               except as provided herein, shall be invalid and void.
             </p>
             <p className="font-lekton text-termsbody text-left mt-2">
               Accordance. Licensee desires to obtain, and Licensor has agreed to
               transfer to and authorize the use of the Permissible Work by
               Licensee in accordance with the terms and conditions of this
-              Agreement. Licensee's purchase and use of the Permissible Work, in
+              Agreement. Licensee&apos;s purchase and use of the Permissible Work, in
               whole or in part, indicates their assent to the terms and
               conditions of this Agreement; and acknowledgment to have read and
               be legally bound by the terms of this Agreement.

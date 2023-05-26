@@ -4,7 +4,7 @@ import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import Link from "next/link";
 import Head from "next/head";
 
-export default function check() {
+export default function Check() {
   const [onWhitelist, setOnWhitelist] = useState(false);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);

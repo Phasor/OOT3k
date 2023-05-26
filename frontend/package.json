@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next link",
+    "lint": "next lint",
     "marketplace": "npx create-web3-dapp marketplace",
     "analyze": "NODE_ENV=production npm run build --stats && webpack-bundle-analyzer .next/stats.json"
   },

@@ -4,3 +4,4 @@ node_modules
 metadata
 package-lock.json
 env.local
+public
