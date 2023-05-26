@@ -109,6 +109,7 @@ function NavBar() {
                   width={60}
                   className="p-1"
                   src="/logocompressed.png"
+                  alt="Logo of a Narwhal"
                 />
               </ScrollLink>
 

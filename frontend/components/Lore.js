@@ -30,8 +30,7 @@ export default function Lore() {
   return (
     <>
       <svg
-        className="bg-bg-dg"
-        class="section-divider"
+        className="bg-bg-dg section-divider"
         fill="rgb(17 24 39)"
         viewBox="0 0 1920 60"
         aria-hidden="true"

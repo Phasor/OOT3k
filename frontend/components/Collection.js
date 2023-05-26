@@ -9,8 +9,7 @@ export default function Collection() {
   return (
     <>
       <svg
-        className="bg-gray-900 text-gray-100"
-        class="section-divider"
+        className="bg-gray-900 text-gray-100 section-divider"
         fill="rgb(243 244 246)"
         viewBox="0 0 1920 60"
         aria-hidden="true"

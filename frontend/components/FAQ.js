@@ -42,8 +42,7 @@ export default function FAQ() {
   return (
     <>
       <svg
-        className="bg-gray-100"
-        class="section-divider"
+        className="bg-gray-100 section-divider"
         fill="rgb(248 249 250)"
         viewBox="0 0 1920 60"
         aria-hidden="true"
@@ -55,10 +54,10 @@ export default function FAQ() {
         />
       </svg>
 
-      <section id="FAQ" class="w-full py-10  bg-bg-dg ">
-        <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl flex flex-col justify-center items-center">
-          <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-gray-800 text-3xl sm:text-5xl font-lekton font-bold">
+      <section id="FAQ" className="w-full py-10  bg-bg-dg ">
+        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl flex flex-col justify-center items-center">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-gray-800 text-3xl sm:text-5xl font-lekton font-bold">
               Frequently Asked Questions
             </h2>
           </div>
@@ -387,7 +386,7 @@ export default function FAQ() {
             >
               <p className="text-gray-800 text-xl mt-5 font-lekton">
                 This collection is on the Ethereum mainnet. Future in game NFTs
-                and transactions will make use of scaling solutions like L2's.
+                and transactions will make use of scaling solutions like L2&apos;s.
               </p>
             </div>
           </div>
